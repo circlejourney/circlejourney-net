@@ -27,8 +27,16 @@
     </script>
 @endsection
 
+@section("breadcrumbs")
+    @include("components.breadcrumbs", ["crumbs" => [
+            ["href"=>"/project-editor", "title"=>"Edit projects"],
+            ["href"=>"/project-editor/create", "title"=>"Create new project"]
+        ]
+    ])
+@endsection
+
 @section("content")
-    <div class="bannerbutton" id="positioner" style="transition: none;">
+    <div class="bannerbutton" id="positioner" style="transition: none; background-position: center 15%;">
         <div class="bannerlabel" style="user-select: none;">Click and drag to reposition background</div>
     </div>
     <form action="" method="post" class="editor">
@@ -36,7 +44,7 @@
         <input class="editor-title" type="text" id="item_id" name="item_id" placeholder="Project ID (no whitespace)">
         <input class="editor-title" type="text" id="href" name="href" placeholder="Link to project">
         <input class="editor-title" type="text" id="background_image" name="background_image" onchange="$('#positioner').css('background-image', 'url('+this.value+')')" placeholder="Background image URL">
-        <input class="editor-title" type="text" id="background_position" name="background_position" value="center 15%" placeholder="Background position">
+        <input class="editor-title" type="text" id="background_position" name="background_position" value="center 15%"  onchange="$('#positioner').css('background-position', this.value)" placeholder="Background position">
         <input class="editor-title" type="text" id="label_title" name="label_title" placeholder="Title">
         <textarea class="editor-body" id="label_text" name="label_text" placeholder="Description HTML"></textarea>
         <input type="checkbox" id="dark" name="dark" onchange="$('#positioner').find('.bannerlabel').toggleClass('darker')">

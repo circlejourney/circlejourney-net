@@ -11,10 +11,11 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        if(Auth::user()->rank != "admin") {
-            return Redirect::back()->withErrors("You do not have permission to delete projects.");
+        if(!Auth::user()) return route("login");
+        if(!Auth::user()->hasRank("admin")) {
+            return Redirect::back()->withErrors("You do not have permission to edit projects.");
         }
-        $projects = Project::all();
+        $projects = Project::all()->sortDesc();
         return view('projects.index', [
             "projects" => $projects
         ]);
@@ -22,7 +23,8 @@ class ProjectController extends Controller
 
     public function create()
     {
-        if(Auth::user()->rank != "admin") {
+        if(!Auth::user()) return route("login");
+        if(!Auth::user()->hasRank("admin")) {
             return Redirect::back()->withErrors("You do not have permission to create projects.");
         }
 
@@ -30,8 +32,9 @@ class ProjectController extends Controller
     }
 
     public function store(Request $request) {
-        if($request->user()->rank != "admin") {
-            return Redirect::back()->withErrors("You do not have permission to create a project.");
+        if(!Auth::user()) return route("login");
+        if(!$request->user()->hasRank("admin")) {
+            return Redirect::back()->withErrors("You do not have permission to create projects.");
         }
         $dark = isset($request->dark) ? "1" : "0";
         $newLink = Project::create(
@@ -46,7 +49,7 @@ class ProjectController extends Controller
                 "dark" => $dark
             ]
         );
-        return redirect("/project-editor/" . $newLink->item_id);
+        return redirect("/project-editor/");
     }
 
     public function show(Project $project)
@@ -56,18 +59,18 @@ class ProjectController extends Controller
     
     public function edit($item_id)
     {
-        if(Auth::user()->rank != "admin") {
-            return Redirect::back()->withErrors("You do not have permission to create projects.");
+        if(!Auth::user()) return route("login");
+        if(!Auth::user()->hasRank("admin")) {
+            return Redirect::back()->withErrors("You do not have permission to edit projects.");
         }
         $project = Project::where("item_id", $item_id)->firstOrFail();
         return view("projects.edit", ["project" => $project]);
-
-        return view("projects.edit");
     }
 
     public function update(Request $request, $item_id)
     {
-        if($request->user()->rank != "admin") {
+        if(!Auth::user()) return route("login");
+        if(!$request->user()->hasRank("admin")) {
             return Redirect::back()->withErrors("You do not have permission to edit projects.");
         }
         $project = Project::where("item_id", $item_id)->firstOrFail();
@@ -82,15 +85,26 @@ class ProjectController extends Controller
                 "dark" => $dark
             ]
         );
-        return redirect("/project-editor/" . $project->item_id);
+        return redirect("/project-editor/");
     }
 
     public function destroy(Project $project)
     {
-        if(Auth::user()->rank != "admin") {
+        if(!Auth::user()) return route("login");
+        if(!Auth::user()->hasRank("admin")) {
             return Redirect::back()->withErrors("You do not have permission to delete projects.");
         }
         $project->delete();
         return redirect("/project-editor/");
+    }
+
+    public static function select(array $project_ids) {
+        $projects = array_map(
+            function($project_id){
+                return Project::where("item_id", $project_id)->firstOrFail();
+            },
+            $project_ids
+        );
+        return $projects;
     }
 }

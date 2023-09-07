@@ -410,10 +410,13 @@
  }
 
  /* BLOG */
- .editor-title, .editor-body {
-    background-color: #333;
-    color: #eee;
-    width: 100%;
+ .editor input[type="text"],
+ .editor input[type="email"],
+ .editor input[type="password"],
+ .editor textarea {
+   background-color: #333;
+   color: #eee;
+   width: 100%;
  }
 
  .editor-body {
@@ -518,7 +521,7 @@
     display: inline-block;
  }
  
- .badge-grid {
+ .badge-grid { 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -557,7 +560,7 @@
     background-color: rgba(0, 0, 0, 0.5);
  }
  
- .banner-grid {
+ .bannergrid {
     display: flex;
     flex-wrap: wrap;
  }
@@ -573,6 +576,14 @@
     margin: 10px;
     transition: 0.4s all ease-in-out;
     text-align: center;
+ }
+
+.alternate .bannerbutton:nth-child(even) {
+   text-align: right;
+ }
+
+.alternate .bannerbutton:nth-child(odd) {
+   text-align: left;
  }
  
  .bannerbutton-50 {

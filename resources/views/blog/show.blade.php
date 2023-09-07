@@ -1,9 +1,3 @@
-<?php
-    use App\Models\BlogPost;
-    use App\Models\User;
-    use Illuminate\Support\Facades\Auth;
-?>
-
 @extends("layouts.canonical")
 
 @section("breadcrumbs")
@@ -24,14 +18,13 @@
     <hr>
     
     <p>
-        <?php $creator = BlogPost::findCreator($blogPost->user_id) ?>
-        Created by {{ $creator->name }} on {{ BlogPost::prettyDate( $blogPost->created_at ) }}.
+        Created by {{ $blogPost->find_creator() }} on {{ $blogPost->created_pretty() }}.
         @if($blogPost->created_at != $blogPost->updated_at)
-            Updated {{ BlogPost::prettyDate( $blogPost->updated_at ) }}.
+            Updated {{ $blogPost->updated_pretty() }}.
         @endif
     </p>
 
-    @if(Auth::id() == $blogPost->user_id)
+    @if($blogPost->edit_allowed())
         <a href="/blog/{{ $blogPost->id }}/edit">Edit post</a>
 
         <form action="" method="post">

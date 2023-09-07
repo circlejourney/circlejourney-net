@@ -23,7 +23,7 @@
 @else
     <div class="breeze-submenu">
         <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-            {{ __('Admin login') }}
+            {{ __('Login') }}
         </x-nav-link>
     </div>
 @endif

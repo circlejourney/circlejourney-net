@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view("welcome", [
+        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true, "before" => "" ])
+    ]);
 });
 
 Route::get('/dashboard', function () {
@@ -33,25 +35,30 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Projects
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::get('/project-editor', [ProjectController::class, "index"]);
     Route::get('/project-editor/create', [ProjectController::class, "create"]);
     Route::post('/project-editor/create', [ProjectController::class, "store"]);
     Route::get('/project-editor/{project}', [ProjectController::class, "edit"]);
     Route::put('/project-editor/{project}', [ProjectController::class, "update"]);
+    Route::delete('/project-editor/{project}', [ProjectController::class, "delete"]);
 });
 
-Route::get('/collabs', function () {
-    return view('collabs');
+Route::get('/collabs', function(){
+    return view("layouts.projects", [
+        "title"=>"Collaborations and community projects",
+        "projects" => ProjectController::select(["windowtoworlds-2023", "lofam5", "windowtoworlds-2021", "seaunseenzine-2021", "windowtoworlds-2020", "songsfromearth", "wishescursesanddreams", "bowozine", "20personswitcharound", "cdz-2021", "rosemagazine2" ]) ]);
 });
 
 Route::get('/links', [\App\Http\Controllers\SocialLinkController::class, 'index']);
 
 // Blog
 Route::get("/blog", [BlogPostController::class, "index"]);
-Route::get("/blog/create", [BlogPostController::class, "create"]);
-Route::post("/blog/create", [BlogPostController::class, "store"]);
-Route::get("/blog/{blogPost}/edit", [BlogPostController::class, "edit"]);
-Route::put("/blog/{blogPost}/edit", [BlogPostController::class, "update"]);
+Route::middleware('auth')->group(function () {
+    Route::get("/blog/create", [BlogPostController::class, "create"]);
+    Route::post("/blog/create", [BlogPostController::class, "store"]);
+    Route::get("/blog/{blogPost}/edit", [BlogPostController::class, "edit"]);
+    Route::put("/blog/{blogPost}/edit", [BlogPostController::class, "update"]);
+    Route::delete("/blog/{blogPost}", [BlogPostController::class, "destroy"]);
+});
 Route::get("/blog/{blogPost}", [BlogPostController::class, "show"]);
-Route::delete("/blog/{blogPost}", [BlogPostController::class, "destroy"]);

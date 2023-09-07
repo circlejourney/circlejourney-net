@@ -1,4 +1,4 @@
-@extends("layouts.projects", ["projects" => ["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways"]])
+@extends("layouts.projects", ["projects" => $projects, "alternate" => false])
 
 @section("top")
     <p style="text-align: center">

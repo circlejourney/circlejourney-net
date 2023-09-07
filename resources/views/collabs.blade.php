@@ -1,3 +1,3 @@
-@extends("layouts.projects", [ "projects" => ["windowtoworlds-2023"] ])
+@extends("layouts.projects", [ "projects" => $projects ])
 
 @section("title") Collaborations and community projects @endsection

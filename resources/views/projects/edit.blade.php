@@ -27,7 +27,16 @@
     </script>
 @endsection
 
+@section("breadcrumbs")
+    @include("components.breadcrumbs", ["crumbs" => [
+            ["href"=>"/project-editor", "title"=>"Edit projects"],
+            ["href"=>"/project-editor/".$project->item_id, "title"=>$project->label_title]
+        ]
+    ])
+@endsection
+
 @section("content")
+
     <div class="bannerbutton" id="positioner" style="transition: none; background-image: url({{  $project->background_image }}); background-position: {{ $project->background_position }}">
         <div class="bannerlabel @if($project->dark) darker @endif" style="user-select: none;">Click and drag to reposition background</div>
     </div>

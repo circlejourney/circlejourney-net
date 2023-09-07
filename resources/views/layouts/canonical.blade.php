@@ -8,7 +8,7 @@
 @endpush
 
 @section("body")
-    @include("components.header")
+    @include("layouts.header")
     <div id="lightbox" onclick="this.style.display='none'"><img id="lightboxImage"/></div>
     <div id="main" onclick = "document.getElementsByClassName('menu')[0].className = 'menu'">
         

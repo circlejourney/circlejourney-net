@@ -1,19 +1,14 @@
-<?php
-    use App\Models\Project;
-?>
-
 @extends("layouts.canonical")
 
-@section("title") @yield("title") @endsection
+@section("title")
+    @isset($title) {{ $title }} @endisset
+@endsection
 
 @section("content")
 @yield("top")
-<div class="bannergrid">
-    @foreach($projects as $project_id)
-        <?php $project = Project::where("item_id", $project_id)->firstOrFail(); ?>
-        @component("components.bannerbutton",
-            $project->toArray()
-        ) @endcomponent
+<div class="bannergrid @unless(isset($alternate) && !$alternate) alternate @endif">
+    @foreach($projects as $project)
+        @component("components.bannerbutton", $project->toArray()) @endcomponent
     @endforeach
 </div>
 @endsection

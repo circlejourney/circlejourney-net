@@ -43,4 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function rank(string $rank): bool {
+        return $this->getAttribute("rank");
+    }
+
+    public function hasRank(string $rank): bool {
+        return $this->getAttribute("rank") === $rank;
+    }
 }
