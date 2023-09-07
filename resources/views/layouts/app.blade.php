@@ -17,7 +17,8 @@
         </title>
 
         <!-- Scripts -->
-        @vite(['resources/js/jquery-3.3.1.min.js', 'resources/js/app.js'])
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/app.js"></script>
         @stack("head")
 
     </head>

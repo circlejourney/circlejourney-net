@@ -1,12 +1,7 @@
-import './bootstrap';
-import Alpine from 'alpinejs';
-window.Alpine = Alpine;
-Alpine.start();
+let bglist;
 
-var bglist;
-
-$.getJSON("/bg.json", function(bglist) {
-
+$.getJSON("/js/bg.json", function(bglist) {
+    console.log(bglist);
     var bg = bglist[Math.floor(Math.random()*bglist.length)];
     $("#blog-title-image-holder").css("background-image", `url(${bg.small})`);
     $("<img>")
@@ -16,7 +11,6 @@ $.getJSON("/bg.json", function(bglist) {
                 .css("background-image", "url("+bg.big+")")
                 .removeClass("blur"); 
         });
-
 });
 
 $(window).on("load", function(){
