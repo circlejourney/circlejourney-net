@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
-use App\Http\Requests\BlogPostUpdateRequest;
+use App\Http\Requests\TextUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +25,7 @@ class BlogPostController extends Controller
     }
 
 
-    public function store(BlogPostUpdateRequest $request): RedirectResponse
+    public function store(TextUpdateRequest $request): RedirectResponse
     {
         if(!Auth::check()) return route("login");
         $newPost = BlogPost::create(
@@ -54,7 +54,7 @@ class BlogPostController extends Controller
         return view("blog.edit", ["blogPost" => $blogPost]);
     }
 
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(TextUpdateRequest $request, BlogPost $blogPost)
     {
         if(!Auth::check()) return route("login");
         if(!$blogPost->edit_allowed()) {
@@ -62,8 +62,8 @@ class BlogPostController extends Controller
         }
         $blogPost->update(
             [
-                "title" => $request->title,
-                "body" => $request->body
+                "title" => $request->validated()["title"],
+                "body" => $request->validated()["body"]
             ]
         );
         return redirect("/blog/" . $blogPost->id);

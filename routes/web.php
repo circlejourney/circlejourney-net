@@ -20,7 +20,7 @@ Route::get('/', function() {
     return view("welcome", [
         "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
     ]);
-});
+})->name("welcome");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -53,16 +53,6 @@ Route::get('/interactive', function(){
     ]);
 });
 
-// Art
-Route::get('/art', function(){
-    return redirect("https://circlejourney.net/art");
-});
-
-// Music
-Route::get('/music', function(){
-    return redirect("https://circlejourney.net/music");
-});
-
 
 // Collabs
 Route::get('/collabs', function(){
@@ -84,3 +74,8 @@ Route::middleware('auth', 'auth.bio')->group(function () {
     Route::delete("/blog/{blogPost}", [BlogPostController::class, "destroy"]);
 });
 Route::get("/blog/{blogPost}", [BlogPostController::class, "show"]);
+
+
+Route::fallback(function ($e) {
+    return redirect( "https://circlejourney.net/".$e );
+});

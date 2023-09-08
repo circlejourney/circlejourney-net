@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class BlogPostUpdateRequest extends FormRequest
+class TextUpdateRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -16,7 +16,7 @@ class BlogPostUpdateRequest extends FormRequest
     {
         $this->request->set(
             "body",
-            preg_replace(["/<\/?(script|style|link|meta).*>/"], "", $this->request->get("body")
+            preg_replace(["/<\/?(script|style|link|meta|title)[^>]*>/"], "", $this->request->get("body")
             )
         );
         return [
