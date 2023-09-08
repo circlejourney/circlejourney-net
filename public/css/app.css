@@ -264,7 +264,6 @@
  .menu {
     font-family: Rubik;
     box-sizing: border-box;
-    text-align: center;
     position: sticky;
     top: 0;
     position: -webkit-sticky;
@@ -273,8 +272,10 @@
     margin: 0;
     font-size: 10.5pt;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
  }
  
  .menu,
@@ -283,17 +284,28 @@
     box-shadow: -10px 0 15px rgba(0, 0, 0, 0.4);
  }
  
- .menu a {
-    text-decoration: none;
-    color: inherit;
- }
- 
  .submenu {
-    display: inline-block;
     padding: 0;
     margin: 0;
     flex-grow: 1;
     position: relative;
+ }
+
+ .submenu a {
+   min-width: 15vw;
+   width: 100%;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+ }
+ 
+ .breeze-submenu a {
+   display: block;
+   padding: 0.4rem;
  }
  
  .dropdown {
@@ -302,6 +314,8 @@
     padding: 0;
     position: absolute;
     background: rgba(46, 52, 56, 0.85);
+    max-height: 90vh;
+    overflow: auto;
  }
 
  .submenu .dropdown {
@@ -318,8 +332,12 @@
     display: block;
  }
 
+ .breeze-submenu {
+   position: relative;
+ }
+
  .breeze-submenu .dropdown {
-    display: none;
+   display: none;
  }
  
  .breeze-submenu:hover .dropdown {
@@ -360,23 +378,6 @@
  
  .menu-option:hover {
     background: #50575b;
- }
-
- .submenu a {
-    min-width: 200px;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    list-style-type: none;
- }
- 
- .breeze-submenu .dropdown {
-
- }
-
- .breeze-submenu a {
-   display: block;
-   padding: 0.4rem;
  }
  
  #main {
@@ -778,7 +779,7 @@
     .submenu:hover .dropdown.open {
         display: block;
     }
-    .menu-option a, .menu-header a {
+    .submenu .menu-option a, .submenu .menu-header a {
         padding: 30px;
         margin-bottom: 10px;
         line-height: 1em;

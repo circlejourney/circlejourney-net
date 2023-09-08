@@ -25,79 +25,79 @@
     <div id = "menuButton" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
 
     <div class="submenu">
-        <div class="menu-header"><a href="/blog">Blog</a></div>
+        <div class="menu-header"><a href="/blog/">Blog</a></div>
     </div>
     
     <div class="submenu">
         <div class="menu-header"><a>Art & comics</a></div>
         <ul class="dropdown">
-        <li class="menu-option"><a href="/art">Art home</a></li>
-        <li class="menu-option"><a href="https://comics.circlejourney.net">Comics home</a></li>
-        <li class="menu-option"><a href="https://circlejourney.carrd.co">Commissions</a></li>
-        <li class="menu-option"><a href="http://circlejourney.weebly.com" target = "_blank">Portfolio</a></li>
-        <li class="menu-option"><a href="https://compass.circlejourney.net">Compass (2017-2020)</a></li>
-        <li class="menu-option"><a href="https://light.circlejourney.net">The Light Left Under Trees (2019-)</a></li>
-        <li class="menu-option"><a href="https://comics.circlejourney.net/dusk">Dusk: Unbirth (2016)</a></li>
-        <li class="menu-option"><a href="https://comics.circlejourney.net/snow-white">A Retelling of Snow White (2016)</a></li>
+        <x-menu-option href="/art/">Art home</x-menu-option>
+        <x-menu-option href="https://comics.circlejourney.net">Comics home</x-menu-option>
+        <x-menu-option href="https://circlejourney.carrd.co">Commissions</x-menu-option>
+        <x-menu-option href="http://circlejourney.weebly.com">Portfolio</x-menu-option>
+        <x-menu-option href="https://compass.circlejourney.net">Compass (2017-2020)</x-menu-option>
+        <x-menu-option href="https://light.circlejourney.net">The Light Left Under Trees (2019-)</x-menu-option>
+        <x-menu-option href="https://comics.circlejourney.net/dusk">Dusk: Unbirth (2016)</x-menu-option>
+        <x-menu-option href="https://comics.circlejourney.net/snow-white">A Retelling of Snow White (2016)</x-menu-option>
         </ul>
     </div>
     
     <div class="submenu">
         <div class="menu-header"><a>Writing</a></div>
         <ul class="dropdown">
-        <li class="menu-option"><a href="/writing">Writing home</a></li>
-        <li class="menu-option"><a href="https://rd.circlejourney.net">Revolving Door</a></li>
-        <li class="menu-option"><a href="/writing/offshore">Offshore</a></li>
-        <li class="menu-option"><a href="/writing/eaglesandswans">Eagles and Swans</a></li>
-        <li class="menu-option"><a href="/writing/otdots">Of the Dragon, of the Stars</a></li>
-        <li class="menu-option"><a href="/writing/compass">Compass</a></li>
-        <li class="menu-option"><a href="/writing/islandwars">Island Wars</a></li>
-        <li class="menu-option"><a href="/writing/voca">Voca</a></li>
-        <li class="menu-option"><a href="/writing/shortstories">Short stories</a></li>
+        <x-menu-option href="/writing/">Writing home</x-menu-option>
+        <x-menu-option href="https://rd.circlejourney.net">Revolving Door</x-menu-option>
+        <x-menu-option href="/writing/offshore/">Offshore</x-menu-option>
+        <x-menu-option href="/writing/eaglesandswans/">Eagles and Swans</x-menu-option>
+        <x-menu-option href="/writing/otdots/">Of the Dragon, of the Stars</x-menu-option>
+        <x-menu-option href="/writing/compass/">Compass</x-menu-option>
+        <x-menu-option href="/writing/islandwars/">Island Wars</x-menu-option>
+        <x-menu-option href="/writing/voca/">Voca</x-menu-option>
+        <x-menu-option href="/writing/shortstories/">Short stories</x-menu-option>
         </ul>
     </div>
     
     <div class="submenu">
         <div class = "menu-header"><a>Interactive</a></div>
         <ul class="dropdown">
-        <li class = "menu-option"><a href="/interactive">Interactive home</a></li>
-        <li class="menu-option"><a href="https://compass.circlejourney.net">Compass</a></li>
-        <li class="menu-option"><a href="https://th.circlejourney.net">Toyhouse editor</a></li>
+        <x-menu-option href="/interactive/">Interactive home</x-menu-option>
+        <x-menu-option href="https://compass.circlejourney.net">Compass</x-menu-option>
+        <x-menu-option href="https://th.circlejourney.net">Toyhouse editor</x-menu-option>
         <li class= "menu-mini-header">GPS</li>
-        <li class="menu-option"><a href="/water">Bubblers and Drinking Fountains Map</a></li>
-        <li class= "menu-option"><a href="/spectralcarta/">The Spectral Carta</a></li>
+        <x-menu-option href="/water/">Bubblers and Drinking Fountains Map</x-menu-option>
+        <x-menu-option href="/spectralcarta/">The Spectral Carta</x-menu-option>
         <li class= "menu-mini-header">Games</li>
-        <li class= "menu-option"><a href="/in-between/">In Between</a></li>
-        <li class= "menu-option"><a href="/angel/">Angel</a></li>
-        <li class="menu-option"><a href="/swim">Swim!</a></li>
+        <x-menu-option href="/in-between/">In Between</x-menu-option>
+        <x-menu-option href="/angel/">Angel</x-menu-option>
+        <x-menu-option href="/swim/">Swim!</x-menu-option>
         <li class= "menu-mini-header">Fun</li>
-        <li class="menu-option"><a href="/p5/islands" target="_blank">Islands</a></li>
-        <li class="menu-option"><a href="/petridish">Petri Dish</a></li>
+        <x-menu-option href="/p5/islands/">Islands</x-menu-option>
+        <x-menu-option href="/petridish/">Petri Dish</x-menu-option>
         </ul>
-    </div>
-    
-    <div class = "submenu">
-        <div class="menu-header"><a href="/collabs">Collabs & community projects</a></div>
     </div>
     
     <div class="submenu">
     <div class="menu-header"><a>Music</a></div>
     <ul class="dropdown">
-    <li class="menu-option"><a href="/music">Music home</a></li>
-    <li class="menu-option"><a href="https://circlejourney.carrd.co#music">Commissions</a></li>
-    <li class = "menu-option"><a href="/music/whereveryouwere">Wherever You Were (2023)</a></li>
-    <li class = "menu-option"><a href="/music/theskybeyondourbay">The Sky Beyond Our Bay (2023)</a></li>
-    <li class = "menu-option"><a href="/music/flyways">Flyways (2021)</a></li>
-    <li class = "menu-option"><a href="/music/amemoryfindsitsname">A Memory Finds Its Name (2021)</a></li>
-    <li class = "menu-option"><a href="/music/theskyisours">The sky is ours (2020)</a></li>
-    <li class = "menu-option"><a href="/music/thechanginglight">The Changing Light (2019)</a></li>
-    <li class = "menu-option"><a href="/music/timeandtide">Time and Tide (2018)</a></li>
-    <li class = "menu-option"><a href="/music/someotherhorizon">Some Other Horizon (2016)</a></li>
-    <li class="menu-option"><a href="/music/betweenskyandsea">Between Sky and Sea (2016)</a></li>
-    <li class="menu-option"><a href="/music/coastaldreaming">Coastal Dreaming (2015)</a></li>
-    <li class="menu-option"><a href="/music/worldsawait">Worlds Await (2013)</a></li>
-    <li class="menu-option"><a href="/music/compass">Compass (2013)</a></li>
+    <x-menu-option href="/music/">Music home</x-menu-option>
+    <x-menu-option href="https://circlejourney.carrd.co#music">Commissions</x-menu-option>
+    <x-menu-option href="/music/whereveryouwere/">Wherever You Were (2023)</x-menu-option>
+    <x-menu-option href="/music/theskybeyondourbay/">The Sky Beyond Our Bay (2023)</x-menu-option>
+    <x-menu-option href="/music/flyways/">Flyways (2021)</x-menu-option>
+    <x-menu-option href="/music/amemoryfindsitsname/">A Memory Finds Its Name (2021)</x-menu-option>
+    <x-menu-option href="/music/theskyisours/">The sky is ours (2020)</x-menu-option>
+    <x-menu-option href="/music/thechanginglight/">The Changing Light (2019)</x-menu-option>
+    <x-menu-option href="/music/timeandtide/">Time and Tide (2018)</x-menu-option>
+    <x-menu-option href="/music/someotherhorizon/">Some Other Horizon (2016)</x-menu-option>
+    <x-menu-option href="/music/betweenskyandsea/">Between Sky and Sea (2016)</x-menu-option>
+    <x-menu-option href="/music/coastaldreaming/">Coastal Dreaming (2015)</x-menu-option>
+    <x-menu-option href="/music/worldsawait/">Worlds Await (2013)</x-menu-option>
+    <x-menu-option href="/music/compass/">Compass (2013)</x-menu-option>
     </ul>
+    </div>
+    
+    <div class = "submenu">
+        <div class="menu-header"><a href="/collabs/">Community projects</a></div>
     </div>
 
 </div>

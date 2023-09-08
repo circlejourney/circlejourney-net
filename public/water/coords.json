@@ -1,0 +1,232 @@
+{
+    "1": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4728245,
+            153.0232705
+        ],
+        "ID": "1"
+    },
+    "2": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4623886,
+            153.0218405
+        ],
+        "ID": "2"
+    },
+    "3": {
+        "description": "Fountain!",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4687417,
+            153.0263152
+        ],
+        "ID": "3"
+    },
+    "4": {
+        "description": "Fountain near big junction",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4698683,
+            153.0250138
+        ],
+        "ID": "4"
+    },
+    "5": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4700828,
+            153.0246027
+        ],
+        "ID": "5"
+    },
+    "6": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4717792,
+            153.0180743
+        ],
+        "ID": "6"
+    },
+    "7": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4744078,
+            153.0188093
+        ],
+        "ID": "7"
+    },
+    "8": {
+        "description": "Fountain",
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.4795174,
+            153.0242277
+        ],
+        "ID": "8"
+    },
+    "9": {
+        "contributor": "Amari",
+        "coords": [
+            -27.4676217,
+            153.027845
+        ],
+        "description": "Fountain outside GPO",
+        "ID": "9"
+    },
+    "BCC_1616": {
+        "contributor": "Brisbane City Council",
+        "coords": [
+            -27.464318862,
+            153.031713087
+        ],
+        "description": "Admiralty Towers II Park: Drinking Fountain",
+        "ID": "BCC_1616"
+    },
+    "Amari1653104144": {
+        "contributor": "Amari",
+        "coords": [
+            -27.2684523,
+            152.9815874
+        ],
+        "description": "Fountain in train station, don't need go card to access",
+        "ID": "Amari1653104144"
+    },
+    "Amari1653451729": {
+        "contributor": "Amari",
+        "coords": [
+            -27.453905346582392,
+            153.01269053774743
+        ],
+        "description": "Fountain outside toilets",
+        "ID": "Amari1653451729"
+    },
+    "Amari1653546923": {
+        "contributor": "Amari",
+        "coords": [
+            -27.52868646066351,
+            153.05741781245814
+        ],
+        "description": "Bubbler under bus platforms",
+        "ID": "Amari1653546923"
+    },
+    "Amari1653553377": {
+        "contributor": "Amari",
+        "coords": [
+            -27.460505302016234,
+            153.0329016147289
+        ],
+        "description": "Bubbler - recently repaired, definitely working",
+        "ID": "Amari1653553377"
+    },
+    "Amari1654154344": {
+        "contributor": "Amari",
+        "coords": [
+            -27.46222528512322,
+            153.03551313952897
+        ],
+        "description": "Bubbler under Story Bridge"
+    },
+    "Amari1654154712": {
+        "contributor": "Amari",
+        "coords": [
+            -27.4622105,
+            153.0330828
+        ],
+        "description": "Bubbler just off the bike path"
+    },
+    "Amari1654220115": {
+        "contributor": "Amari",
+        "coords": [
+            -27.4758567,
+            153.0283621
+        ],
+        "description": "QUT water bottle filling station"
+    },
+    "Amari1654734998": {
+        "contributor": "Amari",
+        "coords": [
+            -27.453507459613657,
+            153.0141443619699
+        ],
+        "description": "Bubbler near junction"
+    },
+    "Amari1656398067": {
+        "contributor": "Amari",
+        "coords": [
+            -27.45176520503908,
+            153.01812480229316
+        ],
+        "description": "Fountain on bus platform"
+    },
+    "Amari1656398077": {
+        "contributor": "Amari",
+        "coords": [
+            -27.45184646780165,
+            153.01835896758962
+        ],
+        "description": "Fountain on bus platform"
+    },
+    "Amari1657089705": {
+        "contributor": "Amari",
+        "coords": [
+            -27.48326003266942,
+            153.0256492513581
+        ],
+        "description": "Fountain under tree"
+    },
+    "Amari1658037527": {
+        "contributor": "Amari",
+        "coords": [
+            -27.263022,
+            153.0789823
+        ],
+        "description": "Bubbler at the head of Hornibrook Highway"
+    },
+    "Anonymoususer1658038716": {
+        "contributor": "Anonymous user",
+        "coords": [
+            -27.265635265827225,
+            153.07591079426027
+        ],
+        "description": "Fountain"
+    },
+    "Amari1658040065": {
+        "contributor": "Amari",
+        "coords": [
+            -27.2752896,
+            153.0713225
+        ],
+        "description": "Fountain on lookout point"
+    },
+    "Max1684549784": {
+        "contributor": "Max",
+        "coords": [
+            -27.4763301713648,
+            153.02872940912192
+        ],
+        "description": "QUT Bottle Filling Station"
+    },
+    "BCC_708": {
+        "contributor": "Brisbane City Council",
+        "coords": [
+            -27.4635307799999,
+            153.03109565
+        ],
+        "description": "Clark Lane: Drinking Fountain"
+    },
+    "BCC_1608": {
+        "contributor": "Brisbane City Council",
+        "coords": [
+            -27.4600500029999,
+            153.035499751
+        ],
+        "description": "Ivory Street Park road Reserve: Bubbler &amp; Tap"
+    }
+}

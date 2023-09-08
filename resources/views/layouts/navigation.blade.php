@@ -1,29 +1,27 @@
 @if(Auth::user())
-    <x-dropdown>
-        <x-slot name="header">
-            {{ Auth::user()->name }}
-        </x-slot>
-        
-        <x-slot name="content">
-            <x-dropdown-link :href="route('dashboard')">
-                {{ __('Dashboard') }}
-            </x-dropdown-link>
-
-            <x-dropdown-link :href="route('profile.edit')">
-                {{ __('Profile') }}
-            </x-dropdown-link>
-
-            <!-- Authentication -->
+    <div class="breeze-submenu">
+        <div class="menu-header">
+            <a>{{ Auth::user()->name }}</a>
+        </div>
+        <ul class="dropdown">
+            <li class="menu-option">
+                <a href="{{route("dashboard")}}">Dashboard</a>
+            </li>
+            <li class="menu-option">
+                <a href="{{route("profile.edit")}}">Profile</a>
+            </li>
             <form class="menu-option" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a href="/logout" onclick="event.preventDefault();this.closest('form').submit();">Log out</a>
             </form>
-        </x-slot>
-    </x-dropdown>        
+        </ul>
+    </div>   
 @else
     <div class="breeze-submenu">
-        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-            {{ __('Login') }}
-        </x-nav-link>
+        <div class="menu-header">
+            <a href="/login">
+                Login / Register
+            </a>
+        </div>
     </div>
 @endif

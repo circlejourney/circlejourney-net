@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bubblers and Drinking Fountains - Crowdsourced Map</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A map of bubblers and drinking fountains in Brisbane and beyond. See bubblers near you and add public bubbler sightings.">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="leaflet/leaflet.css" />
+        <script src="leaflet/leaflet.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="style.css?7">
+        <script src="script.js?2"></script>
+
+    </head>
+
+    <body>
+        <div class="info">
+
+            <h1 class="header">Bubblers and Drinking Fountains</h1>
+            
+            <span class="checkbox-wrapper">
+                <input type="checkbox" id="follow">
+                <label for="follow">Follow you location</label>
+            </span>
+        </div>
+
+        <div id="mymap"></div>
+        
+        <div class="ui-button" id="info-button" onclick="toggleInfo()">About</div>
+        <div class="ui-button" id="recenter-button" onclick="mymap.setView(me.getLatLng())">Me&#x263A;</div>        
+        <div class="ui-button" id="find-nearest-button" onclick="findNearest([me.getLatLng().lat, me.getLatLng().lng])">Closest</div>
+        
+        <div class="info-display info-back hidden" onclick="toggleInfo()"></div>
+        <div class="info-display info-panel hidden">
+            <h1>About this project</h1>
+            <p>I acknowledge the traditional owners of the land on which this project was created - the Turrbal and Yugara peoples - and honour their continuing connection to the land and waters. I pay my respects to elders past and present, and honour the Country on which we, colonial settlers and immigrants, live as guests.</p>
+            <hr>
+            <p>This is a hobby project created and maintained by Amari Low (Circlejourney). While it was started in Meanjin (Brisbane), feel free to add pins from elsewhere in the world. Each new pin will be checked and verified. Currently, a review feature is in the works. You can also email concerns to cj@circlejourney.net.</p>
+
+            <h2>What bubblers can I add?</h2>
+            <p>Only add bubblers that are:</p>
+            <ul>
+                <li>Open to public use and not on inaccessible private property.</li>
+                <li>Working.</li>
+            </ul>
+
+            <hr>
+
+            <h2>Sources</h2>
+            <ul>
+                <li>
+                    <a href="https://www.spatial-data.brisbane.qld.gov.au/datasets/0183f20dac984c2196e0be00168b701f_0/explore?location=-27.467727%2C152.994723%2C11.41">
+                        Brisbane City Council: Park &ndash; Drinking Fountain Tap locations
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Default Statcounter code for Bubblers and Drinking
+        Fountains https://circlejourney.net/water -->
+        <script type="text/javascript">
+        var sc_project=12794208; 
+        var sc_invisible=1; 
+        var sc_security="9754dc0c"; 
+        </script>
+        <script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="Web Analytics"
+        href="https://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="https://c.statcounter.com/12794208/0/9754dc0c/1/"
+        alt="Web Analytics"
+        referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+        <!-- End of Statcounter Code -->
+    </body>
+
+</html>
