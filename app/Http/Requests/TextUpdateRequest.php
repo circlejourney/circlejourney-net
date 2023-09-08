@@ -16,7 +16,7 @@ class TextUpdateRequest extends FormRequest
     {
         $this->request->set(
             "body",
-            preg_replace(["/<\/?(script|style|link|meta|title)[^>]*>/"], "", $this->request->get("body")
+            preg_replace(["/<\/?(a\s|script|style|link|meta|title)[^>]*>/"], "", $this->request->get("body")
             )
         );
         return [
