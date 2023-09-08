@@ -7,7 +7,7 @@
 @section('content')
     <div class="center" style="width: 100%;">
         <p>
-            Joined {{ $user->joined_pretty() }}
+            Rank: <span class="nametag-{{ $user->rank }}">{{ ucfirst($user->rank) }}</span> &bull; Joined {{ $user->joined_pretty() }}
         </p>
         
         @if($user->bio)
