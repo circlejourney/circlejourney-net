@@ -22,10 +22,12 @@
 </a>
 
 <div class="menu" id="menu">
-    <div id = "menuButton" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
+    <div id="menuButton" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
 
     <div class="submenu">
-        <div class="menu-header"><a href="/blog/">Blog</a></div>
+        <div class="menu-header-link">
+            <a href="/blog/">Blog</a>
+        </div>
     </div>
     
     <div class="submenu">
@@ -97,7 +99,7 @@
     </div>
     
     <div class = "submenu">
-        <div class="menu-header"><a href="/collabs/">Community projects</a></div>
+        <div class="menu-header-link"><a href="/collabs/">Community projects</a></div>
     </div>
 
 </div>

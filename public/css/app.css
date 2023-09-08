@@ -344,7 +344,7 @@
     display: block;
  }
  
- .menu-header {
+ .menu-header, .menu-header-link {
     list-style: none;
     color: #eee;
     background: #24506b;
@@ -354,6 +354,10 @@
     flex-direction: column;
     justify-content: center;
  }
+
+ .menu-header a::after {
+   content: " ▾";
+ }
  
  .menu-mini-header {
    padding: 0.1rem;
@@ -361,7 +365,7 @@
     list-style: none;
  }
  
- .menu-header, .menu-option {
+ .menu-header, .menu-header-link, .menu-option {
     box-sizing: border-box;
     margin: 0;
     line-height: 12pt;
@@ -779,7 +783,7 @@
     .submenu:hover .dropdown.open {
         display: block;
     }
-    .submenu .menu-option a, .submenu .menu-header a {
+    .submenu .menu-option a, .submenu .menu-header a, .menu-header-link a {
         padding: 30px;
         margin-bottom: 10px;
         line-height: 1em;
