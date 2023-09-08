@@ -697,6 +697,7 @@
  }
  
  .breadcrumbs {
+   text-align: center;
     width: 100%;
     font-weight: bold;
     margin-bottom: 2rem;

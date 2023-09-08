@@ -4,6 +4,13 @@
     Interactive projects and games
 @endsection
 
+@section("breadcrumbs")
+    @include("components.breadcrumbs", ["crumbs" => [
+        ["href"=>"/interactive", "title"=>"Interactive projects and games"]
+    ]
+    ])
+@endsection
+
 @section('content')
     <p class="center">
         You can also find me on:

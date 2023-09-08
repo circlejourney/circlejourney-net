@@ -4,6 +4,14 @@
     @isset($title) {{ $title }} @endisset
 @endsection
 
+@section("breadcrumbs")
+    @isset($title)
+        @include("components.breadcrumbs", ["crumbs" => [
+            ["href"=>Route::current()->getName(), "title"=> $title ]
+        ] ])
+    @endif
+@endsection
+
 @section("content")
 @yield("top")
 <div class="bannergrid @unless(isset($alternate) && !$alternate) alternate @endif">
