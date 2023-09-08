@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view("welcome", [
-        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
+        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
     ]);
 })->name("welcome");
 
