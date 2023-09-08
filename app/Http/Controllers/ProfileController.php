@@ -5,12 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\BlogPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+
+    public function show(string $user_id) {
+        $user = User::where("id", $user_id)->first();
+        $posts = BlogPost::where("user_id", $user_id)->get();
+        return view("profile.show", ["user" => $user, "posts" => $posts]);
+    }
+
     /**
      * Display the user's profile form.
      */

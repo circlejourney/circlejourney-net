@@ -17,6 +17,10 @@
     <x-text-input id="email" name="email" type="email" :value="old('email', $user->email)" required autocomplete="username" />
     <x-input-error :messages="$errors->get('email')" />
 
+    <label for="email">Short bio</label>
+    <textarea id="bio" name="bio" maxlength="1000">{{ old('bio', $user->bio) }}</textarea>
+    <x-input-error :messages="$errors->get('bio')" />
+
     @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
         <p>
             {{ __('Your email address is unverified.') }}

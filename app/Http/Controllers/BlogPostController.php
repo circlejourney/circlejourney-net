@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
+use App\Http\Requests\BlogPostUpdateRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -12,10 +14,7 @@ class BlogPostController extends Controller
 {
     public function index()
     {
-        $posts = BlogPost::all();
-        foreach($posts as $post) {
-            $post->user_name = User::where("id", $post->id)->firstOrFail()->name;
-        }
+        $posts = BlogPost::all()->sortDesc();
         return view( "blog.index", ["posts" => $posts] );
     }
 
@@ -26,13 +25,13 @@ class BlogPostController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(BlogPostUpdateRequest $request): RedirectResponse
     {
         if(!Auth::check()) return route("login");
         $newPost = BlogPost::create(
             [
-                "title" => $request->title,
-                "body" => $request->body,
+                "title" => $request->validated()["title"],
+                "body" => $request->validated()["body"],
                 "user_id" => $request->user()->id
             ]
         );

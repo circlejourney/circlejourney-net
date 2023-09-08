@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ProfileUpdateRequest extends FormRequest
+class BlogPostUpdateRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,10 +14,14 @@ class ProfileUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+        $this->request->set(
+            "body",
+            preg_replace(["/<\/?(script|style|link|meta).*>/"], "", $this->request->get("body")
+            )
+        );
         return [
-            'name' => ['string', 'max:255'],
-            'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-            'bio' => ['string', 'max:1000']
+            'title' => ['string', 'max:255'],
+            'body' => ['string']
         ];
     }
 }

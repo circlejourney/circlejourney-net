@@ -18,7 +18,8 @@
     <hr>
     
     <p>
-        Created by {{ $blogPost->find_creator() }} on {{ $blogPost->created_pretty() }}.
+        <?php $creator = $blogPost->find_creator() ?>
+        Created by <a href="/profile/{{ $creator->id }}" class="nametag-{{ $creator->rank }}">{{ $creator->name }}</a> on {{ $blogPost->created_pretty() }}.
         @if($blogPost->created_at != $blogPost->updated_at)
             Updated {{ $blogPost->updated_pretty() }}.
         @endif

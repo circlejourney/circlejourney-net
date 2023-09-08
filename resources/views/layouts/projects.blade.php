@@ -8,7 +8,7 @@
 @yield("top")
 <div class="bannergrid @unless(isset($alternate) && !$alternate) alternate @endif">
     @foreach($projects as $project)
-        @component("components.bannerbutton", $project->toArray()) @endcomponent
+    <x-bannerbutton class="" :project="$project"/>
     @endforeach
 </div>
 @endsection

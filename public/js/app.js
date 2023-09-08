@@ -1,11 +1,7 @@
-let bglist;
-
 $.getJSON("/js/bg.json", function(bglist) {
-    console.log(bglist);
     var bg = bglist[Math.floor(Math.random()*bglist.length)];
     $("#blog-title-image-holder").css("background-image", `url(${bg.small})`);
-    $("<img>")
-        .attr("src", bg.big)
+    $("<img>").attr("src", bg.big)
         .on("load", function() {
             $("#blog-title-image-holder")
                 .css("background-image", "url("+bg.big+")")
@@ -18,7 +14,7 @@ $(window).on("load", function(){
     $("<img>")
         .attr("src", "/images/logosmall.png")
         .on("load", function() {
-            $("#blog-title-logo").css("background-image", "url(/images/logosmall.png)").removeClass("transparent");
+            $("#blog-title-logo").attr("src", "/images/logosmall.png").removeClass("transparent");
         });
     
     if("ontouchstart" in window) {

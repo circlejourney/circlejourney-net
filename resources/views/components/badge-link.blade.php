@@ -1,0 +1,1 @@
+<a class="scriptlink" href="{{ $href }}">{{ $slot }}</a>

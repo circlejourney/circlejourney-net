@@ -5,10 +5,10 @@
         </div>
         <ul class="dropdown">
             <li class="menu-option">
-                <a href="{{route("dashboard")}}">Dashboard</a>
+                <a href="/profile/{{ Auth::user()->id}}/">View profile</a>
             </li>
             <li class="menu-option">
-                <a href="{{route("profile.edit")}}">Profile</a>
+                <a href="{{route("profile.edit")}}">Edit profile</a>
             </li>
             <form class="menu-option" method="POST" action="{{ route('logout') }}">
                 @csrf

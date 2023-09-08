@@ -15,16 +15,16 @@ class BlogPost extends Model
 
     public function created_pretty() {
         $postdate = Carbon::createFromTimestamp(strtotime( $this->created_at ));
-        return $postdate->format("j M Y \\a\\t H:i:s");
+        return $postdate->format("j M, Y \\a\\t H:i:s");
     }
 
     public function updated_pretty() {
         $postdate = Carbon::createFromTimestamp(strtotime( $this->updated_at ));
-        return $postdate->format("j M Y \\a\\t H:i:s");
+        return $postdate->format("j M, Y \\a\\t H:i:s");
     }
 
     public function find_creator() {    
-        return User::where("id", $this->user_id)->firstOrFail()->name;
+        return User::where("id", $this->user_id)->firstOrFail();
     }
 
     public function edit_allowed() {

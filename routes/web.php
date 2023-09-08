@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view("welcome", [
-        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true, "before" => "" ])
+        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
     ]);
 });
 
@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get("/profile/{user_id}", [ProfileController::class, "show"]);
 });
 
 require __DIR__.'/auth.php';
@@ -44,6 +45,26 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::delete('/project-editor/{project}', [ProjectController::class, "delete"]);
 });
 
+
+// Interactive
+Route::get('/interactive', function(){
+    return view("interactive", [
+        "projects" => ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ])
+    ]);
+});
+
+// Art
+Route::get('/art', function(){
+    return redirect("https://circlejourney.net/art");
+});
+
+// Music
+Route::get('/music', function(){
+    return redirect("https://circlejourney.net/music");
+});
+
+
+// Collabs
 Route::get('/collabs', function(){
     return view("layouts.projects", [
         "title"=>"Collaborations and community projects",
@@ -54,7 +75,8 @@ Route::get('/links', [\App\Http\Controllers\SocialLinkController::class, 'index'
 
 // Blog
 Route::get("/blog", [BlogPostController::class, "index"]);
-Route::middleware('auth')->group(function () {
+//Route::get("/blog", [BlogPostController::class, "index"]);
+Route::middleware('auth', 'auth.bio')->group(function () {
     Route::get("/blog/create", [BlogPostController::class, "create"]);
     Route::post("/blog/create", [BlogPostController::class, "store"]);
     Route::get("/blog/{blogPost}/edit", [BlogPostController::class, "edit"]);

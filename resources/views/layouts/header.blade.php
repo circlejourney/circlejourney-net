@@ -17,7 +17,12 @@
     <div id="blog-title-image-holder" class="blur">
     </div>
     <div id="blog-title-inside">
-        <div id="blog-title-logo" class="transparent"></div> <span>Circlejourney</span>
+        <div class="blog-title-headline">
+            <img id="blog-title-logo" class="transparent"> <span>Circlejourney</span>
+        </div>
+        
+        <div class="center" style="font-family: Arvo; font-size: 10pt;">⚠️ This site is still being ported! If you run into a link that doesn't work, just change the domain from <code>rebuild.circlejourney.net</code> to <code>circlejourney.net</code>.</div>
+    
     </div>
 </a>
 

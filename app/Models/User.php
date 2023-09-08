@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -21,7 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'website'
+        'website',
+        'bio'
     ];
 
     /**
@@ -50,5 +52,10 @@ class User extends Authenticatable
 
     public function hasRank(string $rank): bool {
         return $this->getAttribute("rank") === $rank;
+    }
+
+    public function joined_pretty() {
+        $joindate = Carbon::createFromTimestamp(strtotime( $this->created_at ));
+        return $joindate->format("j F, Y");
     }
 }

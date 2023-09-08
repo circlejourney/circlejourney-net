@@ -1,6 +1,6 @@
 <a
     href="{{ $href }}"
-    class="bannerbutton"
+    class="bannerbutton {{ $class ?? "" }}"
     style="background-image: url({{ $background_image }}); background-position: {{ $background_position }};"
     target="_blank">
 
