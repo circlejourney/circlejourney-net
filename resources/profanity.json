@@ -4,17 +4,6 @@
       "match": "1m1j|1man1jar|1 man 1 jar|one man one jar|one jar one man"
   },
   {
-      "match": "ass"
-  },
-  {
-      "comment": "Test term, remove when done",
-      "match": "butt",
-      "exceptions": [
-            "*es",
-            "*y"
-      ]
-  },
-  {
         "match": "2g1c|2girls1cup|2 girls 1 cup|two girls one cup|one cup two girls"
   },
   {
@@ -139,7 +128,7 @@
         "match": "beaver lips"
   },
   {
-        "match": "bell*end",
+        "match": "bell+end",
     "exceptions": [
       "*en"
     ]
@@ -165,7 +154,7 @@
         "match": "birdlock"
   },
   {
-        "match": "bi*tch|bi*tches"
+        "match": "bi+tch|bi+tches"
   },
   {
         "match": "bloody"
@@ -183,7 +172,7 @@
         "match": "blumpkin"
   },
   {
-        "match": "bo*ll*o*cks"
+        "match": "bo+ll+o+cks"
   },
   {
         "match": "bone smuggler|bone-smuggler|bonesmuggler"
@@ -343,13 +332,13 @@
     ]
   },
   {
-        "match": "cli*tori*s"
+        "match": "cli+tori+s"
   },
   {
         "match": "clover clamps|clover clamp"
   },
   {
-        "match": "clu*nge"
+        "match": "clu+nge"
   },
   {
         "match": "clusterfuck|cluster-fuck|cluster fuck"
@@ -570,7 +559,7 @@
         "match": "cunnilingus"
   },
   {
-        "match": "cu*n*t|ku*nt|cunts|kunts",
+        "match": "cu+n+t|ku+nt|cunts|kunts",
     "exceptions": [
       "s*horpe"
     ]
@@ -683,7 +672,7 @@
         "match": "eyetie|eye-tie"
   },
   {
-        "match": "fa*g",
+        "match": "fa+g",
     "exceptions": [
       "lea*e",
       "lea*es",
@@ -697,7 +686,7 @@
         "match": "fag bomb|fag-bomb|fagbomb"
   },
   {
-        "match": "fa*gg*o*t|fagot"
+        "match": "fagg+o+t|fagot"
   },
   {
         "match": "felch|felching"
@@ -823,7 +812,7 @@
         "match": "gym bunny|gymbunny"
   },
   {
-        "match": "haji|hajj*i|hadji"
+        "match": "haji|hajj+i|hadji"
   },
   {
         "match": "hand job|hand-job|handjob"
@@ -929,7 +918,7 @@
         "match": "jerkmate|jerk mate"
   },
   {
-        "match": "jig*aboo*|jig*gerboo*"
+        "match": "jig+aboo+|jig+gerboo+"
   },
   {
         "match": "jizz"
@@ -950,7 +939,7 @@
         "match": "kentucky tractor puller"
   },
   {
-        "match": "ki*ke"
+        "match": "ki+ke"
   },
   {
         "match": "kinbaku"
@@ -1022,13 +1011,10 @@
         "match": "light in the pants"
   },
   {
-        "match": "limp wristed|limp-wristed"
-  },
-  {
         "match": "male squirting|male-squirting"
   },
   {
-        "match": "ma*stu*rbate|ma*stu*rb8|masturbation|masturbating|masterbate|masterb8"
+        "match": "ma+stu+rbate|ma+stu+rb8|masturbation|masturbating|masterbate|masterb8"
   },
   {
         "match": "mayonnaise monkey|mayonnaise monkies"
@@ -1091,10 +1077,10 @@
         "match": "nigerian hurricane"
   },
   {
-        "match": "ni*gg*a|ni*gg*s|nignog|nig nog"
+        "match": "ni+gg+a|ni+gg+s|nignog|nig nog"
   },
   {
-        "match": "ni*gg*e*r"
+        "match": "ni+gg+e+r"
   },
   {
         "match": "nipple clamps|nipple clamp"
@@ -1151,7 +1137,7 @@
         "match": "pegging"
   },
   {
-        "match": "pe*ni*s",
+        "match": "pe+ni+s",
     "exceptions": [
       "top*h"
     ]
@@ -1169,7 +1155,7 @@
         "match": "pikey|pikeys"
   },
   {
-        "match": "pi*ss* off"
+        "match": "pi+ss+ off"
   },
   {
         "match": "piss pig|pisspig"
@@ -1178,7 +1164,7 @@
         "match": "piss pig|pisspig"
   },
   {
-        "match": "pi*ss*ed off"
+        "match": "pi+ss+ed off"
   },
   {
         "match": "pissing"
@@ -1280,10 +1266,10 @@
         "match": "pubes"
   },
   {
-        "match": "pu*na*ni|punany"
+        "match": "pu+na+ni|punany"
   },
   {
-        "match": "pu*ss*y"
+        "match": "pu+ss+y"
   },
   {
         "match": "pussy puncher|pussy-puncher|pussypuncher"
@@ -1431,7 +1417,7 @@
         "match": "shibari"
   },
   {
-        "match": "sh*i*t",
+        "match": "sh+i+t",
     "exceptions": [
       "*ake",
       "mi*",
@@ -1443,7 +1429,7 @@
         "match": "shithead|shit head"
   },
   {
-        "match": "shi*tt*y"
+        "match": "shi+tt+y"
   },
   {
         "match": "shota"
@@ -1620,7 +1606,7 @@
         "match": "timber ni*gg*e*r|timber-ni*gg*e*r|timberni*gg*e*r"
   },
   {
-        "match": "titt*y|titt*ies"
+        "match": "titt+y|titt+ies"
   },
   {
         "match": "topless"
@@ -1674,14 +1660,14 @@
         "match": "wagon burner|wagon-burner"
   },
   {
-        "match": "wa*nk",
+        "match": "wa+nk",
     "exceptions": [
       "s*",
       "t*"
     ]
   },
   {
-        "match": "wa*nker"
+        "match": "wa+nker"
   },
   {
         "match": "wax play|wax-play"
@@ -1696,7 +1682,7 @@
         "match": "whitepower|white-power|white power"
   },
   {
-        "match": "who*re"
+        "match": "who+re"
   },
   {
         "match": "wigger|whigger|wigga"

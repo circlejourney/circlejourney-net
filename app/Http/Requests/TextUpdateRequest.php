@@ -29,19 +29,37 @@ class TextUpdateRequest extends FormRequest
             true
         );
         foreach($profanity as $term) {
-            $exceptions = $term["exceptions"] ?? false;
-            
-            if($exceptions) {
-                $exception_strings = array_map(function($i)use($term){
-                    return str_replace("*", $term["match"], $i);
-                }, $exceptions);
-                $string = str_replace(
-                    $exception_strings, $exceptions, $string
-                );
-            }
+            $exceptions = $term["exceptions"] ?? [];
+            $eachexception = [];
 
-            $string = preg_replace("/".$term["match"]."/", "[CENSORED]", $string);
-            $string = str_replace("*", $term["match"], $string);
+            foreach($exceptions as $i=>$exception) {
+                $exceptpattern = "/" . str_replace( "*", "(?:".$term["match"].")", $exception ) . "/";
+                preg_match_all($exceptpattern, $string, $eachexception[$i], PREG_OFFSET_CAPTURE);
+                if(!isset($eachexception[$i][0])) continue;
+
+                foreach( $eachexception[$i] as $excepttriggers ) {
+                    foreach($excepttriggers as $except) {
+                        $mask = str_repeat("%", strlen($except[0]));
+                        $string = substr_replace($string, $mask, $except[1], strlen($except[0]));
+                    }
+                }
+            }
+            
+            preg_match_all("/".$term["match"]."/" , $string, $triggerlist, PREG_OFFSET_CAPTURE);
+            foreach($triggerlist as $triggers) {
+                foreach($triggers as $trigger) {
+                    $replacement = str_repeat("*", strlen($trigger[0]));
+                    $string = substr_replace($string, $replacement, $trigger[1], strlen($trigger[0]));
+                }
+            }
+            
+            foreach($eachexception as $exceptiongroup) {
+                foreach($exceptiongroup as $excepttriggers) {
+                    foreach($excepttriggers as $except) {
+                        $string = substr_replace($string, $except[0], $except[1], strlen($except[0]));
+                    }
+                }
+            }
 
         }
 
