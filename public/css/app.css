@@ -670,6 +670,13 @@
    transition: 0.4s all ease-in-out;
    background: rgba(10, 10, 10, 0.5);
    height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .thumb-bannerlabel h2 {
+   margin:  0;
  }
 
  .bannerlabel {
@@ -714,13 +721,11 @@
  }
  
  .banner-animate,
- 
  .fade-up {
     opacity: 0;
  }
  
  .banner-animating,
- 
  .fading-up {
     animation-name: fadeup;
     animation-duration: 2s;
