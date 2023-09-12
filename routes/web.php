@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MetalinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,30 +43,38 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::post('/project-editor/create', [ProjectController::class, "store"]);
     Route::get('/project-editor/{project}', [ProjectController::class, "edit"]);
     Route::put('/project-editor/{project}', [ProjectController::class, "update"]);
-    Route::delete('/project-editor/{project}', [ProjectController::class, "delete"]);
+    Route::delete('/project-editor/{project}', [ProjectController::class, "destroy"]);
+
+    Route::get("/metalink-editor", [MetalinkController::class, "index"]);
+    Route::get('/metalink-editor/create', [MetalinkController::class, "create"]);
+    Route::post('/metalink-editor/create', [MetalinkController::class, "store"]);
+    Route::get("/metalink-editor/{metalink}", [MetalinkController::class, "edit"]);
+    Route::delete("/metalink-editor/{metalink}", [MetalinkController::class, "destroy"]);
+    Route::put('/metalink-editor/{metalink}', [MetalinkController::class, "update"]);
 });
 
 
 // Interactive
 Route::get('/interactive', function(){
+    $listprojects = ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ]);
     return view("interactive", [
-        "projects" => ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ])
+        "projects" => $listprojects
     ]);
 });
 
 
 // Collabs
 Route::get('/collabs', function(){
+    $listprojects = ProjectController::select(["windowtoworlds-2023", "lofam5", "windowtoworlds-2021", "seaunseenzine-2021", "windowtoworlds-2020", "songsfromearth", "wishescursesanddreams", "bowozine", "20personswitcharound", "cdz-2021", "rosemagazine2" ]);
     return view("layouts.projects", [
         "title"=>"Collaborations and community projects",
-        "projects" => ProjectController::select(["windowtoworlds-2023", "lofam5", "windowtoworlds-2021", "seaunseenzine-2021", "windowtoworlds-2020", "songsfromearth", "wishescursesanddreams", "bowozine", "20personswitcharound", "cdz-2021", "rosemagazine2" ]) ]);
+        "projects" => $listprojects ]);
 });
 
 Route::get('/links', [\App\Http\Controllers\SocialLinkController::class, 'index']);
 
 // Blog
 Route::get("/blog", [BlogPostController::class, "index"]);
-//Route::get("/blog", [BlogPostController::class, "index"]);
 Route::middleware('auth', 'auth.bio')->group(function () {
     Route::get("/blog/create", [BlogPostController::class, "create"]);
     Route::post("/blog/create", [BlogPostController::class, "store"]);
@@ -75,6 +84,25 @@ Route::middleware('auth', 'auth.bio')->group(function () {
 });
 Route::get("/blog/{blogPost}", [BlogPostController::class, "show"]);
 
+// Music
+Route::get("/music", function(){
+    return view("music.index");
+});
+/* Route::get("/music/{id}", function($id){
+    return view("music.".$id);
+}); */
+Route::get("/music/fanmusic", function(){
+    $homestucklinks = MetalinkController::filter("category", "homestuck");
+    $vasterrorlinks = MetalinkController::filter("category", "vasterror");
+    $sulinks = MetalinkController::filter("category", "stevenuniverse");
+    $otherlinks = MetalinkController::filter("category", "others");
+    return view("music.fanmusic", [
+        "homestucklinks" => $homestucklinks,
+        "vasterrorlinks" => $vasterrorlinks,
+        "sulinks" => $sulinks,
+        "otherlinks" => $otherlinks
+    ]);
+});
 
 Route::fallback(function ($e) {
     return redirect( "https://circlejourney.net/".$e );

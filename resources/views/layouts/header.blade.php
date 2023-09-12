@@ -87,7 +87,7 @@
     <div class="menu-header"><a>Music</a></div>
     <ul class="dropdown">
     <x-menu-option href="/music/">Music home</x-menu-option>
-    <x-menu-option href="https://circlejourney.carrd.co#music">Commissions</x-menu-option>
+    <x-menu-option href="/music/fanmusic/">Fanmusic and invited contributions</x-menu-option>
     <x-menu-option href="/music/whereveryouwere/">Wherever You Were (2023)</x-menu-option>
     <x-menu-option href="/music/theskybeyondourbay/">The Sky Beyond Our Bay (2023)</x-menu-option>
     <x-menu-option href="/music/flyways/">Flyways (2021)</x-menu-option>
