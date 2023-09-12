@@ -32,7 +32,8 @@ class MetalinkController extends Controller
                 "img_src" => $request->img_src,
                 "title" => $request->title,
                 "description" => $request->description,
-                "publish_date" => $request->publish_date
+                "publish_date" => $request->publish_date,
+                "track_number" => $request->track_number
             ]
         );
         return redirect("/metalink-editor/");
@@ -52,7 +53,8 @@ class MetalinkController extends Controller
                 "img_src" => $request->img_src,
                 "title" => $request->title,
                 "description" => $request->description,
-                "publish_date" => $request->publish_date
+                "publish_date" => $request->publish_date,
+                "track_number" => $request->track_number
             ]
         );
         return redirect("/metalink-editor/");
@@ -74,6 +76,6 @@ class MetalinkController extends Controller
     }
 
     public static function filter(string $column, string $value) {
-        return Metalink::where($column, $value)->orderBy('publish_date', 'desc')->get();
+        return Metalink::where($column, $value)->orderBy('publish_date', 'desc')->orderBy('track_number', 'desc')->get();
     }
 }

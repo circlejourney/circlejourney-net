@@ -22,6 +22,7 @@
         <input class="editor-title" type="text" id="title" name="title" value="{{ $metalink->title }}" placeholder="Title">
         <textarea class="editor-body" id="description" name="description">{{ $metalink->description }}</textarea>
         <input class="editor-title" type="text" id="publish_date" name="publish_date" placeholder="Publish date Y-M-D H:M:S" value="{{ $metalink->publish_date }}">
+        <input class="editor-title" type="number" id="track_number" name="track_number" placeholder="Number for ordering releases on the same date" value="{{ $metalink->track_number }}">
         <button id="submit">Update metalink</button>
     </form>
     <br>

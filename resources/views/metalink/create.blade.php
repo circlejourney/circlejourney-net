@@ -22,6 +22,7 @@
         <input class="editor-title" type="text" id="title" name="title" placeholder="Title">
         <textarea class="editor-body" id="description" name="description"></textarea>
         <input class="editor-title" type="text" id="publish_date" name="publish_date" placeholder="Publish date Y-M-D H:M:S">
+        <input class="editor-title" type="number" id="track_number" name="track_number" placeholder="Track number">
         <button id="submit">Create metalink</button>
     </form>
 @endsection
