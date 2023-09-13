@@ -15,14 +15,15 @@
     <form action="" method="post" class="editor">
         @csrf
         @method("PUT")
-        <input class="editor-title" type="text" id="item_id" name="item_id" placeholder="Item ID (no spaces)" value="{{ $metalink->item_id }}">
-        <input class="editor-title" type="text" id="href" name="href" value="{{ $metalink->href }}" placeholder="URL">
-        <input class="editor-title" type="text" id="img_src" name="img_src" value="{{ $metalink->img_src }}" placeholder="Image source URL" onchange="$('#preview-image').attr('src', this.value);">
-        <input class="editor-title" type="text" id="category" name="category" value="{{ $metalink->category }}" placeholder="category">
-        <input class="editor-title" type="text" id="title" name="title" value="{{ $metalink->title }}" placeholder="Title">
+        <input class="editor-text" type="text" id="item_id" name="item_id" placeholder="Item ID (no spaces)" value="{{ $metalink->item_id }}">
+        <input class="editor-text" type="text" id="href" name="href" value="{{ $metalink->href }}" placeholder="URL">
+        <input class="editor-text" type="text" id="img_src" name="img_src" value="{{ $metalink->img_src }}" placeholder="Image source URL" onchange="$('#preview-image').attr('src', this.value);">
+        <input class="editor-text" type="text" id="category" name="category" value="{{ $metalink->category }}" placeholder="category">
+        <input class="editor-text" type="text" id="title" name="title" value="{{ $metalink->title }}" placeholder="Title">
         <textarea class="editor-body" id="description" name="description">{{ $metalink->description }}</textarea>
-        <input class="editor-title" type="text" id="publish_date" name="publish_date" placeholder="Publish date Y-M-D H:M:S" value="{{ $metalink->publish_date }}">
-        <input class="editor-title" type="number" id="track_number" name="track_number" placeholder="Number for ordering releases on the same date" value="{{ $metalink->track_number }}">
+        <input class="editor-text" type="text" id="publish_date" name="publish_date" placeholder="Publish date Y-M-D H:M:S" value="{{ $metalink->publish_date }}">
+        <input class="editor-text" type="number" id="track_number" name="track_number" placeholder="Number for ordering releases on the same date" value="{{ $metalink->track_number }}">
+        <br>
         <button id="submit">Update metalink</button>
     </form>
     <br>

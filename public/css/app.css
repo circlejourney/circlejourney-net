@@ -26,7 +26,7 @@
  }
 
  .aside {
-   font-size: medium;
+   font-size: small;
    color: grey;
  }
  
@@ -438,16 +438,13 @@
 
 
  /* Blog */
- .editor input[type="text"],
- .editor input[type="email"],
- .editor input[type="password"],
- .editor textarea {
+ .editor-text, .editor-body {
    background-color: var(--black);
    color: var(--white);
    width: 100%;
  }
 
- .editor-body {
+ .editor textarea {
     min-height: 200px;
  }
 
@@ -677,6 +674,10 @@
 
  .thumb-bannerlabel h2 {
    margin:  0;
+ }
+
+ .thumb-bannerlabel p {
+   font-size: inherit;
  }
 
  .bannerlabel {
