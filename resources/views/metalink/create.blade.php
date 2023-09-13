@@ -14,7 +14,6 @@
     <img id="preview-image">
     <form action="" method="post" class="editor">
         @csrf
-        @method("PUT")
         <input class="editor-title" type="text" id="item_id" name="item_id" placeholder="Item ID (no spaces)">
         <input class="editor-title" type="text" id="href" name="href" placeholder="URL">
         <input class="editor-title" type="text" id="img_src" name="img_src" placeholder="Image source URL" onchange="$('#preview-image').attr('src', this.value);">
