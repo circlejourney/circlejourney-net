@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Edit Projects @endsection
+@section("title"){{ "Edit Projects" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

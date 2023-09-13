@@ -1,8 +1,6 @@
 @extends("layouts.canonical")
 
-@section('title')
-    Music
-@endsection
+@section('title'){{ "Music" }}@endsection
 
 @section('content')
 <p class="center">

@@ -9,7 +9,7 @@
     )
 @endsection
 
-@section("title") {{ $blogPost->title }} @endsection
+@section("title"){{ $blogPost->title }}@endsection
 
 @section("content")
 

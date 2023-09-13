@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Edit blog post {{ $blogPost->title }} @endsection
+@section("title"){{ "Edit blog post ".$blogPost->title }} @endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

@@ -1,8 +1,6 @@
 @extends("layouts.canonical")
 
-@section('title')
-    Interactive projects and games
-@endsection
+@section('title'){{ "Interactive projects and games" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

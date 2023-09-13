@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("html_title") Links @endsection
+@section("html_title"){{ "Links" }}@endsection
 
 @section("head")
     <style>

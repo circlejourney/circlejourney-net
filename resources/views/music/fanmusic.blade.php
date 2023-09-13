@@ -1,8 +1,6 @@
 @extends("layouts.canonical")
 
-@section('title')
-    Fanmusic and invited contributions
-@endsection
+@section('title'){{ "Fanmusic and invited contributions" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

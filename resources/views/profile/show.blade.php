@@ -1,8 +1,6 @@
 @extends("layouts.canonical")
 
-@section('title')
-    {{ $user->name }}'s profile
-@endsection
+@section('title'){{ $user->name ."'s profile" }}@endsection
 
 @section('content')
     <div class="center" style="width: 100%;">

@@ -1,8 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title")
-    @isset($title) {{ $title }} @endisset
-@endsection
+@section("title")@isset($title){{ $title }}@endisset @endsection
 
 @section("breadcrumbs")
     @isset($title)

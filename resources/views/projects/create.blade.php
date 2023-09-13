@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Create New Project @endsection
+@section("title"){{ "Create New Project" }}@endsection
 
 @section("head")
     <script>

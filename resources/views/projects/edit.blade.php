@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Edit Project: {{$project->label_title}} @endsection
+@section("title"){{ "Edit Project: " . $project->label_title }}@endsection
 
 @section("head")
     <script>

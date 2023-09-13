@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("html_title") @yield("title") @endsection
+@section("html_title")@yield("title")@endsection
 
 @push("head")
     <link rel="stylesheet" href="/css/app.css?v=8">

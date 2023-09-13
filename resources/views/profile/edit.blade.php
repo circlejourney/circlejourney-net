@@ -1,7 +1,5 @@
 @extends("layouts.canonical")
-@section('title')
-    {{ __('Profile') }}
-@endsection
+@section('title'){{ __('Profile') }}@endsection
 
 @section("content")
     @include('profile.partials.update-profile-information-form')

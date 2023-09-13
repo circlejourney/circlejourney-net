@@ -1,7 +1,5 @@
 @extends("layouts.canonical")
-    @section("title")
-        Dashboard
-    @endsection
+    @section("title"){{ "Dashboard" }}@endsection
 @section('content')
     <p>You're logged in! Get started:</p>
     

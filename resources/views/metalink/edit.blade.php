@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Edit Metalink: {{$metalink->title}} @endsection
+@section("title"){{ "Edit Metalink: ".$metalink->title }} @endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

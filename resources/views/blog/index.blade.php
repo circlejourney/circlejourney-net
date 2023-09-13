@@ -1,5 +1,5 @@
 @extends("layouts.canonical")
-@section("title") Blog @endsection
+@section("title"){{ "Blog" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Create metalink @endsection
+@section("title"){{ "Create metalink" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [

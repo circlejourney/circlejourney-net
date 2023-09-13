@@ -1,6 +1,6 @@
 @extends("layouts.canonical")
 
-@section("title") Create new blog post @endsection
+@section("title"){{ "Create new blog post" }}@endsection
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [
