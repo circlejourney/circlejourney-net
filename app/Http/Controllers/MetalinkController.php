@@ -31,6 +31,7 @@ class MetalinkController extends Controller
                 "href" => $request->href,
                 "img_src" => $request->img_src,
                 "title" => $request->title,
+                "category" => $request->category,
                 "description" => $request->description,
                 "publish_date" => $request->publish_date,
                 "track_number" => $request->track_number
@@ -53,6 +54,7 @@ class MetalinkController extends Controller
                 "img_src" => $request->img_src,
                 "title" => $request->title,
                 "description" => $request->description,
+                "category" => $request->category,
                 "publish_date" => $request->publish_date,
                 "track_number" => $request->track_number
             ]
