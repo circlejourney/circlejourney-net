@@ -10,15 +10,15 @@
     @method('patch')
 
     <label for="name">Name</label>
-    <x-text-input id="name" name="name" type="text" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+    <x-text-input class="editor-text" id="name" name="name" type="text" :value="old('name', $user->name)" required autofocus autocomplete="name" />
     <x-input-error :messages="$errors->get('name')" />
 
     <label for="email">Email</label>
-    <x-text-input id="email" name="email" type="email" :value="old('email', $user->email)" required autocomplete="username" />
+    <x-text-input class="editor-text" id="email" name="email" type="email" :value="old('email', $user->email)" required autocomplete="username" />
     <x-input-error :messages="$errors->get('email')" />
 
     <label for="email">Short bio</label>
-    <textarea id="bio" name="bio" maxlength="1000">{{ old('bio', $user->bio) }}</textarea>
+    <textarea class="editor-text" id="bio" name="bio" maxlength="1000">{{ old('bio', $user->bio) }}</textarea>
     <x-input-error :messages="$errors->get('bio')" />
 
     @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
