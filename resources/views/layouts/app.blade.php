@@ -4,15 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Laravel') }}
-            @hasSection("html_title")
-                || @yield("html_title")
-            @endif
-        </title>
-
 
         <!-- OpenGraph -->
-        <meta property="og:title" content="Circlejourney @hasSection("html_title") || @yield("html_title") @endif" />
+        @hasSection("html_title")
+            <title>{{ config('app.name', 'Laravel') }} || @yield("html_title")</title>
+            <meta property="og:title" content="{{ config('app.name', 'Laravel') }} || @yield("html_title")" />
+            <meta property="og:description" content="@yield("html_title") on Circlejourney's homepage." />
+        @else
+            <title>{{ config('app.name', 'Laravel') }}</title>
+            <meta property="og:title" content="{{ config('app.name', 'Laravel') }}" />
+            <meta property="og:description" content="Circlejourney's homepage." />
+        @endif
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ url()->full() }}" />
         <meta property="og:image" content="/images/logosmall.png" />
