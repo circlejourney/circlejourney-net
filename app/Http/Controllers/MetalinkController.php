@@ -59,7 +59,7 @@ class MetalinkController extends Controller
                 "track_number" => $request->track_number
             ]
         );
-        return redirect("/metalink-editor/");
+        return redirect("/metalink-editor/".$request->item_id);
     }
 
     public function destroy(Metalink $metalink) {
