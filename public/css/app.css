@@ -678,6 +678,7 @@
 
  .thumb-bannerlabel p {
    font-size: inherit;
+   line-height: 1.2em;
  }
 
  .bannerlabel {
