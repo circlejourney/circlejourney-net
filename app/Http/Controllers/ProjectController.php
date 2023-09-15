@@ -32,7 +32,7 @@ class ProjectController extends Controller
                 "background_position" => $request->background_position,
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
-                "user_id" => $request->user()->id,
+                "category" => $request->category,
                 "dark" => $dark
             ]
         );
@@ -61,10 +61,11 @@ class ProjectController extends Controller
                 "background_position" => $request->background_position,
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
+                "category" => $request->category,
                 "dark" => $dark
             ]
         );
-        return redirect("/project-editor/");
+        return redirect("/project-editor/".$item_id);
     }
 
     public function destroy(Project $project)
@@ -81,5 +82,9 @@ class ProjectController extends Controller
             $project_ids
         );
         return $projects;
+    }
+
+    public static function filter(string $column, string $value) {
+        return Project::where($column, $value)->get();
     }
 }

@@ -18,7 +18,7 @@ $(window).on("load", function(){
         });
     
     if("ontouchstart" in window) {
-        $("#menuButton").after($(".breeze-submenu").attr("class", "submenu"));
+        $("#menu-button").after($(".breeze-submenu").attr("class", "submenu"));
         $(".submenu").each((i, val)=> {
                 if(!$(val).children(".dropdown").length) return true;
                 $(val).click((e)=>{

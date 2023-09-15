@@ -43,10 +43,11 @@
     <form action="" method="post" class="editor">
         @csrf
         @method("PUT")
-        <input class="editor-title" type="text" id="href" name="href" value="{{ $project->href }}">
-        <input class="editor-title" type="text" id="background_image" name="background_image" value="{{ $project->background_image }}" onchange="$('#positioner').css('background-image', 'url('+this.value+')')">
-        <input class="editor-title" type="text" id="background_position" name="background_position" value="{{ $project->background_position }}">
-        <input class="editor-title" type="text" id="label_title" name="label_title" value="{{ $project->label_title }}">
+        <input class="editor-text" type="text" id="href" name="href" value="{{ $project->href }}">
+        <input class="editor-text" type="text" id="background_image" name="background_image" value="{{ $project->background_image }}" onchange="$('#positioner').css('background-image', 'url('+this.value+')')">
+        <input class="editor-text" type="text" id="background_position" name="background_position" value="{{ $project->background_position }}">
+        <input class="editor-text" type="text" id="category" name="category" placeholder="Category" value="{{ $project->category }}">
+        <input class="editor-text" type="text" id="label_title" name="label_title" value="{{ $project->label_title }}">
         <textarea class="editor-body" id="label_text" name="label_text">{{ $project->label_text }}</textarea>
         <input type="checkbox" id="dark" name="dark" onchange="$('#positioner').find('.bannerlabel').toggleClass('darker')" @if($project->dark) checked @endif>
         <label for="dark">Darker overlay</label>

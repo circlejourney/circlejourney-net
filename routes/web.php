@@ -56,7 +56,8 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
 
 // Interactive
 Route::get('/interactive', function(){
-    $listprojects = ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ]);
+    //$listprojects = ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ]);
+    $listprojects = ProjectController::filter("category", "interactive");
     return view("interactive", [
         "projects" => $listprojects
     ]);
@@ -65,7 +66,7 @@ Route::get('/interactive', function(){
 
 // Collabs
 Route::get('/collabs', function(){
-    $listprojects = ProjectController::select(["windowtoworlds-2023", "lofam5", "windowtoworlds-2021", "seaunseenzine-2021", "windowtoworlds-2020", "songsfromearth", "wishescursesanddreams", "bowozine", "20personswitcharound", "cdz-2021", "rosemagazine2" ]);
+    $listprojects = ProjectController::filter("category", "collabs");
     return view("layouts.projects", [
         "title"=>"Collaborations and community projects",
         "projects" => $listprojects ]);

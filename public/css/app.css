@@ -176,6 +176,8 @@
  }
  
  .topbar {
+   text-align: center;
+   line-height:1.2em;
     box-sizing: border-box;
     width: 100%;
     padding: 0.2em;
@@ -184,7 +186,7 @@
     vertical-align: middle;
     background-color: #24506b;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
  }
@@ -194,14 +196,20 @@
     line-height: 1em;
     padding: 0.2em 0.4em;
  }
+
+ .home-button {
+   margin-right: auto;
+ }
+
+ .breeze-submenu {
+   margin-left: auto;
+ }
  
  #topbar #rightalign {
     float: right;
  }
  
- #blog-title,
- 
- #blogTitle {
+ #blog-title {
     height: 250px;
     display: block;
     position: relative;
@@ -257,7 +265,9 @@
 
  .blog-title-headline {
    display: flex;
+   justify-content: center;
    align-items: center;
+   flex-wrap: wrap;
  }
  
  #titleText {
@@ -766,7 +776,7 @@
     text-align: center;
  }
  
- #menuButton {
+ #menu-button {
     color: var(--white);
     display: none;
  }
@@ -786,10 +796,24 @@
     .topbar {
         padding-right: 90px;
         height: 90px;
+        justify-content: center;
     }
     .topbar a {
         padding: 0.5em;
     }
+
+    .topbar .home-button {
+      flex-basis: 0;
+    }
+
+    .topbar .linklist {
+      flex-wrap: wrap;
+    }
+
+    .home-button, .breeze-submenu {
+      margin: 0;
+    }
+
     .scriptlink {
         margin: 5px 8%;
         font-size: 24pt;
@@ -838,7 +862,7 @@
     .menu::-webkit-scrollbar {
         display: none;
     }
-    #menuButton {
+    #menu-button {
         margin-left: auto;
         display: block;
         padding: 30px 0;

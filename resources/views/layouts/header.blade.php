@@ -1,15 +1,13 @@
-<div class="topbar" style = "text-align: center; line-height:1.2em; display: flex; justify-content: space-between;">
-    <a href="/"><i class="fa fa-home"></i></a>
-    <span>
-    <a target = "_blank" href = "mailto:circlejourneyart@gmail.com"><i class = "fas fa-envelope"></i></a>
-    <a target = "_blank" href = "http://twitter.com/circlejourney"><i class = "fab fa-twitter"></i></a>
-    <a target = "_blank" href = "http://instagram.com/circlejourneyart"><i class = "fab fa-instagram"></i></a>
-    <a target = "_blank" href = "http://circlejourneyart.tumblr.com"><i class = "fab fa-tumblr"></i></a>
-    <a target = "_blank" href = "http://facebook.com/circlejourneyart"><i class = "fab fa-facebook"></i></a>
-    <a target = "_blank" href = "http://circlejourney.bandcamp.com"><i class = "fa fa-music"></i></a>
-    <a target = "_blank" href = "https://www.linkedin.com/in/amari-low-29494b87/"><i class = "fab fa-linkedin"></i></a>
-    <a href = "/links"><i class = "fa fa-chain"></i> Link list</a>
-    </span>
+<div class="topbar">
+    <a class="home-button" href="/"><i class="fa fa-home"></i></a>
+    <a class="linklist-button" target = "_blank" href = "mailto:circlejourneyart@gmail.com"><i class = "fas fa-envelope"></i></a>
+    <a class="linklist-button" target = "_blank" href = "http://twitter.com/circlejourney"><i class = "fab fa-twitter"></i></a>
+    <a class="linklist-button" target = "_blank" href = "http://instagram.com/circlejourneyart"><i class = "fab fa-instagram"></i></a>
+    <a class="linklist-button" target = "_blank" href = "http://circlejourneyart.tumblr.com"><i class = "fab fa-tumblr"></i></a>
+    <a class="linklist-button" target = "_blank" href = "http://facebook.com/circlejourneyart"><i class = "fab fa-facebook"></i></a>
+    <a class="linklist-button" target = "_blank" href = "http://circlejourney.bandcamp.com"><i class = "fa fa-music"></i></a>
+    <a class="linklist-button" target = "_blank" href = "https://www.linkedin.com/in/amari-low-29494b87/"><i class = "fab fa-linkedin"></i></a>
+    <a class="linklist-button" href = "/links"><i class = "fa fa-chain"></i> Link list</a>
     @include("layouts.navigation")
 </div>
 
@@ -27,7 +25,7 @@
 </a>
 
 <div class="menu" id="menu">
-    <div id="menuButton" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
+    <div id="menu-button" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
 
     <div class="submenu">
         <div class="menu-header-link">

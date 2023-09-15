@@ -70,7 +70,7 @@ class MetalinkController extends Controller
     public static function select(array $link_ids) { // pick by an array 
         $metalinks = array_map(
             function($id){
-                return Metalink::where("item_id", $id)->firstOrFail();
+                return Metalink::find("item_id", $id);
             },
             $link_ids
         );
