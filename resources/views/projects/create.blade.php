@@ -47,6 +47,7 @@
         <input class="editor-text" type="text" id="background_position" name="background_position" value="center 15%"  onchange="$('#positioner').css('background-position', this.value)" placeholder="Background position">
         <input class="editor-text" type="text" id="label_title" name="label_title" placeholder="Title">
         <input class="editor-text" type="text" id="category" name="category" placeholder="Category">
+        <input class="editor-text" type="number" id="order" name="order" placeholder="Display order" value="0">
         <textarea class="editor-body" id="label_text" name="label_text" placeholder="Description HTML"></textarea>
         <input type="checkbox" id="dark" name="dark" onchange="$('#positioner').find('.bannerlabel').toggleClass('darker')">
         <label for="dark">Darker overlay</label>

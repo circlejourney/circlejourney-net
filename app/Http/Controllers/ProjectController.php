@@ -33,6 +33,7 @@ class ProjectController extends Controller
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
                 "category" => $request->category,
+                "order" => $request->order,
                 "dark" => $dark
             ]
         );
@@ -62,6 +63,7 @@ class ProjectController extends Controller
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
                 "category" => $request->category,
+                "order" => $request->order,
                 "dark" => $dark
             ]
         );
@@ -85,6 +87,6 @@ class ProjectController extends Controller
     }
 
     public static function filter(string $column, string $value) {
-        return Project::where($column, $value)->get();
+        return Project::where($column, $value)->orderBy('order', 'desc')->orderBy('created_at', 'asc')->get();
     }
 }

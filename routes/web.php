@@ -56,20 +56,15 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
 
 // Interactive
 Route::get('/interactive', function(){
-    //$listprojects = ProjectController::select([ "compass-2020", "spectralcarta", "water", "theditor", "in-between", "angel", "islands", "petridish", "ghosts", "swim" ]);
     $listprojects = ProjectController::filter("category", "interactive");
-    return view("interactive", [
-        "projects" => $listprojects
-    ]);
+    return view("interactive", ["projects"=>$listprojects]);
 });
 
 
 // Collabs
 Route::get('/collabs', function(){
     $listprojects = ProjectController::filter("category", "collabs");
-    return view("layouts.projects", [
-        "title"=>"Collaborations and community projects",
-        "projects" => $listprojects ]);
+    return view("layouts.projects", ["title"=>"Collaborations and community projects", "projects"=>$listprojects ]);
 });
 
 Route::get('/links', [\App\Http\Controllers\SocialLinkController::class, 'index']);
