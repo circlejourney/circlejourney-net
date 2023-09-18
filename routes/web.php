@@ -56,14 +56,21 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
 
 // Interactive
 Route::get('/interactive', function(){
-    $listprojects = ProjectController::filter("category", "interactive");
+    $listprojects = ProjectController::filter("category", "%interactive%");
     return view("interactive", ["projects"=>$listprojects]);
+});
+
+
+// Art andcomics
+Route::get('/art', function(){
+    $listprojects = ProjectController::filter("category", "%art%");
+    return view("layouts.projects", ["title"=>"Art and comics", "projects"=>$listprojects]);
 });
 
 
 // Collabs
 Route::get('/collabs', function(){
-    $listprojects = ProjectController::filter("category", "collabs");
+    $listprojects = ProjectController::filter("category", "%collabs%");
     return view("layouts.projects", ["title"=>"Collaborations and community projects", "projects"=>$listprojects ]);
 });
 

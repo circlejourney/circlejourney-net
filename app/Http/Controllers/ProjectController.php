@@ -87,6 +87,6 @@ class ProjectController extends Controller
     }
 
     public static function filter(string $column, string $value) {
-        return Project::where($column, $value)->orderBy('order', 'desc')->orderBy('created_at', 'asc')->get();
+        return Project::where($column, "like", $value)->orderBy('order', 'desc')->orderBy('created_at', 'asc')->get();
     }
 }
