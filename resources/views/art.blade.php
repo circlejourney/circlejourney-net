@@ -16,7 +16,8 @@
         </div>
         @foreach($artworks as $artwork)
             <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src" >
-                Test
+                <p>{{ $artwork->title }}</p>
+                {{ $artwork->description }}
             </x-gallery-art>
         @endforeach
     </div>

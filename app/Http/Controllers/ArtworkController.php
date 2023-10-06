@@ -39,10 +39,12 @@ class ArtworkController extends Controller
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-            if(!$img_src = $this->upload($request->image, "images/art", null)){
+            
+            if(!$img_src = $this->upload($request->image, "uploads/art", null)){
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
-            $thumb_src = $img_src;
+            
+            $thumb_src = $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -116,11 +118,13 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        if( file_exists(realpath($artwork->img_src)) ) {
-            unlink( realpath($artwork->img_src) );
+        $imgpathtrim = substr($artwork->img_src,1);
+        $thumbpathtrim = substr($artwork->thumb_src,1);
+        if( file_exists(realpath($imgpathtrim)) ) {
+            unlink( realpath($imgpathtrim) );
         };
-        if( file_exists(realpath($artwork->thumb_src)) ) {
-            unlink( realpath($artwork->thumb_src) );
+        if( file_exists($thumbpathtrim) ) {
+            unlink( realpath($thumbpathtrim) );
         };
 
         $artwork->delete();
@@ -141,7 +145,7 @@ class ArtworkController extends Controller
         return Artwork::where($column, "like", $value)->orderBy('order', 'desc')->orderBy('created_at', 'desc')->get();
     }
 
-    public function upload($file, $target_folder, $old_filename) {
+    protected function upload($file, $target_folder, $old_filename) {
         $filename = $file->getClientOriginalName();
         $target_path = $target_folder . "/" . $filename;
 
@@ -154,6 +158,28 @@ class ArtworkController extends Controller
         };
 
         $file->move(public_path($target_folder), $filename);
+        return "/" . $target_path;
+    }
+
+    protected function generate_thumbnail($filepath, $target_folder) {
+        $imagesize = getimagesize($filepath);
+        $hwratio = $imagesize[1] / $imagesize[0];
+        preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $filepath, $matches);
+        $filename = $matches[1]."_thumb.jpg";
+
+        $format = explode("/", $imagesize["mime"])[1];
+        $imagecreatefunc = "imagecreatefrom".$format;
+        $sourceGDImage = $imagecreatefunc($filepath);
+        $targetGDImage = imagecreatetruecolor(400, 400 * $hwratio);
+        imagecopyresampled( $targetGDImage, $sourceGDImage,
+            0, 0,
+            0, 0,
+            400, 400 * $hwratio,
+            $imagesize[0], $imagesize[1]
+        );
+        $target_path = $target_folder . "/" . $filename;
+        error_log($target_path);
+        imagejpeg($targetGDImage, $target_path);
         return "/" . $target_path;
     }
 }
