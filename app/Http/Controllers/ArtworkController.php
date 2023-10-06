@@ -47,7 +47,7 @@ class ArtworkController extends Controller
      */
     public function edit(Artwork $artwork)
     {
-        //
+        return view("artworks.edit", ["artwork" => $artwork]);
     }
 
     /**
@@ -55,7 +55,15 @@ class ArtworkController extends Controller
      */
     public function update(Request $request, Artwork $artwork)
     {
-        //
+        $artwork -> update([
+            "title" => $request->title,
+            "description" => $request->description,
+            "thumb_src" => $request->thumb_src,
+            "img_src" => $request->img_src,
+            "category" => $request->category,
+            "order" => $request->order
+        ]);
+        return redirect("/artwork-editor/" . $artwork->id);
     }
 
     /**

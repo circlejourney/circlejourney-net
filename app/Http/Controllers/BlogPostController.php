@@ -20,14 +20,12 @@ class BlogPostController extends Controller
 
     public function create()
     {
-        if(!Auth::check()) return route("login");
         return view("blog.create");
     }
 
 
     public function store(TextUpdateRequest $request): RedirectResponse
     {
-        if(!Auth::check()) return route("login");
         $newPost = BlogPost::create(
             [
                 "title" => $request->validated()["title"],
@@ -46,17 +44,14 @@ class BlogPostController extends Controller
 
     public function edit(BlogPost $blogPost)
     {
-        if(!Auth::check()) return route("login");
         if(!$blogPost->edit_allowed()) {
             return Redirect::back()->withErrors("You do not have permission to edit this post.");
         }
-        //$blogPost->user_name = $blogPost->findCreator();
         return view("blog.edit", ["blogPost" => $blogPost]);
     }
 
     public function update(TextUpdateRequest $request, BlogPost $blogPost)
     {
-        if(!Auth::check()) return route("login");
         if(!$blogPost->edit_allowed()) {
             return Redirect::back()->withErrors("You do not have permission to edit this post.");
         }

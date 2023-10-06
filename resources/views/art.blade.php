@@ -15,9 +15,9 @@
             <div class="click-notice">Click to view full size</div>
         </div>
         @foreach($artworks as $artwork)
-            <a class="gallery-image" href="{{ $artwork->img_src }}">
-                <img class="thumbnail" src="{{ $artwork->thumb_src }}">
-            </a>
+            <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src" >
+                Test
+            </x-gallery-art>
         @endforeach
     </div>
 @endsection

@@ -547,17 +547,14 @@
     width: 100%;
     box-sizing: border-box;
     text-align: left;
+    transition: 0.2s all linear;
  }
  
  .caption p {
+   color: #ccc;
     display: block;
     width: 100%;
     padding: 0;
- }
- 
- .caption-paragraph {
-    font-size: 80%;
-    color: #888;
  }
  
  .thumbnail {

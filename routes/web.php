@@ -52,6 +52,10 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::get("/metalink-editor/{metalink}", [MetalinkController::class, "edit"]);
     Route::delete("/metalink-editor/{metalink}", [MetalinkController::class, "destroy"]);
     Route::put('/metalink-editor/{metalink}', [MetalinkController::class, "update"]);
+
+    Route::get("/artwork-editor", [ArtworkController::class, "index"]);
+    Route::get("/artwork-editor/{artwork}", [ArtworkController::class, "edit"]);
+    Route::put("/artwork-editor/{artwork}", [ArtworkController::class, "update"]);
 });
 
 
@@ -62,7 +66,7 @@ Route::get('/interactive', function(){
 });
 
 
-// Art andcomics
+// Art and comics
 Route::get('/art', function(){
     $listprojects = ProjectController::filter("category", "%art%");
     $listartworks = ArtworkController::filter("category", "illustration");
