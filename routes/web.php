@@ -54,7 +54,10 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::put('/metalink-editor/{metalink}', [MetalinkController::class, "update"]);
 
     Route::get("/artwork-editor", [ArtworkController::class, "index"]);
+    Route::get("/artwork-editor/create", [ArtworkController::class, "create"]);
+    Route::post("/artwork-editor/create", [ArtworkController::class, "store"]);
     Route::get("/artwork-editor/{artwork}", [ArtworkController::class, "edit"]);
+    Route::delete("/artwork-editor/{artwork}", [ArtworkController::class, "destroy"]);
     Route::put("/artwork-editor/{artwork}", [ArtworkController::class, "update"]);
 });
 

@@ -40,12 +40,12 @@ class MetalinkController extends Controller
         return redirect("/metalink-editor/".$request->item_id);
     }
 
-    public function create(Request $request)
+    public function create()
     {
         return view("metalink.create");
     }
 
-    public function store(Request $request, Metalink $metalink)
+    public function store(Request $request)
     {
         Metalink::create(
             [

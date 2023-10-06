@@ -23,7 +23,7 @@ class ArtworkController extends Controller
      */
     public function create()
     {
-        //
+        return view("artworks.create");
     }
 
     /**
@@ -31,7 +31,15 @@ class ArtworkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Artwork::create([
+            "title" => $request->title,
+            "description" => $request->description,
+            "thumb_src" => $request->thumb_src,
+            "img_src" => $request->img_src,
+            "category" => $request->category,
+            "order" => $request->order
+        ]);
+        return redirect("/artwork-editor/");
     }
 
     /**
@@ -71,7 +79,8 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        //
+        $artwork->delete();
+        return redirect("/artwork-editor/");
     }
 
     public static function select(array $artwork_ids) {
