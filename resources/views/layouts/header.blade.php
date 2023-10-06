@@ -19,7 +19,7 @@
             <img id="blog-title-logo" class="transparent"> <span>Circlejourney</span>
         </div>
         
-        <div class="center" style="font-family: Arvo; font-size: 10pt; text-shadow: 0 0 10px #eee;">⚠️ This site is still being ported! Some links will take you back to my original domain, <code>circlejourney.net</code>.</div>
+        <div class="center" style="font-family: Arvo; font-size: 10pt; text-shadow: 0 0 10px #eee;">⚠️&#xfe0e; This site is still being ported! Some links will take you back to my original domain, <code>circlejourney.net</code>.</div>
     
     </div>
 </a>
@@ -36,9 +36,8 @@
     <div class="submenu">
         <div class="menu-header"><a>Art & comics</a></div>
         <ul class="dropdown">
-        <x-menu-option href="/art/">Art home</x-menu-option>
-        <x-menu-option href="https://comics.circlejourney.net">Comics home</x-menu-option>
-        <x-menu-option href="https://circlejourney.carrd.co">Commissions</x-menu-option>
+        <x-menu-option href="/art/">Art and comics home</x-menu-option>
+        <x-menu-option href="https://circlejourney.carrd.co">Commission sheet</x-menu-option>
         <x-menu-option href="http://circlejourney.weebly.com">Portfolio</x-menu-option>
         <x-menu-option href="https://compass.circlejourney.net">Compass (2017-2020)</x-menu-option>
         <x-menu-option href="https://light.circlejourney.net">The Light Left Under Trees (2019-)</x-menu-option>

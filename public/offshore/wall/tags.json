@@ -1,0 +1,144 @@
+{
+    "catorder": [
+        "character",
+        "count",
+        "location",
+        "size",
+        "style",
+        "set"
+    ],
+    "tagdict": {
+        "zera": {
+            "category": "character"
+        },
+        "xye": {
+            "category": "character"
+        },
+        "anqien": {
+            "category": "character"
+        },
+        "jinai": {
+            "category": "character"
+        },
+        "telaki": {
+            "category": "character"
+        },
+        "iki": {
+            "category": "character"
+        },
+        "lujang": {
+            "category": "character"
+        },
+        "janda": {
+            "category": "character"
+        },
+        "josa": {
+            "category": "character"
+        },
+        "mx-mo": {
+            "category": "character"
+        },
+        "other-character": {
+            "category": "character"
+        },
+        "scene-background": {
+            "category": "style"
+        },
+        "cloudlander": {
+            "category": "location"
+        },
+        "sea": {
+            "category": "location"
+        },
+        "home": {
+            "category": "location"
+        },
+        "indoors": {
+            "category": "location"
+        },
+        "colour": {
+            "category": "style"
+        },
+        "shaded": {
+            "category": "style"
+        },
+        "animation": {
+            "category": "style"
+        },
+        "comic": {
+            "category": "style"
+        },
+        "chibi": {
+            "category": "style"
+        },
+        "transparent": {
+            "category": "style"
+        },
+        "waist-up": {
+            "category": "size"
+        },
+        "full-body": {
+            "category": "size"
+        },
+        "bust": {
+            "category": "size"
+        },
+        "group": {
+            "category": "count"
+        },
+        "solo": {
+            "category": "count"
+        },
+        "knee-up": {
+            "category": "size"
+        },
+        "guest": {
+            "category": "uncategorised"
+        },
+        "ref-sheet": {
+            "category": "set"
+        },
+        "nsfw": {
+            "category": "uncategorised"
+        },
+        "chapter-art": {
+            "category": "set"
+        },
+        "album-art": {
+            "category": "set"
+        },
+        "torani": {
+            "category": "character"
+        },
+        "sendou": {
+            "category": "character"
+        },
+        "shiu": {
+            "category": "character"
+        },
+        "laida": {
+            "category": "character"
+        },
+        "baria": {
+            "category": "character"
+        },
+        "lanth": {
+            "category": "character"
+        },
+        "humour": {
+            "category": "uncategorised"
+        },
+        "fanclub-badge": {
+            "category": "set"
+        },
+        "showcase": {
+            "category": "uncategorised"
+        },
+        "logo": {
+            "category": "uncategorised"
+        },
+        "other-crop": {
+            "category": "size"
+        }
+    }
+}

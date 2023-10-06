@@ -476,11 +476,11 @@
  /* Gallery */
  
  .gallery {
-    position: Relative;
+    position: relative;
     display: inline;
  }
  
- .clickNotice {
+ .click-notice {
     display: inline-block;
     font-size: 80%;
     color: #888;
@@ -497,9 +497,9 @@
  }
  
  .gallery-title {
-    flex-basis: 100%;
-    display: block;
-    text-align: left;
+   text-align: center;
+   flex-basis: 100%;
+   display: block;
  }
  
  .gallery-title h2 {

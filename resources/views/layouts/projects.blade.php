@@ -17,4 +17,5 @@
     <x-bannerbutton class="" :project="$project"/>
     @endforeach
 </div>
+@yield("bottom")
 @endsection

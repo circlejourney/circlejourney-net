@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Crochet Counter",
+  "short_name": "Crochet Counter",
+  "version": "com.circlejourney.crochet",
+  "description": "Crochet stitch and row counter application.",
+  "author": "Circlejourney",
+  "icons": [
+    {
+      "src": "www/img/logo.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": "index.html"
+}

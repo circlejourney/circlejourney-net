@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\MetalinkController;
+use App\Http\Controllers\ArtworkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,9 +65,11 @@ Route::get('/interactive', function(){
 // Art andcomics
 Route::get('/art', function(){
     $listprojects = ProjectController::filter("category", "%art%");
-    return view("layouts.projects", ["title"=>"Art and comics", "projects"=>$listprojects]);
+    $listartworks = ArtworkController::filter("category", "illustration");
+    return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "artworks"=>$listartworks]);
 });
 
+Route::get('/art/{column},{value}', [ArtworkController::class, "filter"]);
 
 // Collabs
 Route::get('/collabs', function(){
@@ -91,9 +94,8 @@ Route::get("/blog/{blogPost}", [BlogPostController::class, "show"]);
 Route::get("/music", function(){
     return view("music.index");
 });
-/* Route::get("/music/{id}", function($id){
-    return view("music.".$id);
-}); */
+Route::get('/music/{column},{value}', [\App\Http\Controllers\MetalinkController::class, "filterview"]);
+
 Route::get("/music/fanmusic", function(){
     $homestucklinks = MetalinkController::filter("category", "homestuck");
     $vasterrorlinks = MetalinkController::filter("category", "vasterror");

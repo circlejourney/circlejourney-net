@@ -80,4 +80,9 @@ class MetalinkController extends Controller
     public static function filter(string $column, string $value) {
         return Metalink::where($column, "like", $value)->orderBy('publish_date', 'desc')->orderBy('track_number', 'desc')->get();
     }
+
+    public static function filterview(string $column, string $value) {
+        $metalinks = Metalink::where($column, "like", $value)->orderBy('publish_date', 'desc')->orderBy('track_number', 'desc')->get();
+        return view("metalink.index", ["metalinks" => $metalinks]);
+    }
 }
