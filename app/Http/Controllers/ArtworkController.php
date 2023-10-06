@@ -39,11 +39,7 @@ class ArtworkController extends Controller
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-            
-            /*$request->image->move(public_path('art/images'), $filename);
-            $img_src = "/art/images/".$filename;
-            $thumb_src = $img_src;*/
-            if(!$img_src = $this->upload($request->image, "art/images", null)){
+            if(!$img_src = $this->upload($request->image, "images/art", null)){
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             $thumb_src = $img_src;
@@ -91,24 +87,9 @@ class ArtworkController extends Controller
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-
-            /*if( file_exists(realpath("art/images/" . $filename)) && $artwork->img_src !== "/art/images/" . $filename ) {
-                return Redirect::back()->withErrors("File " .$filename. " already exists.");
-            } else {
-                if( file_exists(realpath($artwork->img_src)) ) {
-                    unlink( realpath($artwork->img_src) );
-                };
-                if( file_exists(realpath($artwork->thumb_src)) ) {
-                    unlink( realpath($artwork->thumb_src) );
-                };
-            }
-
-            $request->image->move(public_path('art/images'), $filename);
-            $img_src = "/art/images/".$filename;
-            $thumb_src = $img_src;*/
             preg_match("/\/([^\/]*)$/", $artwork->img_src, $old_path);
             $old_filename = $old_path[1];
-            if( !$img_src = $this->upload($request->image, "art/images", $old_filename) ) {
+            if( !$img_src = $this->upload($request->image, "images/art", $old_filename) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             $thumb_src = $img_src;
