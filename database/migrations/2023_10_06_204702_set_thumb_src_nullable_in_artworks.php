@@ -12,9 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('artworks', function (Blueprint $table) {
-            $table->text("title")->nullable()->change();
-            $table->text("description")->nullable()->change();
-            $table->text("order")->default(0)->change();
+            $table->text("thumb_src")->nullable()->change();
+            $table->text("category")->nullable()->change();
         });
     }
 
@@ -24,9 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('artworks', function (Blueprint $table) {
-            $table->text("title")->nullable(false)->change();
-            $table->text("description")->nullable(false)->change();
-            $table->text("order")->default(null)->change();
+            $table->text("thumb_src")->nullable(false)->change();
+            $table->text("category")->nullable(false)->change();
         });
     }
 };

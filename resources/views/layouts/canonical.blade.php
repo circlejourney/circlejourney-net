@@ -3,8 +3,7 @@
 @section("html_title")@yield("title")@endsection
 
 @push("head")
-    <link rel="stylesheet" href="/css/app.css?v=8">
-    <!--@ vite('resources/css/app.css')-->
+    <link rel="stylesheet" href="/css/app.css?v=9">
     @yield("head")
 @endpush
 

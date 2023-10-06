@@ -25,6 +25,10 @@
     opacity: 0;
  }
 
+ .hidden {
+   display: none;
+ }
+
  .aside {
    font-size: small;
    color: grey;
@@ -448,6 +452,7 @@
 
 
  /* Blog */
+
  .editor-text, .editor-body {
    background-color: var(--black);
    color: var(--white);
