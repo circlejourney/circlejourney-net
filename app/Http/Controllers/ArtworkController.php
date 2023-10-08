@@ -104,7 +104,7 @@ class ArtworkController extends Controller
 
             $thumb_src = "/" . $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
 
-        } else if($request->fileoption == "url") {
+        } else {
             $request->validate($this->urlrules);
             $img_src=$request->img_src;
             $thumb_src=$request->thumb_src;
