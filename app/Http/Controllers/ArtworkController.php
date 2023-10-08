@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 class ArtworkController extends Controller
 {
     
-    protected $fileuploadrules = [ 'image' => 'image|mimes:jpg,png,jpeg,gif' ];
+    protected $fileuploadrules = [ 'image' => 'image|mimes:jpg,png,jpeg,gif|max:5120' ];
     protected $urlrules = [ 'img_src' => 'required', 'thumb_src' => 'required' ];
     /**
      * Display a listing of the resource.
@@ -91,10 +91,16 @@ class ArtworkController extends Controller
             $filename = $request->image->getClientOriginalName();
             preg_match("/\/([^\/]*)$/", $artwork->img_src, $old_path);
             $old_filename = $old_path[1];
-            if( !$img_src = $this->upload($request->image, "images/art", $old_filename) ) {
+            if( !$img_src = $this->upload($request->image, "uploads/art", $old_filename) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
-            $thumb_src = $img_src;
+            
+            $thumbpathtrim = substr($artwork->thumb_src,1);
+            if( file_exists(realpath($thumbpathtrim)) ) {
+                unlink( realpath($thumbpathtrim) );
+            };
+
+            $thumb_src = $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -149,7 +155,7 @@ class ArtworkController extends Controller
         $filename = $file->getClientOriginalName();
         $target_path = $target_folder . "/" . $filename;
 
-        if( file_exists(realpath($target_path)) && $old_filename !== null && $filename !== $old_filename) {
+        if( file_exists(realpath($target_path)) && $filename !== $old_filename ) {
             return false;
         }
         
@@ -161,25 +167,33 @@ class ArtworkController extends Controller
         return "/" . $target_path;
     }
 
-    protected function generate_thumbnail($filepath, $target_folder) {
-        $imagesize = getimagesize($filepath);
+    protected function generate_thumbnail($src_filepath, $target_folder) {
+        $imagesize = getimagesize($src_filepath);
         $hwratio = $imagesize[1] / $imagesize[0];
-        preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $filepath, $matches);
-        $filename = $matches[1]."_thumb.jpg";
+        $scaleH = $imagesize[1] > $imagesize[0] ? 300 : 300 * $hwratio;
+        $scaleW = $imagesize[0] > $imagesize[1] ? 300 : 300 / $hwratio;
+        preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $src_filepath, $matches);
+        $filename = $matches[1]."_thumb.png";
 
         $format = explode("/", $imagesize["mime"])[1];
         $imagecreatefunc = "imagecreatefrom".$format;
-        $sourceGDImage = $imagecreatefunc($filepath);
-        $targetGDImage = imagecreatetruecolor(400, 400 * $hwratio);
-        imagecopyresampled( $targetGDImage, $sourceGDImage,
+        
+        $source_image_blob = $imagecreatefunc($src_filepath);
+        $destination_image_blob = imagecreatetruecolor($scaleW, $scaleH);
+        $clear = imagecolorallocatealpha($destination_image_blob, 0, 0, 0, 127);
+        imagefilledrectangle($destination_image_blob, 0, 0, $scaleW, $scaleH, $clear);
+        imagecolortransparent($destination_image_blob, $clear);
+        
+        imagecopyresampled( $destination_image_blob, $source_image_blob,
             0, 0,
             0, 0,
-            400, 400 * $hwratio,
+            $scaleW, $scaleH,
             $imagesize[0], $imagesize[1]
         );
         $target_path = $target_folder . "/" . $filename;
-        error_log($target_path);
-        imagejpeg($targetGDImage, $target_path);
+
+        imagepng($destination_image_blob, $target_path);
+        
         return "/" . $target_path;
     }
 }

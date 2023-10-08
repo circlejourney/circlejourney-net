@@ -11,7 +11,7 @@ class GalleryArt extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $src, public string $href)
+    public function __construct(public string $src, public string $href, public bool $clickthrough)
     {
         //
     }

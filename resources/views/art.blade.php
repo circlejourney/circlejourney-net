@@ -1,6 +1,7 @@
 @extends("layouts.projects", ["title"=>$title, "projects"=>$projects])
 
 @section("top")
+    @include("components.lightbox")
     <div class="center">
         <x-badge-link href="https://circlejourney.weebly.com">Art and design portfolio</x-badge-link>
         <x-badge-link href="https://circlejourney.carrd.co">Commission sheet</x-badge-link>
@@ -15,7 +16,7 @@
             <div class="click-notice">Click to view full size</div>
         </div>
         @foreach($artworks as $artwork)
-            <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src" >
+            <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src">
                 <p>{{ $artwork->title }}</p>
                 {{ $artwork->description }}
             </x-gallery-art>

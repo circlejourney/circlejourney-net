@@ -55,3 +55,12 @@ function loadBannersPretty() {
     });
     
 }
+
+function openLightbox(url) {
+    $("#lightbox-image").attr("src", url);
+    $("#lightbox").removeClass("hidden");
+}
+
+function closeLightbox() {
+    $("#lightbox").addClass("hidden");
+}
