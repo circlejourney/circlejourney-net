@@ -151,7 +151,7 @@ class ArtworkController extends Controller
     }
 
     public static function filter(string $column, string $value) {
-        return Artwork::where($column, "like", $value)->orderBy('order', 'desc')->orderBy('created_at', 'desc')->get();
+        return Artwork::where($column, "like", $value)->orderBy('order', 'asc')->orderBy('created_at', 'desc')->get();
     }
 
     protected function upload($file, $target_folder, $old_path) {
