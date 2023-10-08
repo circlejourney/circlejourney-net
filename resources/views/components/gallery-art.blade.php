@@ -1,4 +1,4 @@
-<a class="gallery-image" href="{{ $href }}" @isset($attributes["openlightbox"]) onclick="event.preventDefault(); openLightbox('{{ $href }}')" @endisset>
+<a class="gallery-image" href="{{ $href }}" @if($attributes["openlightbox"] === true) onclick="event.preventDefault(); openLightbox('{{ $href }}')" @endif>
     <img class="thumbnail" src="{{ $src }}">
     <div class="caption">
         <p>{{ $slot }}</p>

@@ -47,6 +47,7 @@
 
         <input class="editor-text" type="text" id="category" name="category" value="{{ $artwork->category }}" placeholder="Category tags (separated by commas)">
         <input class="editor-text" type="number" id="order" name="order" value="{{  $artwork->order }}" placeholder="Display order">
+        <input type="checkbox" id="openlightbox" name="openlightbox" checked="{{  $artwork->openlightbox }}"><label for="openlightbox">Open lightbox on click</label>
         <br>
         <button id="submit">Update artwork</button>
     </form>

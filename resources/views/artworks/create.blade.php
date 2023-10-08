@@ -45,6 +45,7 @@
         
         <input class="editor-text" type="text" id="category" name="category" placeholder="Category tags (separated by commas)">
         <input class="editor-text" type="number" id="order" name="order" placeholder="Display order">
+        <input type="checkbox" id="openlightbox" name="openlightbox" checked="true"><label for="openlightbox">Open lightbox on click</label>
         <br>
         <button id="submit">Create artwork</button>
     </form>

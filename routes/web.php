@@ -72,8 +72,10 @@ Route::get('/interactive', function(){
 // Art and comics
 Route::get('/art', function(){
     $listprojects = ProjectController::filter("category", "%art%");
-    $listartworks = ArtworkController::filter("category", "illustration");
-    return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "artworks"=>$listartworks]);
+    $illustrations = ArtworkController::filter("category", "%illustration%");
+    $animations = ArtworkController::filter("category", "%animation%");
+
+    return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "illustrations"=>$illustrations, "animations"=>$animations]);
 });
 
 Route::get('/art/{column},{value}', [ArtworkController::class, "filter"]);

@@ -58,7 +58,8 @@ class ArtworkController extends Controller
             "thumb_src" => $thumb_src,
             "img_src" => $img_src,
             "category" => $request->category,
-            "order" => $request->order
+            "order" => $request->order,
+            "openlightbox" => isset($request->openlightbox) ? "1" : "0"
         ]);
 
         return redirect("/artwork-editor/");
@@ -90,9 +91,11 @@ class ArtworkController extends Controller
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
             $old_path = substr($artwork->img_src, 1);
-            if( !$img_src = "/" . $this->upload($request->image, "uploads/art", $old_path) ) {
+            if( !$img_src = $this->upload($request->image, "uploads/art", $old_path) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
+
+            $img_src = "/" . $img_src;
             
             $thumbpathtrim = substr($artwork->thumb_src,1);
             if( file_exists(realpath($thumbpathtrim)) ) {
@@ -113,7 +116,8 @@ class ArtworkController extends Controller
             "thumb_src" => $thumb_src,
             "img_src" => $img_src,
             "category" => $request->category,
-            "order" => $request->order
+            "order" => $request->order,
+            "openlightbox" => isset($request->openlightbox) ? "1" : "0"
         ]);
         return redirect("/artwork-editor/" . $artwork->id);
     }

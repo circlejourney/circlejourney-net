@@ -15,10 +15,10 @@
             <h2>Illustrations</h2>
             <div class="click-notice">Click to view full size</div>
         </div>
-        @foreach($artworks as $artwork)
-            <x-gallery-art :src="$artwork->thumb_src" :href="$artwork->img_src" openlightbox=true>
-                <h2 class="caption-title">{{ $artwork->title }}</h2>
-                <p>{{ $artwork->description }}</p>
+        @foreach($illustrations as $illustration)
+            <x-gallery-art :src="$illustration->thumb_src" :href="$illustration->img_src" :openlightbox="$illustration->openlightbox">
+                <h2 class="caption-title">{{ $illustration->title }}</h2>
+                <p>{{ $illustration->description }}</p>
             </x-gallery-art>
         @endforeach
     </div>
