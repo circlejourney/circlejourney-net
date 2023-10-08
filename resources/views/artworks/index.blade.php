@@ -14,9 +14,9 @@
     <a href="/artwork-editor/create">Create a new artwork</a>
 </p>
 
-<ul>
+<div class="subgallery">
     @foreach($artworks as $artwork)
         <x-gallery-art href="/artwork-editor/{{ $artwork->id }}" :src="$artwork->thumb_src">{{ $artwork->title }}</x-gallery-art>
     @endforeach
-</ul>
+</div>
 @endsection

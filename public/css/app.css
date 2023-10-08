@@ -544,7 +544,7 @@
     position: absolute;
     opacity: 0;
     background: rgba(0, 0, 0, 0.7);
-    padding: 10px 15px;
+    padding: 15px;
     left: 0;
     bottom: -30px;
     line-height: 11pt;
@@ -554,11 +554,17 @@
     transition: 0.2s all linear;
  }
  
+ .caption-title {
+   margin: 0;
+   font-size: 18pt;
+ }
+
  .caption p {
    color: #ccc;
-    display: block;
-    width: 100%;
-    padding: 0;
+   display: block;
+   width: 100%;
+   padding: 0;
+   font-size: small;
  }
  
  .thumbnail {
