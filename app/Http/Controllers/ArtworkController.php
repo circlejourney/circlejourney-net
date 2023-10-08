@@ -40,11 +40,11 @@ class ArtworkController extends Controller
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
             
-            if(!$img_src = $this->upload($request->image, "uploads/art", null)){
+            if(!$img_src = "/" . $this->upload($request->image, "uploads/art", null)){
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             
-            $thumb_src = $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
+            $thumb_src = "/" . $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -89,9 +89,8 @@ class ArtworkController extends Controller
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-            preg_match("/\/([^\/]*)$/", $artwork->img_src, $old_path);
-            $old_filename = $old_path[1];
-            if( !$img_src = $this->upload($request->image, "uploads/art", $old_filename) ) {
+            $old_path = substr($artwork->img_src, 1);
+            if( !$img_src = "/" . $this->upload($request->image, "uploads/art", $old_path) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             
@@ -100,7 +99,7 @@ class ArtworkController extends Controller
                 unlink( realpath($thumbpathtrim) );
             };
 
-            $thumb_src = $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
+            $thumb_src = "/" . $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -151,20 +150,24 @@ class ArtworkController extends Controller
         return Artwork::where($column, "like", $value)->orderBy('order', 'desc')->orderBy('created_at', 'desc')->get();
     }
 
-    protected function upload($file, $target_folder, $old_filename) {
+    protected function upload($file, $target_folder, $old_path) {
         $filename = $file->getClientOriginalName();
         $target_path = $target_folder . "/" . $filename;
 
-        if( file_exists(realpath($target_path)) && $filename !== $old_filename ) {
+        if( file_exists(realpath($target_path)) && $target_path !== $old_path ) {
             return false;
         }
+        
+        if( file_exists(realpath($old_path)) && $old_path !== null ) {
+            unlink( realpath($old_path) );
+        };
         
         if( file_exists(realpath($target_path)) ) {
             unlink( realpath($target_path) );
         };
 
         $file->move(public_path($target_folder), $filename);
-        return "/" . $target_path;
+        return $target_path;
     }
 
     protected function generate_thumbnail($src_filepath, $target_folder) {
@@ -194,6 +197,6 @@ class ArtworkController extends Controller
 
         imagepng($destination_image_blob, $target_path);
         
-        return "/" . $target_path;
+        return $target_path;
     }
 }

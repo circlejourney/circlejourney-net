@@ -16,7 +16,7 @@
 
 <ul>
     @foreach($artworks as $artwork)
-        <x-gallery-art href="/artwork-editor/{{ $artwork->id }}" :src="$artwork->thumb_src" clickthrough=true>{{ $artwork->title }}</x-gallery-art>
+        <x-gallery-art href="/artwork-editor/{{ $artwork->id }}" :src="$artwork->thumb_src">{{ $artwork->title }}</x-gallery-art>
     @endforeach
 </ul>
 @endsection

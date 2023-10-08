@@ -16,7 +16,7 @@
             <div class="click-notice">Click to view full size</div>
         </div>
         @foreach($artworks as $artwork)
-            <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src">
+            <x-gallery-art :src="$artwork->img_src" :href="$artwork->thumb_src" openlightbox=true>
                 <p>{{ $artwork->title }}</p>
                 {{ $artwork->description }}
             </x-gallery-art>
