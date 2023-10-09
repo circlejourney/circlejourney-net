@@ -92,8 +92,7 @@ class ArtworkController extends Controller
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-            $old_path = substr($artwork->img_src, 1);
-            if( !$img_src = $this->upload($request->image, "uploads/art", $old_path) ) {
+            if( !$img_src = $this->upload($request->image, "uploads/art", $artwork->img_src) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             
