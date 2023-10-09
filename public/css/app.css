@@ -438,7 +438,7 @@
     display: block;
     position: relative;
     box-sizing: border-box;
-    padding: 8% 10%;
+    padding: 8% 12%;
     margin: 0 auto;
     width: 100%;
  }
@@ -521,13 +521,12 @@
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
  }
  
  .gallery-title {
    text-align: center;
-   flex-basis: 100%;
-   display: block;
+   margin-bottom: 1rem;
  }
  
  .gallery-title h2 {
@@ -535,14 +534,11 @@
  }
  
  .gallery-image {
-    margin-right: 10px;
-    margin-bottom: 50px;
+   margin: 10px;
+   box-sizing: border-box;
     position: relative;
-    display: block;
-    width: auto;
     text-align: center;
     overflow: hidden;
-    align-self: center;
     line-height: 0;
  }
  
@@ -556,11 +552,15 @@
     border-color: rgba(255, 255, 255, 0.5);
  }
  
- .gallery-image img {
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    box-sizing: border-box;
+ .thumbnail {
+   height: 100%;
+   object-fit: cover;
+   object-position: top;
+   box-sizing: border-box;
+   padding: 5px;
+   border: 5px solid rgba(255, 255, 255, 0.2);
+   max-height: 320px;
+   max-width: 320px;
  }
  
  .caption {
@@ -590,15 +590,6 @@
    width: 100%;
    padding: 0;
    font-size: small;
- }
- 
- .thumbnail {
-    padding: 5px;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    margin: 0;
-    max-height: 350px;
-    max-width: 350px;
-    display: inline-block;
  }
  
  .badge-grid { 

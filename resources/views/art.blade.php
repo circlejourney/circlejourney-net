@@ -36,11 +36,11 @@
         $sequence = 0;
     ?>
 
+    <div class="gallery-title">
+        <h2>Illustrations</h2>
+    </div>
+
     <div class="subgallery">
-        <div class="gallery-title">
-            <h2>Illustrations</h2>
-            <div class="click-notice">Click to view full size</div>
-        </div>
         @foreach($illustrations as $illustration)
             <x-gallery-art
                 :data-sequence="$illustration->openlightbox ? $sequence++ : false"
@@ -53,11 +53,11 @@
         @endforeach
     </div>
 
+    <div class="gallery-title">
+        <h2>Animations</h2>
+    </div>
+
     <div class="subgallery">
-        <div class="gallery-title">
-            <h2>Animations</h2>
-            <div class="click-notice">Click to view full size</div>
-        </div>
         @foreach($animations as $animation)
             <x-gallery-art
                 :data-sequence="$animation->openlightbox ? $sequence++ : false"
