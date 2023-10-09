@@ -101,7 +101,7 @@ class ArtworkController extends Controller
                 unlink( realpath($artwork->thumb_src) );
             };
 
-            $thumb_src = "/" . $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
+            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
 
         } else {
             $request->validate($this->urlrules);
