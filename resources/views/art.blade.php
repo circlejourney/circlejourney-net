@@ -3,7 +3,7 @@
 @section("head")
     @include("components.lightbox-scripts")
     <script>
-        $(window).on("load", function(){
+        $(document).ready(function(){
             $(".gallery-image").on("click", function(e){
                 e.preventDefault();
                 lightbox.show(this.dataset.sequence);
