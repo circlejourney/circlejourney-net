@@ -194,7 +194,11 @@ class ArtworkController extends Controller
             $imagesize[0], $imagesize[1]
         );
         $target_path = $target_folder . "/" . $filename;
-
+        
+        if(file_exists(realpath($target_path))) {
+            unlink(realpath($target_path));
+        }
+        
         imagepng($destination_image_blob, $target_path);
         
         return $target_path;
