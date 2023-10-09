@@ -125,13 +125,11 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        $imgpathtrim = substr($artwork->img_src,1);
-        $thumbpathtrim = substr($artwork->thumb_src,1);
-        if( file_exists(realpath($imgpathtrim)) ) {
-            unlink( realpath($imgpathtrim) );
+        if( file_exists(realpath($artwork->img_src)) ) {
+            unlink( realpath($artwork->img_src) );
         };
-        if( file_exists($thumbpathtrim) ) {
-            unlink( realpath($thumbpathtrim) );
+        if( file_exists($artwork->thumb_src) ) {
+            unlink( realpath($artwork->thumb_src) );
         };
 
         $artwork->delete();
