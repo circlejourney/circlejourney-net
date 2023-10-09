@@ -518,16 +518,16 @@
  .subgallery {
     position: relative;
     width: 100%;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
  }
  
  .gallery-title {
-   flex-basis: 100%;
    text-align: center;
+   flex-basis: 100%;
    display: block;
-   margin-bottom: 1em;
  }
  
  .gallery-title h2 {
@@ -535,11 +535,14 @@
  }
  
  .gallery-image {
-   box-sizing: border-box;
-   margin: 10px;
-   flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 50px;
     position: relative;
+    display: block;
+    width: auto;
+    text-align: center;
     overflow: hidden;
+    align-self: center;
     line-height: 0;
  }
  
@@ -554,8 +557,8 @@
  }
  
  .gallery-image img {
-    object-fit: cover;
     height: 100%;
+    object-fit: cover;
     object-position: top;
     box-sizing: border-box;
  }
@@ -594,7 +597,7 @@
     border: 5px solid rgba(255, 255, 255, 0.2);
     margin: 0;
     max-height: 350px;
-    width: 100%;
+    max-width: 350px;
     display: inline-block;
  }
  
