@@ -1,5 +1,5 @@
 <div id="lightbox" class="hidden">
-    <div class="lightbox-nav lightbox-prev">&lt;</div>
+    <div class="lightbox-nav lightbox-prev"><i class="fa fa-chevron-left"></i></div>
     
     @foreach($artworks as $artwork)
     <div class="lightbox-display hidden">
@@ -9,5 +9,5 @@
     </div>
     @endforeach
 
-    <div class="lightbox-nav lightbox-next">&gt;</div>
+    <div class="lightbox-nav lightbox-next"><i class="fa fa-chevron-right"></i></div>
 </div>

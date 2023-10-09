@@ -167,6 +167,7 @@
  }
 
  .lightbox-nav {
+   font-size: 30pt;
    padding: 10px;
    display: flex;
    flex-direction: column;
@@ -866,6 +867,9 @@
     }
     .bannerbutton-50 {
       flex-basis: 100%;
+    }
+    .lightbox-display:not(.hidden) {
+      padding: 0;
     }
  }
  
