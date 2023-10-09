@@ -1,4 +1,4 @@
-<script src="/js/Lightbox.js" type="text/javascript"></script>
+<script src="/js/lightbox.js" type="text/javascript"></script>
 <script>
     let lightbox;
     $(document).ready(() => {
