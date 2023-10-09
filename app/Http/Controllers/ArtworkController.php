@@ -198,7 +198,7 @@ class ArtworkController extends Controller
         if(file_exists(realpath($target_path))) {
             unlink(realpath($target_path));
         }
-        
+
         imagepng($destination_image_blob, $target_path);
         
         return $target_path;

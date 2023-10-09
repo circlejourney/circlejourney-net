@@ -8,12 +8,15 @@ use Illuminate\View\Component;
 
 class GalleryArt extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct(public string $src, public string $href)
+    public $src;
+    public $href;
+
+    public function __construct(string $src, string $href, public bool $openlightbox)
     {
-        //
+        if(!preg_match("/^https?:\/\//", $src) && !preg_match("/^\//", $src)) $src = "/" . $src;
+        if(!preg_match("/^https?:\/\//", $href) && !preg_match("/^\//", $href)) $href = "/" . $href;
+        $this->src = $src;
+        $this->href = $href;
     }
 
     /**

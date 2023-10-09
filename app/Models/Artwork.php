@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artwork extends Model
 {
-    protected $fillable = ["title", "description", "img_src", "thumb_src", "category", "order"];
+    protected $fillable = ["title", "description", "img_src", "thumb_src", "category", "order", "openlightbox"];
     use HasFactory;
 }

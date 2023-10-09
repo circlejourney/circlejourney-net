@@ -4,17 +4,26 @@
     @include("components.lightbox-scripts")
     <script>
         $(document).ready(function(){
-            $(".gallery-image > a").on("click", function(e){
-                e.preventDefault();
-                lightbox.show(this.dataset.sequence);
+            $(".gallery-image > a").each(function(i, elt){
+                if($(elt).data("sequence") !== undefined) {
+                    $(elt).on("click", (e)=>{
+                        e.preventDefault();
+                        lightbox.show(this.dataset.sequence);
+                    });
+                }
             });
         })
     </script>
 @endsection
 
+<?php
+    $lightboxable = $illustrations->concat($animations)->filter(function($artwork) {
+        return $artwork->openlightbox;
+    });
+?>
 
 @section("top")
-    @include("components.lightbox", ["artworks" => $illustrations->concat($animations)])
+    @include("components.lightbox", ["artworks" => $lightboxable])
     <div class="center">
         <x-badge-link href="https://circlejourney.weebly.com">Art and design portfolio</x-badge-link>
         <x-badge-link href="https://circlejourney.carrd.co">Commission sheet</x-badge-link>
@@ -34,9 +43,9 @@
         </div>
         @foreach($illustrations as $illustration)
             <x-gallery-art
-                :sequence="$sequence++"
-                src="/{{$illustration->thumb_src}}"
-                href="/{{$illustration->img_src}}"
+                :data-sequence="$illustration->openlightbox ? $sequence++ : false"
+                src="{{$illustration->thumb_src}}"
+                href="{{$illustration->img_src}}"
                 :openlightbox="$illustration->openlightbox">
                 <h2 class="caption-title">{{ $illustration->title }}</h2>
                 <p>{!! $illustration->description !!}</p>
@@ -51,9 +60,9 @@
         </div>
         @foreach($animations as $animation)
             <x-gallery-art
-                :sequence="$sequence++"
-                src="/{{$animation->thumb_src}}"
-                href="/{{$illustration->img_src}}" :openlightbox="$illustration->openlightbox">
+                :data-sequence="$animation->openlightbox ? $sequence++ : false"
+                src="{{$animation->thumb_src}}"
+                href="{{$animation->img_src}}" :openlightbox="$animation->openlightbox">
                 <h2 class="caption-title">{{ $animation->title }}</h2>
                 <p>{!! $animation->description !!}</p>
             </x-gallery-art>

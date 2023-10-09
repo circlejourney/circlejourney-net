@@ -22,9 +22,16 @@
 
 @section("content")
 
-    <p>
-        <img class="thumbnail" id="preview-image" src="/{{ $artwork->thumb_src  }}" style="margin: auto;">
-    </p>
+    <div class="subgallery">
+        <x-gallery-art
+            :href="$artwork->img_src"
+            :src="$artwork->thumb_src"
+            openlightbox=true
+        >
+            <h2 class="caption-title">{{$artwork->title}}</h2>
+            <p>{!! $artwork->description !!}</p>
+        </x-gallery-art>
+    </div>
 
     <br>
     <form action="" method="post" class="editor" enctype="multipart/form-data">
@@ -47,7 +54,7 @@
 
         <input class="editor-text" type="text" id="category" name="category" value="{{ $artwork->category }}" placeholder="Category tags (separated by commas)">
         <input class="editor-text" type="number" id="order" name="order" value="{{  $artwork->order }}" placeholder="Display order">
-        <input type="checkbox" id="openlightbox" name="openlightbox" checked="{{  $artwork->openlightbox }}"><label for="openlightbox">Open lightbox on click</label>
+        <input type="checkbox" id="openlightbox" name="openlightbox" @if($artwork->openlightbox) checked @endif><label for="openlightbox">Open lightbox on click</label>
         <br>
         <button id="submit">Update artwork</button>
     </form>
