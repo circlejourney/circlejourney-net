@@ -46,7 +46,7 @@ class ArtworkController extends Controller
 
             $img_src = $img_src;
             
-            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art");
+            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -101,7 +101,7 @@ class ArtworkController extends Controller
                 unlink( realpath($artwork->thumb_src) );
             };
 
-            $thumb_src = "/" . $this->generate_thumbnail(realpath($img_src), "uploads/art");
+            $thumb_src = "/" . $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
 
         } else {
             $request->validate($this->urlrules);
@@ -173,11 +173,11 @@ class ArtworkController extends Controller
         return $target_path;
     }
 
-    protected function generate_thumbnail($src_filepath, $target_folder) {
+    protected function generate_thumbnail($src_filepath, $target_folder, $maxsize) {
         $imagesize = getimagesize($src_filepath);
         $hwratio = $imagesize[1] / $imagesize[0];
-        $scaleH = $imagesize[1] > $imagesize[0] ? 300 : 300 * $hwratio;
-        $scaleW = $imagesize[0] > $imagesize[1] ? 300 : 300 / $hwratio;
+        $scaleH = $imagesize[1] > $imagesize[0] ? $maxsize : $maxsize * $hwratio;
+        $scaleW = $imagesize[0] > $imagesize[1] ? $maxsize : $maxsize / $hwratio;
         preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $src_filepath, $matches);
         $filename = $matches[1]."-thumb.png";
 
