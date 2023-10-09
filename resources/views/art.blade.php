@@ -35,8 +35,8 @@
         @foreach($illustrations as $illustration)
             <x-gallery-art
                 :sequence="$sequence++"
-                :src="$illustration->thumb_src"
-                :href="$illustration->img_src"
+                src="/{{$illustration->thumb_src}}"
+                href="/{{$illustration->img_src}}"
                 :openlightbox="$illustration->openlightbox">
                 <h2 class="caption-title">{{ $illustration->title }}</h2>
                 <p>{{ $illustration->description }}</p>
@@ -50,7 +50,10 @@
             <div class="click-notice">Click to view full size</div>
         </div>
         @foreach($animations as $animation)
-            <x-gallery-art :sequence="$sequence++" :src="$animation->thumb_src" :href="$illustration->img_src" :openlightbox="$illustration->openlightbox">
+            <x-gallery-art
+                :sequence="$sequence++"
+                src="/{{$animation->thumb_src}}"
+                href="/{{$illustration->img_src}}" :openlightbox="$illustration->openlightbox">
                 <h2 class="caption-title">{{ $animation->title }}</h2>
                 <p>{{ $animation->description }}</p>
             </x-gallery-art>

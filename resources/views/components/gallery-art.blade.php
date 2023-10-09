@@ -1,8 +1,8 @@
 <a class="gallery-image"
     data-sequence="{{ $attributes["sequence"] }}"
-    href="/{{ $href }}"
+    href="{{ $href }}"
     @if($attributes["openlightbox"])@endif>
-    <img class="thumbnail" src="/{{ $src }}">
+    <img class="thumbnail" src="{{ $src }}">
     <div class="caption">
         <p>{{ $slot }}</p>
     </div>
