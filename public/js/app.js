@@ -57,6 +57,7 @@ function loadBannersPretty() {
 }
 
 function openLightbox(url) {
+    $("#lightbox-image").attr("src", "https://rebuild.circlejourney.net/images/logosmall.png");
     $("#lightbox-image").attr("src", url);
     $("#lightbox").removeClass("hidden");
 }
