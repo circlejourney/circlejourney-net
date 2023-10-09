@@ -2,6 +2,10 @@
 
 @section("title")@isset($title){{ $title }}@endisset @endsection
 
+@section("head")
+    @yield("head")
+@endsection
+
 @section("breadcrumbs")
     @isset($title)
         @include("components.breadcrumbs", ["crumbs" => [
