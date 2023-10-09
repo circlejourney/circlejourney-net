@@ -16,7 +16,10 @@
 
 <div class="subgallery">
     @foreach($artworks as $artwork)
-        <x-gallery-art id="image-{{ $artwork->id }}" href="/artwork-editor/{{ $artwork->id }}" src="/{{$artwork->thumb_src}}">{{ $artwork->title }}</x-gallery-art>
+        <x-gallery-art id="image-{{ $artwork->id }}" href="/artwork-editor/{{ $artwork->id }}" src="/{{$artwork->thumb_src}}">
+            <h2 class="caption-title">{{ $artwork->title }}</h2>
+            <p>{!! $artwork->description !!}</p>
+        </x-gallery-art>
     @endforeach
 </div>
 @endsection
