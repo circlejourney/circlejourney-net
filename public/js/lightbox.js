@@ -1,4 +1,5 @@
 class Lightbox {
+
     constructor(element) {
         this.element = element;
         $(window).on("keydown", ((e)=>{
@@ -11,8 +12,7 @@ class Lightbox {
         $(this.element).on("click", ()=>{
             this.hide();
         });
-
-        console.log($(this.element).find(".lightbox-prev"));
+        
         $(this.element).find(".lightbox-prev").on("click", (e)=>{
             e.stopPropagation();
             this.nav(-1);
@@ -25,21 +25,24 @@ class Lightbox {
     }
 
     show(sequenceNo) { // Shows image in lightbox based on integer representing its ordinal position in the gallery.
-        if(sequenceNo < 0 || sequenceNo >= $(this.element).find(".lightbox-image").length) return false;
-        $(this.element)
+        if(sequenceNo < 0 || sequenceNo >= $(this.element).find(".lightbox-display").length) return false;
+       
+        $(document.body).addClass("freeze");
+         $(this.element)
             .removeClass("hidden")
             .data("active", sequenceNo)
-            .find(".lightbox-image:not(.hidden)").addClass("hidden")
-        $(this.element).find(".lightbox-image").eq(sequenceNo).removeClass("hidden")
+            .find(".lightbox-display:not(.hidden)").addClass("hidden");
+        $(this.element).find(".lightbox-display").eq(sequenceNo).removeClass("hidden");
+    }
+
+    hide() {
+        $(this.element).addClass("hidden");
+        $(document.body).removeClass("freeze");
     }
 
     nav(delta) {
         const goto = parseInt($(this.element).data("active")) + delta;
         this.show(goto);
-    }
-
-    hide() {
-        $(this.element).addClass("hidden");
     }
 
 }

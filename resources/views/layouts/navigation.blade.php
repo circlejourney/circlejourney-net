@@ -5,6 +5,9 @@
         </div>
         <ul class="dropdown">
             <li class="menu-option">
+                <a href="/dashboard/">Dashboard</a>
+            </li>
+            <li class="menu-option">
                 <a href="/profile/{{ Auth::user()->id}}/">View profile</a>
             </li>
             <li class="menu-option">

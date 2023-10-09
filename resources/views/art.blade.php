@@ -18,7 +18,7 @@
     <div class="center">
         <x-badge-link href="https://circlejourney.weebly.com">Art and design portfolio</x-badge-link>
         <x-badge-link href="https://circlejourney.carrd.co">Commission sheet</x-badge-link>
-        <x-badge-link href="/commform">Slot claim form</x-badge-link>
+        <x-badge-link href="/commform">Commission slot claim form</x-badge-link>
     </div>
 @endsection
 
@@ -39,7 +39,7 @@
                 href="/{{$illustration->img_src}}"
                 :openlightbox="$illustration->openlightbox">
                 <h2 class="caption-title">{{ $illustration->title }}</h2>
-                <p>{{ $illustration->description }}</p>
+                <p>{!! $illustration->description !!}</p>
             </x-gallery-art>
         @endforeach
     </div>
@@ -55,7 +55,7 @@
                 src="/{{$animation->thumb_src}}"
                 href="/{{$illustration->img_src}}" :openlightbox="$illustration->openlightbox">
                 <h2 class="caption-title">{{ $animation->title }}</h2>
-                <p>{{ $animation->description }}</p>
+                <p>{!! $animation->description !!}</p>
             </x-gallery-art>
         @endforeach
     </div>
