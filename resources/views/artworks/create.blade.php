@@ -36,7 +36,7 @@
             <input type="file" name="image" id="image" onchange="updatePreview()">
         </div>
         <div class="formtoggle hidden">
-            <input class="editor-text" type="text" id="thumb_src" name="thumb_src" placeholder="Thumbnail source URL" onchange="$('#preview-image').attr('src', this.value);">
+            <input class="editor-text" type="text" id="thumb_src" name="thumb_src" placeholder="Thumbnail source URL" onchange="$('#preview-image').attr('src', '/'+this.value);">
             <input class="editor-text" type="text" id="img_src" name="img_src" placeholder="Image source URL">
         </div>
 
@@ -44,7 +44,7 @@
         <textarea class="editor-body" id="description" name="description" placeholder="Description"></textarea>
         
         <input class="editor-text" type="text" id="category" name="category" placeholder="Category tags (separated by commas)">
-        <input class="editor-text" type="number" id="order" name="order" placeholder="Display order">
+        <input class="editor-text" type="number" id="order" name="order" placeholder="Display order" value="0">
         <input type="checkbox" id="openlightbox" name="openlightbox" checked="true"><label for="openlightbox">Open lightbox on click</label>
         <br>
         <button id="submit">Create artwork</button>

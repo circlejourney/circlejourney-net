@@ -552,6 +552,7 @@
     box-sizing: border-box;
     text-align: left;
     transition: 0.2s all linear;
+    font-family: Rubik;
  }
  
  .caption-title {

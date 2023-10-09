@@ -16,7 +16,7 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        $artworks = Artwork::all()->sortDesc();
+        $artworks = Artwork::all()->sortByDesc('created_at')->sortBy('order');
         return view('artworks.index', [
             "artworks" => $artworks
         ]);
@@ -40,11 +40,13 @@ class ArtworkController extends Controller
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
             
-            if(!$img_src = "/" . $this->upload($request->image, "uploads/art", null)){
+            if(!$img_src = $this->upload($request->image, "uploads/art", null)){
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
+
+            $img_src = $img_src;
             
-            $thumb_src = "/" . $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
+            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art");
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -94,15 +96,12 @@ class ArtworkController extends Controller
             if( !$img_src = $this->upload($request->image, "uploads/art", $old_path) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
-
-            $img_src = "/" . $img_src;
             
-            $thumbpathtrim = substr($artwork->thumb_src,1);
-            if( file_exists(realpath($thumbpathtrim)) ) {
-                unlink( realpath($thumbpathtrim) );
+            if( file_exists(realpath($artwork->thumb_src)) ) {
+                unlink( realpath($artwork->thumb_src) );
             };
 
-            $thumb_src = "/" . $this->generate_thumbnail(realpath("uploads/art/".$filename), "uploads/art");
+            $thumb_src = "/" . $this->generate_thumbnail(realpath($img_src), "uploads/art");
 
         } else {
             $request->validate($this->urlrules);
@@ -155,7 +154,7 @@ class ArtworkController extends Controller
     }
 
     protected function upload($file, $target_folder, $old_path) {
-        $filename = $file->getClientOriginalName();
+        $filename = preg_replace("/\s/", "-", $file->getClientOriginalName());
         $target_path = $target_folder . "/" . $filename;
 
         if( file_exists(realpath($target_path)) && $target_path !== $old_path ) {
@@ -180,7 +179,7 @@ class ArtworkController extends Controller
         $scaleH = $imagesize[1] > $imagesize[0] ? 300 : 300 * $hwratio;
         $scaleW = $imagesize[0] > $imagesize[1] ? 300 : 300 / $hwratio;
         preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $src_filepath, $matches);
-        $filename = $matches[1]."_thumb.png";
+        $filename = $matches[1]."-thumb.png";
 
         $format = explode("/", $imagesize["mime"])[1];
         $imagecreatefunc = "imagecreatefrom".$format;
