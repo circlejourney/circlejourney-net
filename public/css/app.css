@@ -308,7 +308,7 @@
  
  .hl {
     font-weight: bold;
-    color: orange;
+    color: #d8874a;
  }
  
  .menu {
@@ -536,16 +536,15 @@
  }
  
  .gallery-image {
-    cursor: pointer;
     margin-right: 10px;
     margin-bottom: 50px;
     position: relative;
-    display: inline-block;
+    display: block;
     width: auto;
-    vertical-align: middle;
     text-align: center;
     overflow: hidden;
     align-self: center;
+    line-height: 0;
  }
  
  .gallery-image:hover .caption {
@@ -581,6 +580,7 @@
  }
  
  .caption-title {
+   color: #d8874a;
    margin: 0;
    font-size: 18pt;
  }
@@ -596,7 +596,6 @@
  .thumbnail {
     padding: 5px;
     border: 5px solid rgba(255, 255, 255, 0.2);
-    cursor: pointer;
     margin: 0;
     max-height: 300px;
     max-width: 250px;

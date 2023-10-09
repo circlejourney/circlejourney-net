@@ -4,7 +4,7 @@
     @include("components.lightbox-scripts")
     <script>
         $(document).ready(function(){
-            $(".gallery-image").on("click", function(e){
+            $(".gallery-image > a").on("click", function(e){
                 e.preventDefault();
                 lightbox.show(this.dataset.sequence);
             });
