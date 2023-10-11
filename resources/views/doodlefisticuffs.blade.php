@@ -91,11 +91,7 @@
             border: 4px solid var(--accent);
         }
 
-        .char-image.ace-pair {
-            border: 4px dashed var(--accent);
-        }
-
-		.between-cell {
+		.relationship-cell {
 			height: 0;
 			z-index: 2;
 			text-align: center;
@@ -104,14 +100,14 @@
 			justify-content: center;
 		}
 
-		.between-label {
+		.relationship-label {
 			padding: 0.1rem;
 			border-radius: var(--border-radius);
 			background-color: var(--accent);
 			color: white;
 		}
 
-		.between-label.active {
+		.relationship-label.active {
 			border: 3px solid white;
 		}
 
@@ -119,7 +115,7 @@
             position: absolute;
             bottom: 5px;
             right: 5px;
-            width: 10vw;
+            height: 120px;
         }
 
 		.info-heading {
@@ -142,6 +138,11 @@
 		
 		<!-- BEGIN TEARS CARD -->
         <div class="card" id="tears" style="background-image: linear-gradient(to bottom, #C5E9E6, #CEEDEA); background-size: 20%, cover;">
+	
+			<a href="https://toyhou.se/TenTen">
+				<img class="pagedoll" src="/images/df/teamtearsmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
+			</a>
+
             <div class="d-flex align-items-center py-2">
                 <div class="team-border flex-grow-1"></div>
 
@@ -168,9 +169,9 @@
 								</div>
                             </a>
 							
-							<div class="between-cell">							
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-4">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">							
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-4">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									Teammates...in love
 								</a>
 							</div>
@@ -178,7 +179,7 @@
                             <a
                                 href="https://toyhou.se/17040760.jinai"
 								target="_blank"
-                                class="char-image ace-pair"
+                                class="char-image ace"
                                 style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/64022461_lHvIO8aaKoRUTXM.jpg?1683270831);">
                                 <div class="char-label">
 									Jinai <span class="ace-text">ace pair</span>
@@ -194,9 +195,9 @@
 								<div class="char-label">Vanth</div>
 							</a>
 
-							<div class="between-cell">
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-5">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-5">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									Acquaintances
 								</a>
 							</div>
@@ -217,9 +218,9 @@
                                 <div class="char-label">Pala</div>
                             </a>
 	
-							<div class="between-cell">
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-6">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-6">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									QPPs
 								</a>
 							</div>
@@ -236,10 +237,10 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4">
-					<p>
-						Click on the relationship labels to view more info about the characters and their relationship. Click on the portraits to open their Toyhouse profiles.
-					</p>
+                <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
+					<p>You can change hairstyles, outfits, and all design details that the character themself can change. But don't change their skin tones or body types.</p>
+					<p>Click on the relationship labels to view more info about the characters / relationship. Click on the portraits to open their Toyhouse profiles.</p>
+
 					<br>
 					<div class="tab-content">
 						<div class="tab-pane" id="tab-4">
@@ -256,10 +257,7 @@
 								Vanth + Maatkheru
 							</h4>
 							<p>
-								Most beings who pass between earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In Between, the realm where Maatkheru lives. Vanth has on occasion stopped by the dutiful sphinx's desert tomb to talk and while the hours away.
-							</p>
-							<p>
-								They're not as close as the other pairs here so I'm happy for solo art.
+								Most beings who pass relationship earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In relationship, the realm where Maatkheru lives. Vanth has on occasion stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
 							</p>
 						</div>
 
@@ -273,16 +271,17 @@
                 </div>
 
             </div>
-	
-			<a href="https://toyhou.se/TenTen">
-				<img class="pagedoll" src="/images/df/teamtearsmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
-			</a>
 		</div>
 
 		<br>
 
 		<!-- BEGIN BLOOD CARD -->
         <div class="card" id="blood" style="background-image: linear-gradient(to bottom, #C8ADAF, #E1D7D7); background-size: 20%, cover;">
+
+			<a href="https://toyhou.se/TenTen">
+				<img class="pagedoll" src="https://rebuild.circlejourney.net/images/df/teambloodmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
+			</a>
+
             <div class="d-flex align-items-center py-2">
                 <div class="team-border flex-grow-1"></div>
 
@@ -309,9 +308,9 @@
 								</div>
                             </a>
 							
-							<div class="between-cell">							
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-1">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">							
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-1">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									WLW battle couple
 	</a>
 							</div>
@@ -319,7 +318,7 @@
                             <a
                                 href="https://toyhou.se/1820973.marcia"
 								target="_blank"
-                                class="char-image ace-pair"
+                                class="char-image ace"
                                 style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png">
                                 <div class="char-label">
 									Marcia <span class="ace-text">ace pair</span>
@@ -337,9 +336,9 @@
                                 <div class="char-label">Xye</div>
                             </a>
 
-							<div class="between-cell">
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-2">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-2">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									Bickering teammates
 								</a>
 							</div>
@@ -361,9 +360,9 @@
                                 <div class="char-label">Circlejourney</div>
                             </a>
 	
-							<div class="between-cell">
-								<a class="between-label nav-item" data-bs-toggle="tab" href="#tab-3">
-									<i class="between-arrows fa fa-arrows-up-down"></i>
+							<div class="relationship-cell">
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-3">
+									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									Unrelated
 								</a>
 							</div>
@@ -383,9 +382,9 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4">
-
-					<p>Click on the relationship labels to view more info about the characters and their relationship. Click on the portraits to open their Toyhouse profiles.</p>
+                <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
+					<p>You can change hairstyles, outfits, and all design details that the character themself can change. But don't change their skin tones or body types.</p>
+					<p>Click on the relationship labels to view more info about the characters / relationship. Click on the portraits to open their Toyhouse profiles.</p>
 
 					<div class="tab-content">
 						<div class="tab-pane" id="tab-1">
@@ -409,10 +408,6 @@
                 </div>
 
             </div>
-
-			<a href="https://toyhou.se/TenTen">
-                <img class="pagedoll" src="https://rebuild.circlejourney.net/images/df/teambloodmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
-            </a>
 		</div>
 
     </div>
