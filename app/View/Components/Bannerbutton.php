@@ -15,9 +15,8 @@ class Bannerbutton extends Component
     public $label_title;
     public $label_text;
     public $dark;
-    public $class;
 
-    public function __construct(string $class, Project $project)
+    public function __construct(Project $project)
     {
         $this->href = $project->href;
         $this->background_image = $project->background_image;
@@ -25,7 +24,6 @@ class Bannerbutton extends Component
         $this->label_title = $project->label_title;
         $this->label_text = $project->label_text;
         $this->dark = $project->dark;
-        $this->class = $class;
     }
 
     /**

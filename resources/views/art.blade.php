@@ -1,4 +1,4 @@
-@extends("layouts.projects", ["title"=>$title, "projects"=>$projects])
+@extends("layouts.canonical", ["title"=>$title, "projects"=>$projects])
 
 @section("head")
     @include("components.lightbox-scripts")
@@ -22,16 +22,20 @@
     });
 ?>
 
-@section("top")
+@section("content")
     @include("components.lightbox", ["artworks" => $lightboxable])
     <div class="center">
         <x-badge-link href="https://circlejourney.weebly.com">Art and design portfolio</x-badge-link>
         <x-badge-link href="https://circlejourney.carrd.co">Commission sheet</x-badge-link>
         <x-badge-link href="/commform">Commission slot claim form</x-badge-link>
     </div>
-@endsection
+    
+    <div class="bannergrid">
+    @foreach($projects as $project)
+        <x-bannerbutton class="bannerbutton-50" :$project />
+    @endforeach
+    </div>
 
-@section("bottom")
     <?php
         $sequence = 0;
     ?>

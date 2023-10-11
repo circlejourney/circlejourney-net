@@ -18,7 +18,7 @@
 @yield("top")
 <div class="bannergrid @unless(isset($alternate) && !$alternate) alternate @endif">
     @foreach($projects as $project)
-    <x-bannerbutton class="" :project="$project"/>
+        <x-bannerbutton :$project />
     @endforeach
 </div>
 @yield("bottom")
