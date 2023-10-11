@@ -106,6 +106,7 @@
 			background-color: var(--accent);
 			color: white;
 			text-decoration: none;
+			box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 		}
 
 		.relationship-label.active {
@@ -258,7 +259,7 @@
 								Vanth + Maatkheru
 							</h4>
 							<p>
-								Most beings who pass relationship earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In relationship, the realm where Maatkheru lives. Vanth has on occasion stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
+								Most beings who pass through earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In relationship, the realm where Maatkheru lives. Vanth has on occasion stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
 							</p>
 						</div>
 
@@ -320,7 +321,7 @@
                                 href="https://toyhou.se/1820973.marcia"
 								target="_blank"
                                 class="char-image ace"
-                                style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png">
+                                style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png)">
                                 <div class="char-label">
 									Marcia <span class="ace-text">ace pair</span>
 								</div>
