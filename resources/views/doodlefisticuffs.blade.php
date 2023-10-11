@@ -105,6 +105,7 @@
 			border-radius: var(--border-radius);
 			background-color: var(--accent);
 			color: white;
+			text-decoration: none;
 		}
 
 		.relationship-label.active {
