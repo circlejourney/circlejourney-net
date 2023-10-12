@@ -189,6 +189,10 @@
             filter: drop-shadow(var(--box-shadow));
         }
 
+        .info {
+            padding-bottom: 4rem;
+        }
+
 		.info-heading {
 			font-family: "DM Serif Display", serif;
 			padding: 0.1rem;
@@ -197,12 +201,12 @@
 			color: white;
 		}
 
-        .info-heading a {
-            color: white;
-            border-bottom: 1px dashed white;
+        .info-links::before {
+            content: "▸";
         }
 
         .info-links {
+            display: inline-block;
             font-size: 11pt;
         }
 
@@ -321,7 +325,7 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
+                <div class="info col-12 col-lg-4">
 					{!! $usagenotes !!}
 
 					<div class="tab-content">
@@ -330,13 +334,13 @@
 							<h4 class="info-heading">
 								Anqien + Jinai
 							</h4>
-                            <p class="info-links">
-                                Profiles:
-                                <a href="https://toyhou.se/17040769.anqien">1</a> &bull; <a href="https://toyhou.se/17040760.jinai">2</a> &bull;
+                            <div class="info-links">
+                                
+                                <a href="https://toyhou.se/17040769.anqien">Anqien</a> &bull; <a href="https://toyhou.se/17040760.jinai">Jinai</a> &bull;
                                 <a href="https://toyhou.se/20496317.offshore-masterpost/20496327.cloudlanders-ship">Relationship</a>
-                            </p>
+                            </div>
 							<p>
-								They're an offshore (long-distance) sailing team nearing the end of their professional partnership&mdash;Jinai is retiring after the next race. They are trying so hard not to fall in love and get distracted. It's not working.
+								From my novel <a href="https://circlejourney.net/offshore">Offshore</a>. They're a long-distance sailing team nearing the end of their professional partnership&mdash;Jinai is retiring after the next race. They are trying so hard not to fall in love and get distracted. It's not working.
 							</p>
 						</div>
 
@@ -345,6 +349,10 @@
 							<h4 class="info-heading">
 								Vanth + Maatkheru
 							</h4>
+                            <div class="info-links">
+                                
+                                <a href="https://toyhou.se/20918922.vanth">Profile 1</a> &bull; <a href="https://toyhou.se/5864645.maatkheru">Profile 2</a>
+                            </div>
 							<p>
 								Most who pass through earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In Between, the realm where Maatkheru lives. Vanth has occasionally stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
 							</p>
@@ -353,8 +361,12 @@
 						<div class="tab-pane" id="tab-6">
 					        <hr>
 							<h4 class="info-heading">Pala + Fen</h4>
+                            <div class="info-links">
+                                
+                                <a href="https://toyhou.se/1872046.pala">Profile 1</a> &bull; <a href="https://toyhou.se/1941234.fen">Profile 2</a>
+                            </div>
 							<p>
-								Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
+								From my (unfinished) comic <a href="https://light.circlejourney.net">The Light Left Under Trees</a>! Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
 							</p>
 						</div>
 					</div>
@@ -480,29 +492,43 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
+                <div class="info col-12 col-lg-4">
                     {!! $usagenotes !!}
 
 					<div class="tab-content">
 						<div class="tab-pane" id="tab-1">
 					        <hr>
 							<h4 class="info-heading">Vesper + Marcia</h4>
-							<p>Vesper (a World War 2 soldier) and Marcia (a gladiator from the Modern Roman Empire) meet when Orobelle, the most important spoilt brat in the multiverse, hires them to protect her. After several combat missions together in various universes, they go from respecting each other to head over heels.</p>
-							<p>Vesper is my ace ace lol. Her <a href="https://rd.circlejourney.net/read/?c=002">intro chapter</a> in Revolving Door is even called <i>Ace</i>.</p>
+                            <div class="info-links">
+                                
+                                <a href="https://toyhou.se/1779921.vesper">Profile 1</a> &bull; <a href="https://toyhou.se/1820973.marcia">Profile 2</a>
+                            </div>
+							<p>From <a href="https://rd.circlejourney.net">Revolving Door</a>, my multiverse novel. Vesper (a World War 2 soldier/weapon) and Marcia (a gladiator from the Modern Roman Empire) meet when <a href="https://toyhou.se/1776660.orobelle">the most important spoilt brat in the multiverse</a> hires them to protect her. After several combat missions together, they go from respecting each other to head over heels. (Vesper is my ace ace lol)</p>
 						</div>
 						<div class="tab-pane" id="tab-2">
 					        <hr>
 							<h4 class="info-heading">Xye + Zera</h4>
+                            <div class="info-links">
+                                
+                                <a href="https://toyhou.se/19563604.xye">Profile 1</a> &bull; <a href="https://toyhou.se/19650517.zera">Profile 2</a>
+                            </div>
 							<p>
-								Xye and Zera are teammates who are somehow always at loggerheads on land, but an unstoppable team at sea. Zera is tired of Xye rankling their rivals and flirting with random people (including their rivals). But she's the only person who can get Xye to behave soberly and somehow, the team just works.
+								From my novel <a href="https://circlejourney.net/offshore">Offshore</a>. Xye and Zera are teammates who are somehow always at loggerheads on land, but an unstoppable team at sea. Zera is tired of Xye rankling their rivals and flirting with random people (including their rivals). But she's the only person who can get Xye to behave soberly and somehow, the team just works.
 							</p>
 						</div>
 						<div class="tab-pane" id="tab-3">
 					        <hr>
 							<h4 class="info-heading">Circlejourney</h4>
-							<p>My sona, an edgy necromancer and questionable surgeon, who lives in the "dungeon" aboard a pirate ship.</p>
+                            <div class="info-links">
+                                <a href="https://toyhou.se/2037696.circlejourney">Profile</a>
+                            </div>
+							<p>My sona, an edgy bird-loving necromancer and sus surgeon. Lives in the "dungeon" aboard a pirate ship.</p>
+
 							<h4 class="info-heading">Omen</h4>
-							<p>They're Bad Luck. As in they literally siphon away everyone else's luck in their vicinity. They made a fortune swindling 50 casinos across the US.</p>
+                            <div class="info-links">
+                                <a href="https://toyhou.se/2628384.omen">Profile</a>
+                            </div>
+							<p>They're Bad Luck. As in they literally siphon away everyone else's luck in their vicinity. They made a fortune swindling 50 casinos across the US with their powers.</p>
 						</div>
 					</div>
                 </div>
