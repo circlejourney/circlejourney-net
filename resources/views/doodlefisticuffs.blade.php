@@ -218,7 +218,7 @@
 @endpush
 
 @section("body")
-    <div class="main container p-5">
+    <div class="main container p-lg-5">
 		
 		<!-- BEGIN TEARS CARD -->
         <div class="card" id="tears" style="background-image: repeating-linear-gradient(45deg, #d2ecea, #d2ecea 25px, transparent 25px, transparent 50px), linear-gradient(to bottom, #C5E9E6, #CEEDEA);">
@@ -244,7 +244,7 @@
 
             <div class="content row p-4 g-3">
 
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-md-7">
                     <div class="char-area row g-0 nav">
                     
                         <div class="char-column col-12 col-lg-4 flex-column">
@@ -325,7 +325,7 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4">
+                <div class="info col-12 col-md-5">
 					{!! $usagenotes !!}
 
 					<div class="tab-content">
@@ -401,7 +401,7 @@
 
             <div class="content row p-4 g-3">
 
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-md-7">
                     <div class="char-area row g-0 nav">
                     
                         <div class="char-column col-12 col-lg-4 flex-column">
@@ -492,7 +492,7 @@
 
                 </div>
 
-                <div class="info col-12 col-lg-4">
+                <div class="info col-12 col-md-5">
                     {!! $usagenotes !!}
 
 					<div class="tab-content">
