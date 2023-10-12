@@ -28,7 +28,7 @@
         body {
 			background: var(--black);
             font-family: "PT Serif", serif;
-			font-size: 14pt;
+			font-size: 13pt;
         }
 
         hr {
