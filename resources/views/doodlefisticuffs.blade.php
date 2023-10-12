@@ -214,11 +214,77 @@
             transform: scale(105%) rotate(2deg);
         }
 
+        .roster {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+        }
+
+        .roster-slot {
+            width: 25%;
+            padding: 0.2rem;
+        }
+
+        .portrait {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: var(--box-shadow);
+        }
+
+        .blood-portrait {
+            border: 4px solid #A93354;
+        }
+
+        .tears-portrait {
+            border: 4px solid #1E897F;
+        }
+
     </style>
 @endpush
 
 @section("body")
     <div class="main container p-lg-5">
+
+        <div class="roster w-50 m-auto d-none">
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1779921?1573488244">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://file.toyhou.se/characters/1820973?1530080699">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/19563604?1682417737">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/19650517?1682418105">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/2037696?1683810738">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/2628384?1603632476">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/17040769?1693553088">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/17040760?1678451834">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/20918922?1680523577">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/5864645?1579713234">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1872046?1589171661">
+            </div>
+            <div class="roster-slot">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1941234?1589039025">
+            </div>
+        </div>
+
+        <br>
 		
 		<!-- BEGIN TEARS CARD -->
         <div class="card" id="tears" style="background-image: repeating-linear-gradient(45deg, #d2ecea, #d2ecea 25px, transparent 25px, transparent 50px), linear-gradient(to bottom, #C5E9E6, #CEEDEA);">
@@ -336,7 +402,7 @@
 							</h4>
                             <div class="info-links">
                                 
-                                <a href="https://toyhou.se/17040769.anqien">Anqien</a> &bull; <a href="https://toyhou.se/17040760.jinai">Jinai</a> &bull;
+                                <a href="https://toyhou.se/17040769.anqien">Anqien profile</a> &bull; <a href="https://toyhou.se/17040760.jinai">Jinai profile</a> &bull;
                                 <a href="https://toyhou.se/20496317.offshore-masterpost/20496327.cloudlanders-ship">Relationship</a>
                             </div>
 							<p>
@@ -351,7 +417,7 @@
 							</h4>
                             <div class="info-links">
                                 
-                                <a href="https://toyhou.se/20918922.vanth">Profile 1</a> &bull; <a href="https://toyhou.se/5864645.maatkheru">Profile 2</a>
+                                <a href="https://toyhou.se/20918922.vanth">Vanth profile</a> &bull; <a href="https://toyhou.se/5864645.maatkheru">Maatkheru profile</a>
                             </div>
 							<p>
 								Most who pass through earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In Between, the realm where Maatkheru lives. Vanth has occasionally stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
@@ -363,7 +429,7 @@
 							<h4 class="info-heading">Pala + Fen</h4>
                             <div class="info-links">
                                 
-                                <a href="https://toyhou.se/1872046.pala">Profile 1</a> &bull; <a href="https://toyhou.se/1941234.fen">Profile 2</a>
+                                <a href="https://toyhou.se/1872046.pala">Pala profile</a> &bull; <a href="https://toyhou.se/1941234.fen">Fen profile</a>
                             </div>
 							<p>
 								From my (unfinished) comic <a href="https://light.circlejourney.net">The Light Left Under Trees</a>! Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
@@ -500,8 +566,7 @@
 					        <hr>
 							<h4 class="info-heading">Vesper + Marcia</h4>
                             <div class="info-links">
-                                
-                                <a href="https://toyhou.se/1779921.vesper">Profile 1</a> &bull; <a href="https://toyhou.se/1820973.marcia">Profile 2</a>
+                                <a href="https://toyhou.se/1779921.vesper">Vesper profile</a> &bull; <a href="https://toyhou.se/1820973.marcia">Marcia profile</a>
                             </div>
 							<p>From <a href="https://rd.circlejourney.net">Revolving Door</a>, my multiverse novel. Vesper (a World War 2 soldier/weapon) and Marcia (a gladiator from the Modern Roman Empire) meet when <a href="https://toyhou.se/1776660.orobelle">the most important spoilt brat in the multiverse</a> hires them to protect her. After several combat missions together, they go from respecting each other to head over heels. (Vesper is my ace ace lol)</p>
 						</div>
@@ -510,7 +575,7 @@
 							<h4 class="info-heading">Xye + Zera</h4>
                             <div class="info-links">
                                 
-                                <a href="https://toyhou.se/19563604.xye">Profile 1</a> &bull; <a href="https://toyhou.se/19650517.zera">Profile 2</a>
+                                <a href="https://toyhou.se/19563604.xye">Xye profile</a> &bull; <a href="https://toyhou.se/19650517.zera">Zera profile</a>
                             </div>
 							<p>
 								From my novel <a href="https://circlejourney.net/offshore">Offshore</a>. Xye and Zera are teammates who are somehow always at loggerheads on land, but an unstoppable team at sea. Zera is tired of Xye rankling their rivals and flirting with random people (including their rivals). But she's the only person who can get Xye to behave soberly and somehow, the team just works.
