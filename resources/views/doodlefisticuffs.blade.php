@@ -1,3 +1,5 @@
+<?php $usagenotes = "<p><b>Notes.</b> You can change hairstyles, outfits, and all design details that the character themself can change. Don't change skin tones or body types.</p><p>Click on the relationship labels to view more info about the characters / relationship. Click on the portraits to open their Toyhouse profiles.</p>"; ?>
+
 @extends('layouts.app')
 
 @push('head')
@@ -13,18 +15,24 @@
 			});
 		});
 	</script>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=PT+Serif&display=swap" rel="stylesheet">
     <style>
 
 		:root {
 			--border-radius: 10px;
+            --box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 			--black: #0F0F12;
+            --transition: 0.1s all linear;
 		}
 
         body {
 			background: var(--black);
-            font-family: "Playfair Display", serif;
-			font-size: 13pt;
+            font-family: "PT Serif", serif;
+			font-size: 14pt;
+        }
+
+        hr {
+            border-style: dashed;
         }
 
 		h1, h2, h3, h4, h5 {
@@ -45,38 +53,85 @@
 			--accent-light: #B4E5E0;
         }
 
-        .team-border {
-            border-top: 4px solid var(--black);
-            border-bottom: 4px solid var(--black);
-            height: 12px;
+        .card {
+            position: relative;
+            overflow: hidden;
+            border: 8px solid var(--accent);
+            padding: 2rem;
+            background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3) 10px, transparent 10px, transparent 20px);
         }
 
-		.subheading {
+        .accent-icon {
+            position: absolute;
+            font-size: 300pt;
+            -webkit-text-stroke: 4px var(--accent);
+            color: transparent; opacity: 0.2;
+            line-height: 1em;
+            top: -10%;
+            left: -10%;
+        }
+
+        .stripes {
+            border-top: 8px dotted var(--accent);
+        }
+
+        .team-title img {
+            max-height: 100px;
+            max-width: 100%;
+        }
+
+		.nametag {
 			font-family: "DM Serif Display", serif;
+            letter-spacing: 1px;
 			border-radius: var(--border-radius);
 			display: inline-block;
 			background-color: var(--black);
 			color: white;
 		}
 
+        .header, .content {
+            z-index: 2;
+        }
+
+        .char-area {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-image: url(https://i.postimg.cc/R0LfhNpf/triangles.png);
+            box-shadow: var(--box-shadow);
+        }
+
+        .char-column {
+            height: 600px;
+            display: flex;
+        }
+
         .char-image {
+            flex-grow: 1;
+            flex-basis: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             text-align: center;
             width: 100%;
-            height: 300px;
             background-size: cover;
             background-position: top;
 			background-repeat: no-repeat;
             text-decoration: none;
+            overflow: hidden;
         }
 
         .char-label {
 			font-size: 14pt;
-            padding: 1.5em 0 1em;
+            padding: 1.8em 0 1em;
             background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
             color: white;
+            transition: var(--transition);
+        }
+        
+        .char-image:hover .char-label {
+            color: var(--accent-light);
+            padding-bottom: 1.8em;
+            padding-top: 2.4em;
         }
 
 		.ace-text {
@@ -91,6 +146,16 @@
             border: 4px solid var(--accent);
         }
 
+        .char-image.ace:nth-of-type(1) {
+            border-top-left-radius: var(--border-radius);
+            border-bottom: none;
+        }
+
+        .char-image.ace:nth-of-type(2) {
+            border-bottom-left-radius: 10px;
+            border-top: none;
+        }
+
 		.relationship-cell {
 			height: 0;
 			z-index: 2;
@@ -98,6 +163,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+            background-color: var(--accent);
 		}
 
 		.relationship-label {
@@ -106,10 +172,12 @@
 			background-color: var(--accent);
 			color: white;
 			text-decoration: none;
-			box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            border: 0px solid transparent;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
 		}
 
-		.relationship-label.active {
+		.relationship-label:hover, .relationship-label.active {
 			border: 3px solid white;
 		}
 
@@ -118,15 +186,25 @@
             bottom: 5px;
             right: 5px;
             height: 120px;
+            filter: drop-shadow(var(--box-shadow));
         }
 
 		.info-heading {
 			font-family: "DM Serif Display", serif;
 			padding: 0.1rem;
 			display: inline-block;
-			background-color: var(--black);
+			background-color: var(--accent);
 			color: white;
 		}
+
+        .info-heading a {
+            color: white;
+            border-bottom: 1px dashed white;
+        }
+
+        .info-links {
+            font-size: 11pt;
+        }
 
         .pagedoll:hover {
             transform: scale(105%) rotate(2deg);
@@ -136,32 +214,36 @@
 @endpush
 
 @section("body")
-    <div class="main container py-5">
+    <div class="main container p-5">
 		
 		<!-- BEGIN TEARS CARD -->
-        <div class="card" id="tears" style="background-image: linear-gradient(to bottom, #C5E9E6, #CEEDEA); background-size: 20%, cover;">
-	
+        <div class="card" id="tears" style="background-image: repeating-linear-gradient(45deg, #d2ecea, #d2ecea 25px, transparent 25px, transparent 50px), linear-gradient(to bottom, #C5E9E6, #CEEDEA);">
+            
+            <div class="accent-icon">
+                <i class="far fa-fw fa-face-sad-tear"></i>
+            </div>
+
 			<a href="https://toyhou.se/TenTen">
 				<img class="pagedoll" src="/images/df/teamtearsmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
 			</a>
 
-            <div class="d-flex align-items-center py-2">
-                <div class="team-border flex-grow-1"></div>
+            <div class="header d-flex align-items-center py-2">
+                <div class="stripes flex-grow-1"></div>
 
-                <div class="team-title m-2 w-25 d-flex flex-column">
+                <div class="team-title m-2 d-flex flex-column">
 					<img class="d-block mb-2" src="https://rebuild.circlejourney.net/images/df/teamtearslogolong.png">
-					<p class="subheading text-center">User &bull; Circlejourney</p>
+					<p class="nametag text-center">User &bull; Circlejourney</p>
 				</div>
                 
-                <div class="team-border flex-grow-1"></div>
+                <div class="stripes flex-grow-1"></div>
             </div>
 
-            <div class="row p-4 g-2">
+            <div class="content row p-4 g-3">
 
                 <div class="col-12 col-lg-8">
-                    <div class="row g-0 nav">
+                    <div class="char-area row g-0 nav">
                     
-                        <div class="col-12 col-lg-4 flex-column">
+                        <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image ace"
 								href="https://toyhou.se/17040769.anqien"
 								target="_blank"
@@ -190,7 +272,7 @@
                         </div>
 
 
-						<div class="col-12 col-lg-4 flex-column">
+						<div class="char-column col-12 col-lg-4 flex-column">
 							<a class="char-image"
 								target="_blank"
 								href="https://toyhou.se/20918922.vanth" style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/63236565_Fq3IolWy7qixI1l.jpg?1683272024)">
@@ -213,7 +295,7 @@
 						</div>
 
 
-                        <div class="col-12 col-lg-4 flex-column">
+                        <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image"
 								target="_blank"
 								href="https://toyhou.se/1872046.pala" style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/58104908_sRdXq9H41Ng5WHt.jpg?1683274981)">
@@ -240,33 +322,39 @@
                 </div>
 
                 <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
-					<p>You can change hairstyles, outfits, and all design details that the character themself can change. But don't change their skin tones or body types.</p>
-					<p>Click on the relationship labels to view more info about the characters / relationship. Click on the portraits to open their Toyhouse profiles.</p>
+					{!! $usagenotes !!}
 
-					<br>
 					<div class="tab-content">
 						<div class="tab-pane" id="tab-4">
+					        <hr>
 							<h4 class="info-heading">
 								Anqien + Jinai
 							</h4>
+                            <p class="info-links">
+                                Profiles:
+                                <a href="https://toyhou.se/17040769.anqien">1</a> &bull; <a href="https://toyhou.se/17040760.jinai">2</a> &bull;
+                                <a href="https://toyhou.se/20496317.offshore-masterpost/20496327.cloudlanders-ship">Relationship</a>
+                            </p>
 							<p>
-								They're an offshore (long-distance) sailing team nearing the end of their professional partnership&mdash;because Jinai is retiring after the next race. They are trying so hard not to fall in love and get distracted. It's not working. <a href="https://toyhou.se/20496317.offshore-masterpost/20496327.cloudlanders-ship">They have a relationship profile!</a>
+								They're an offshore (long-distance) sailing team nearing the end of their professional partnership&mdash;Jinai is retiring after the next race. They are trying so hard not to fall in love and get distracted. It's not working.
 							</p>
 						</div>
 
 						<div class="tab-pane" id="tab-5">
+					        <hr>
 							<h4 class="info-heading">
 								Vanth + Maatkheru
 							</h4>
 							<p>
-								Most beings who pass through earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In relationship, the realm where Maatkheru lives. Vanth has on occasion stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
+								Most who pass through earth and the realms of the dead&mdash;especially death messengers like Vanth&mdash;will transit through In Between, the realm where Maatkheru lives. Vanth has occasionally stopped by the dutiful sphinx's desert tomb to talk and while the hours away. (They're not as close as the other pairs here so I'm happy for solo art.)
 							</p>
 						</div>
 
 						<div class="tab-pane" id="tab-6">
+					        <hr>
 							<h4 class="info-heading">Pala + Fen</h4>
 							<p>
-								Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki. All the while, they deal with the travails of teenhood, and confide in each other. A profoundly deep bond that eventually becomes a queerplatonic relationship.
+								Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
 							</p>
 						</div>
 					</div>
@@ -278,29 +366,33 @@
 		<br>
 
 		<!-- BEGIN BLOOD CARD -->
-        <div class="card" id="blood" style="background-image: linear-gradient(to bottom, #C8ADAF, #E1D7D7); background-size: 20%, cover;">
+        <div class="card" id="blood" style="background-image:  repeating-linear-gradient(45deg, #d9bdbf, #d9bdbf 25px, transparent 25px, transparent 50px), linear-gradient(to bottom, #C8ADAF, #E1D7D7);">
+            
+            <div class="accent-icon">
+                <i class="fa fa-fw fa-droplet"></i>
+            </div>
 
 			<a href="https://toyhou.se/TenTen">
 				<img class="pagedoll" src="https://rebuild.circlejourney.net/images/df/teambloodmascot.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Mascot art by TenTen">
 			</a>
 
-            <div class="d-flex align-items-center py-2">
-                <div class="team-border flex-grow-1"></div>
+            <div class="header d-flex align-items-center py-2">
+                <div class="stripes flex-grow-1"></div>
 
-                <div class="team-title m-2 w-25 d-flex flex-column">
+                <div class="team-title m-2 d-flex flex-column">
 					<img class="d-block mb-2" src="https://rebuild.circlejourney.net/images/df/teambloodlogolong.png">
-					<p class="subheading text-center">User &bull; Circlejourney</p>
+					<p class="nametag text-center">User &bull; Circlejourney</p>
 				</div>
                 
-                <div class="team-border flex-grow-1"></div>
+                <div class="stripes flex-grow-1"></div>
             </div>
 
-            <div class="row p-4 g-2">
+            <div class="content row p-4 g-3">
 
                 <div class="col-12 col-lg-8">
-                    <div class="row g-0 nav">
+                    <div class="char-area row g-0 nav">
                     
-                        <div class="col-12 col-lg-4 flex-column">
+                        <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image ace"
 								href="https://toyhou.se/1779921.vesper"
 								target="_blank"
@@ -314,13 +406,16 @@
 								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-1">
 									<i class="relationship-arrows fa fa-arrows-up-down"></i>
 									WLW battle couple
-	</a>
+	                            </a>
 							</div>
 							
                             <a
                                 href="https://toyhou.se/1820973.marcia"
 								target="_blank"
                                 class="char-image ace"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="right"
+                                title="Art by problematic @ Toyhouse"
                                 style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png)">
                                 <div class="char-label">
 									Marcia <span class="ace-text">ace pair</span>
@@ -329,7 +424,7 @@
                         </div>
 
 
-                        <div class="col-12 col-lg-4 flex-column">
+                        <div class="char-column col-12 col-lg-4 flex-column">
                             <a
                                 href="https://toyhou.se/19563604.xye"
 								target="_blank"
@@ -355,7 +450,7 @@
                         </div>
 
 
-                        <div class="col-12 col-lg-4 flex-column">
+                        <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image"
 								target="_blank"
 								href="https://toyhou.se/2037696.circlejourney" style="background-image: url(https://i.postimg.cc/XYdX58bb/image.png)">
@@ -370,13 +465,14 @@
 							</div>
 
                             <a class="char-image"
-								href="https://toyhou.se/5864645.maatkheru"
+								href="https://toyhou.se/2628384.omen"
 								target="_blank"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="right"
+                                title="Art by Heavenly_Graphite @ Toyhouse"
 								style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/36834513_txLs3LfmXYWpJZF.png)">
                                 <div class="char-label">
 									Omen
-									<br>
-									<span style="font-size: 10pt;">(Art: Heavenly_Graphite @ Toyhouse)</span>
 								</div>
                             </a>
                         </div>
@@ -385,22 +481,24 @@
                 </div>
 
                 <div class="info col-12 col-lg-4" style="padding-bottom: 100px;">
-					<p>You can change hairstyles, outfits, and all design details that the character themself can change. But don't change their skin tones or body types.</p>
-					<p>Click on the relationship labels to view more info about the characters / relationship. Click on the portraits to open their Toyhouse profiles.</p>
+                    {!! $usagenotes !!}
 
 					<div class="tab-content">
 						<div class="tab-pane" id="tab-1">
+					        <hr>
 							<h4 class="info-heading">Vesper + Marcia</h4>
 							<p>Vesper (a World War 2 soldier) and Marcia (a gladiator from the Modern Roman Empire) meet when Orobelle, the most important spoilt brat in the multiverse, hires them to protect her. After several combat missions together in various universes, they go from respecting each other to head over heels.</p>
 							<p>Vesper is my ace ace lol. Her <a href="https://rd.circlejourney.net/read/?c=002">intro chapter</a> in Revolving Door is even called <i>Ace</i>.</p>
 						</div>
 						<div class="tab-pane" id="tab-2">
+					        <hr>
 							<h4 class="info-heading">Xye + Zera</h4>
 							<p>
-								Xye and Zera are teammates who are somehow always at loggerheads when on land, but a frighteningly good team at sea. Zera is tired of Xye rankling their rivals and flirting with random people (including their rivals). But she's the only person who can get Xye to behave soberly and somehow, the team just works.
+								Xye and Zera are teammates who are somehow always at loggerheads on land, but an unstoppable team at sea. Zera is tired of Xye rankling their rivals and flirting with random people (including their rivals). But she's the only person who can get Xye to behave soberly and somehow, the team just works.
 							</p>
 						</div>
 						<div class="tab-pane" id="tab-3">
+					        <hr>
 							<h4 class="info-heading">Circlejourney</h4>
 							<p>My sona, an edgy necromancer and questionable surgeon, who lives in the "dungeon" aboard a pirate ship.</p>
 							<h4 class="info-heading">Omen</h4>
