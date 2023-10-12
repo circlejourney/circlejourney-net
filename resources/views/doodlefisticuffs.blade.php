@@ -587,7 +587,7 @@
                             <div class="info-links">
                                 <a href="https://toyhou.se/2037696.circlejourney">Profile</a>
                             </div>
-							<p>My sona, an edgy bird-loving necromancer and sus surgeon. Lives in the "dungeon" aboard a pirate ship.</p>
+							<p>My sona, an edgy bird-loving necromancer and sus surgeon who specialises in reanimation and communicating with the dead. They live in the "dungeon" aboard a pirate ship with reanimated skeletons.</p>
 
 							<h4 class="info-heading">Omen</h4>
                             <div class="info-links">
