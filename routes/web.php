@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\MetalinkController;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,11 @@ require __DIR__.'/auth.php';
 
 // Projects
 Route::middleware(['auth', 'auth.admin'])->group(function(){
+    Route::get("/upload", function(){
+        return view("upload");
+    });
+    Route::post("/upload", [UploadController::class, "upload"]);
+
     Route::get('/project-editor', [ProjectController::class, "index"]);
     Route::get('/project-editor/create', [ProjectController::class, "create"]);
     Route::post('/project-editor/create', [ProjectController::class, "store"]);
