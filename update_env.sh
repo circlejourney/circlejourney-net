@@ -1,3 +1,5 @@
+#!/bin/bash
+
 php artisan composer dump-autoload
 php artisan cache:clear
 php artisan config:clear
