@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artwork;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Services\FileUploadService;
 
 class ArtworkController extends Controller
 {
@@ -33,20 +34,18 @@ class ArtworkController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, FileUploadService $fileUploadService)
     {
         
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
             
-            if(!$img_src = $this->upload($request->image, "uploads/art", null)){
-                return Redirect::back()->withErrors("File " .$filename. " already exists.");
+            if(!$img_src = $fileUploadService->upload($request->image, "uploads/art", null)){
+                return Redirect::back()->withErrors("File " . $filename . " already exists.");
             }
-
-            $img_src = $img_src;
             
-            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
+            $thumb_src = $fileUploadService->generate_thumbnail(realpath($img_src), "uploads/art", 350);
 
         } else if($request->fileoption == "url") {
             $request->validate($this->urlrules);
@@ -86,13 +85,13 @@ class ArtworkController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Artwork $artwork)
+    public function update(Request $request, Artwork $artwork, FileUploadService $fileUploadService)
     {
 
         if($request->image && $request->fileoption == "upload"){
             $request->validate($this->fileuploadrules);
             $filename = $request->image->getClientOriginalName();
-            if( !$img_src = $this->upload($request->image, "uploads/art", $artwork->img_src) ) {
+            if( !$img_src = $fileUploadService->upload($request->image, "uploads/art", $artwork->img_src) ) {
                 return Redirect::back()->withErrors("File " .$filename. " already exists.");
             }
             
@@ -100,7 +99,7 @@ class ArtworkController extends Controller
                 unlink( realpath($artwork->thumb_src) );
             };
 
-            $thumb_src = $this->generate_thumbnail(realpath($img_src), "uploads/art", 350);
+            $thumb_src = $fileUploadService->generate_thumbnail(realpath($img_src), "uploads/art", 350);
 
         } else {
             $request->validate($this->urlrules);
@@ -148,59 +147,5 @@ class ArtworkController extends Controller
 
     public static function filter(string $column, string $value) {
         return Artwork::where($column, "like", $value)->orderBy('order', 'asc')->orderBy('created_at', 'desc')->get();
-    }
-
-    protected function upload($file, $target_folder, $old_path) {
-        $filename = preg_replace("/\s/", "-", $file->getClientOriginalName());
-        $target_path = $target_folder . "/" . $filename;
-
-        if( file_exists(realpath($target_path)) && $target_path !== $old_path ) {
-            return false;
-        }
-        
-        if( file_exists(realpath($old_path)) && $old_path !== null ) {
-            unlink( realpath($old_path) );
-        };
-        
-        if( file_exists(realpath($target_path)) ) {
-            unlink( realpath($target_path) );
-        };
-
-        $file->move(public_path($target_folder), $filename);
-        return $target_path;
-    }
-
-    protected function generate_thumbnail($src_filepath, $target_folder, $maxsize) {
-        $imagesize = getimagesize($src_filepath);
-        $hwratio = $imagesize[1] / $imagesize[0];
-        $scaleH = $imagesize[1] > $imagesize[0] ? $maxsize : $maxsize * $hwratio;
-        $scaleW = $imagesize[0] > $imagesize[1] ? $maxsize : $maxsize / $hwratio;
-        preg_match("/([^\/\\\]+)\.[A_Za-z]{3,4}$/", $src_filepath, $matches);
-        $filename = $matches[1]."-thumb.png";
-
-        $format = explode("/", $imagesize["mime"])[1];
-        $imagecreatefunc = "imagecreatefrom".$format;
-        
-        $source_image_blob = $imagecreatefunc($src_filepath);
-        $destination_image_blob = imagecreatetruecolor($scaleW, $scaleH);
-        $clear = imagecolorallocatealpha($destination_image_blob, 0, 0, 0, 127);
-        imagefilledrectangle($destination_image_blob, 0, 0, $scaleW, $scaleH, $clear);
-        imagecolortransparent($destination_image_blob, $clear);
-        
-        imagecopyresampled( $destination_image_blob, $source_image_blob,
-            0, 0,
-            0, 0,
-            $scaleW, $scaleH,
-            $imagesize[0], $imagesize[1]
-        );
-        $target_path = $target_folder . "/" . $filename;
-        
-        if(file_exists(realpath($target_path))) {
-            unlink(realpath($target_path));
-        }
-
-        imagepng($destination_image_blob, $target_path);
-        
-        return $target_path;
     }
 }

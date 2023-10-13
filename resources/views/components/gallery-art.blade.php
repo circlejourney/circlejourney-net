@@ -1,5 +1,5 @@
 <div class="gallery-image">
-    <a href="{{ $href }}" {{ $attributes }} target="_blank">
+    <a href="{{ $href }}" {{ $attributes }}>
         <img class="thumbnail" src="{{ $src }}">
     </a>
     <div class="caption">
