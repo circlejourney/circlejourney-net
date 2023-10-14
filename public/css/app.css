@@ -183,7 +183,7 @@
  .lightbox-info {
    flex-basis: 30%;
    padding-left: 0.4rem;
-   margin-left: 0.4rem;
+   margin-left: 0.8rem;
    border-left: 3px solid var(--softwhite);
  }
 

@@ -12,6 +12,10 @@ class Lightbox {
         $(this.element).on("click", ()=>{
             this.hide();
         });
+
+        $(this.element).find(".lightbox-info").on("click", (e)=>{
+            e.stopPropagation();
+        });
         
         $(this.element).find(".lightbox-prev").on("click", (e)=>{
             e.stopPropagation();
