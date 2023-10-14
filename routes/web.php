@@ -84,6 +84,11 @@ Route::get('/art', function(){
     return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "illustrations"=>$illustrations, "animations"=>$animations]);
 });
 
+Route::get("/writing", function(){
+    $projects = ProjectController::filter("category", "%writing%");
+    return view("layouts.projects", ["title"=>"Writing", "projects"=>$projects]);
+});
+
 Route::get('/art/{column},{value}', [ArtworkController::class, "filter"]);
 
 // Collabs
@@ -126,7 +131,7 @@ Route::get("/music/fanmusic", function(){
 
 Route::get("/doodlefisticuffs", function(){
     return view("doodlefisticuffs");
-});  
+});
 
 Route::fallback(function ($e) {
     return redirect( "https://circlejourney.net/".$e );

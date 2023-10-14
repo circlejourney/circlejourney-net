@@ -90,24 +90,18 @@
  }
  
  td,
- 
  th {
     padding: 0 1rem;
     border: none;
  }
  
  a,
- 
- em {
+ strong {
     color: #d8874a;
  }
  
  a {
     text-decoration: none;
- }
- 
- em {
-    font-weight: bold;
  }
  
  h1,
@@ -516,8 +510,14 @@
  .editor-text, .editor-body, .editor-button {
    background-color: var(--black);
    color: var(--white);
+   border: 1px solid grey;
    width: 100%;
-   padding: 0.2rem;
+   padding: 0.4rem;
+   border-radius: 10px;
+ }
+
+ .editor fieldset {
+   border: none;
  }
 
  .editor textarea {

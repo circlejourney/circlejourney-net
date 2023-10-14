@@ -15,10 +15,11 @@
 
 @section('content')
     
-    <form action="" class="center editor" method="POST" enctype="multipart/form-data">
+    <form action="" class="editor" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="file" class="editor-text">
-        <br>
+        <fieldset>
+        <input type="file" name="file" id="file"> <label for="file">Files must be &lt; 30MB and of the following types: jpg, png, gif, tiff, pdf, txt, csv.</label>
+        </fieldset>
         <button id="submit" class="editor-button">Submit</button>
     </form>
     <div class="bannergrid">
