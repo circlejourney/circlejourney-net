@@ -51,7 +51,7 @@
         <ul class="dropdown">
         <x-menu-option href="/writing/">Writing home</x-menu-option>
         <x-menu-option href="https://rd.circlejourney.net">Revolving Door</x-menu-option>
-        <x-menu-option href="/writing/offshore/">Offshore</x-menu-option>
+        <x-menu-option href="/offshore/">Offshore</x-menu-option>
         <x-menu-option href="/writing/eaglesandswans/">Eagles and Swans</x-menu-option>
         <x-menu-option href="/writing/otdots/">Of the Dragon, of the Stars</x-menu-option>
         <x-menu-option href="/writing/compass/">Compass</x-menu-option>

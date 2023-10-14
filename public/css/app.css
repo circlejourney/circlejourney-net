@@ -648,7 +648,6 @@
  }
  
  .scriptlink {
-    padding: 18px;
     background-image: linear-gradient(#2692CC, #2972B4);
     border-radius: 5px;
     text-align: center;
@@ -657,6 +656,17 @@
     font-size: 14pt;
     margin: 5px 0;
     display: inline-block;
+ }
+
+ .scriptlink-inside {
+   display: block;
+   padding: 1rem;
+   color: white;
+   border-radius: 5px;
+ }
+
+ .scriptlink-inside.dark {
+   background: rgba(0, 0, 0, 0.5);
  }
  
  .scriptlink-bg {

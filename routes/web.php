@@ -89,6 +89,17 @@ Route::get("/writing", function(){
     return view("layouts.projects", ["title"=>"Writing", "projects"=>$projects]);
 });
 
+Route::get("/offshore", function(){
+    $artworks = ArtworkController::filter("category", "%offshore%");
+    return view("canonical.offshore", ["artworks"=>$artworks]);
+});
+
+Route::get("/writing/{page}", function($page) { // Redirect 2-deep writing pages from legacy site links.
+    return redirect("/".$page);
+});
+
+
+
 Route::get('/art/{column},{value}', [ArtworkController::class, "filter"]);
 
 // Collabs
