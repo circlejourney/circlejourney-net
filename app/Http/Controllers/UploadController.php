@@ -12,7 +12,7 @@ class UploadController extends Controller
 {
 
     public function index() {
-        $uploads = Upload::all();
+        $uploads = Upload::all()->sortByDesc("updated_at");
         return view("upload.index", ["uploads" => $uploads]);
     }
 

@@ -249,7 +249,7 @@
 @section("body")
     <div class="main container p-lg-5">
 
-        <div class="roster w-50 m-auto">
+        <div class="roster w-50 m-auto d-none">
             <div class="roster-slot">
                 <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1872046?1589171661">
             </div>
