@@ -31,6 +31,10 @@
 			font-size: 13pt;
         }
 
+        .display {
+            font-size: 15pt;
+        }
+
         hr {
             border-style: dashed;
         }
@@ -243,14 +247,14 @@
 @endpush
 
 @section("body")
-    <div class="main container p-lg-5">
+    <div class="main display container p-lg-5">
 
-        <div class="roster w-50 m-auto d-none">
+        <div class="roster w-50 m-auto">
             <div class="roster-slot">
-                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1779921?1573488244">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1872046?1589171661">
             </div>
             <div class="roster-slot">
-                <img class="portrait blood-portrait" src="https://file.toyhou.se/characters/1820973?1530080699">
+                <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1941234?1589039025">
             </div>
             <div class="roster-slot">
                 <img class="portrait blood-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/19563604?1682417737">
@@ -277,10 +281,10 @@
                 <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/5864645?1579713234">
             </div>
             <div class="roster-slot">
-                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1872046?1589171661">
+                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1779921?1573488244">
             </div>
             <div class="roster-slot">
-                <img class="portrait tears-portrait" src="https://f2.toyhou.se/file/f2-toyhou-se/characters/1941234?1589039025">
+                <img class="portrait tears-portrait" src="https://file.toyhou.se/characters/1820973?1530080699">
             </div>
         </div>
 
@@ -363,30 +367,38 @@
 								<div class="char-label">Maatkheru</div>
 							</a>
 						</div>
-
-
+                    
                         <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image"
+								href="https://toyhou.se/1779921.vesper"
 								target="_blank"
-								href="https://toyhou.se/1872046.pala" style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/58104908_sRdXq9H41Ng5WHt.jpg?1683274981)">
-                                <div class="char-label">Pala</div>
+								style="background-image: url(https://file.toyhou.se/images/10926513_rhxnMTFJ22lXRvZ.png);">
+                                <div class="char-label">
+                                    Vesper
+								</div>
                             </a>
-	
-							<div class="relationship-cell">
-								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-6">
+							
+							<div class="relationship-cell">							
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-1">
 									<i class="relationship-arrows fa fa-arrows-up-down"></i>
-									QPPs
-								</a>
+									WLW battle couple
+	                            </a>
 							</div>
-
-                            <a 
-								class="char-image"
-								href="https://toyhou.se/1941234.fen"
+							
+                            <a
+                                href="https://toyhou.se/1820973.marcia"
 								target="_blank"
-								style="background-image: url(https://file.toyhou.se/images/8275935_Mwrez6VLiCebr8g.png?1530587673)">
-                                <div class="char-label">Fen</div>
+                                class="char-image"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="right"
+                                title="Art by problematic @ Toyhouse"
+                                style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png)">
+                                <div class="char-label">
+									Marcia
+								</div>
                             </a>
                         </div>
+
 					</div>
 
                 </div>
@@ -424,16 +436,13 @@
 							</p>
 						</div>
 
-						<div class="tab-pane" id="tab-6">
+						<div class="tab-pane" id="tab-1">
 					        <hr>
-							<h4 class="info-heading">Pala + Fen</h4>
+							<h4 class="info-heading">Vesper + Marcia</h4>
                             <div class="info-links">
-                                
-                                <a href="https://toyhou.se/1872046.pala">Pala profile</a> &bull; <a href="https://toyhou.se/1941234.fen">Fen profile</a>
+                                <a href="https://toyhou.se/1779921.vesper">Vesper profile</a> &bull; <a href="https://toyhou.se/1820973.marcia">Marcia profile</a>
                             </div>
-							<p>
-								From my (unfinished) comic <a href="https://light.circlejourney.net">The Light Left Under Trees</a>! Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
-							</p>
+							<p>From <a href="https://rd.circlejourney.net">Revolving Door</a>. Vesper (a World War 2 soldier/weapon) and Marcia (a gladiator from the Modern Roman Empire) meet when <a href="https://toyhou.se/1776660.orobelle">the most important spoilt brat in the multiverse</a> hires them to protect her. After several combat missions together, they go from respecting each other to head over heels.</p>
 						</div>
 					</div>
                 </div>
@@ -469,35 +478,28 @@
 
                 <div class="col-12 col-md-7">
                     <div class="char-area row g-0 nav">
-                    
+
+
                         <div class="char-column col-12 col-lg-4 flex-column">
                             <a class="char-image ace"
-								href="https://toyhou.se/1779921.vesper"
 								target="_blank"
-								style="background-image: url(https://file.toyhou.se/images/10926513_rhxnMTFJ22lXRvZ.png);">
-                                <div class="char-label">
-                                    Vesper <span class="ace-text">ace</span> <span class="ace-text">ace pair<span>
-								</div>
+								href="https://toyhou.se/1872046.pala" style="background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/58104908_sRdXq9H41Ng5WHt.jpg?1683274981)">
+                                <div class="char-label">Pala <span class="ace-text">ace</span> <span class="ace-text">ace pair<span></div>
                             </a>
-							
-							<div class="relationship-cell">							
-								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-1">
+	
+							<div class="relationship-cell">
+								<a class="relationship-label nav-item" data-bs-toggle="tab" href="#tab-6">
 									<i class="relationship-arrows fa fa-arrows-up-down"></i>
-									WLW battle couple
-	                            </a>
+									QPPs
+								</a>
 							</div>
-							
-                            <a
-                                href="https://toyhou.se/1820973.marcia"
+
+                            <a 
+								class="char-image ace"
+								href="https://toyhou.se/1941234.fen"
 								target="_blank"
-                                class="char-image ace"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="right"
-                                title="Art by problematic @ Toyhouse"
-                                style="background-image: url(https://i.postimg.cc/hvBPMv7h/image.png)">
-                                <div class="char-label">
-									Marcia <span class="ace-text">ace pair</span>
-								</div>
+								style="background-image: url(https://file.toyhou.se/images/8275935_Mwrez6VLiCebr8g.png?1530587673)">
+                                <div class="char-label">Fen <span class="ace-text">ace pair<span></div>
                             </a>
                         </div>
 
@@ -562,14 +564,19 @@
                     {!! $usagenotes !!}
 
 					<div class="tab-content">
-						<div class="tab-pane" id="tab-1">
+
+						<div class="tab-pane" id="tab-6">
 					        <hr>
-							<h4 class="info-heading">Vesper + Marcia</h4>
+							<h4 class="info-heading">Pala + Fen</h4>
                             <div class="info-links">
-                                <a href="https://toyhou.se/1779921.vesper">Vesper profile</a> &bull; <a href="https://toyhou.se/1820973.marcia">Marcia profile</a>
+                                
+                                <a href="https://toyhou.se/1872046.pala">Pala profile</a> &bull; <a href="https://toyhou.se/1941234.fen">Fen profile</a>
                             </div>
-							<p>From <a href="https://rd.circlejourney.net">Revolving Door</a>, my multiverse novel. Vesper (a World War 2 soldier/weapon) and Marcia (a gladiator from the Modern Roman Empire) meet when <a href="https://toyhou.se/1776660.orobelle">the most important spoilt brat in the multiverse</a> hires them to protect her. After several combat missions together, they go from respecting each other to head over heels. (Vesper is my ace ace lol)</p>
+							<p>
+								From my (unfinished) comic <a href="https://light.circlejourney.net">The Light Left Under Trees</a>! Two best friends on a quest to discover all the timespace anomalies across their home island of Havaiki&mdash;while they deal with the travails of teenhood and learn to confide in each other. They share a profound bond that eventually becomes a queerplatonic relationship.
+							</p>
 						</div>
+
 						<div class="tab-pane" id="tab-2">
 					        <hr>
 							<h4 class="info-heading">Xye + Zera</h4>
