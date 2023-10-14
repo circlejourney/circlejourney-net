@@ -6,7 +6,7 @@
     <script>
         function updatePreview() {
             if([file] = event.target.files) {
-                $("#preview-image").attr("src", URL.createObjectURL(file));
+                $("#preview-image .gallery-thumbnail").attr("src", URL.createObjectURL(file));
             }
         }
     </script>
@@ -27,6 +27,7 @@
             :href="$artwork->img_src"
             :src="$artwork->thumb_src"
             openlightbox=true
+            id="preview-image"
         >
             <x-slot name="title">{{$artwork->title}}</x-slot>
             <p>{!! $artwork->description !!}</p>

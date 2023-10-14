@@ -2,15 +2,15 @@
 
 @section("title"){{ "Create New Artwork" }} @endsection
 
-@section("head")
+@push("head")
     <script>
         function updatePreview() {
             if([file] = event.target.files) {
-                $("#preview-image").attr("src", URL.createObjectURL(file));
+                $("#preview-image .gallery-thumbnail").attr("src", URL.createObjectURL(file));
             }
         }
     </script>
-@endsection
+@endpush
 
 @section("breadcrumbs")
     @include("components.breadcrumbs", ["crumbs" => [
@@ -22,9 +22,14 @@
 
 @section("content")
 
-    <p>
-        <img class="thumbnail" id="preview-image" src="/images/logosmall.png" style="margin: auto;">
-    </p>
+    <div class="gallery">
+        <x-gallery-art
+            href="#"
+            src="/images/logosmall.png"
+            openlightbox=true
+            id="preview-image"
+        ></x-gallery-art>
+    </div>
     
     <form action="" method="post" class="editor" enctype="multipart/form-data">
         @csrf

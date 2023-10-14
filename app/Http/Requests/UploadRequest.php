@@ -21,7 +21,7 @@ class UploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "file" => "required|mimes:jpg,jpeg,png,gif,tiff,pdf,txt,csv"
+            "file" => "required|mimes:jpg,jpeg,png,gif,tiff,pdf,txt,csv|max:30720"
         ];
     }
 }
