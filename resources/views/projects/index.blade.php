@@ -17,10 +17,9 @@
 <div class="bannergrid">
     @foreach($projects as $project)
         <?php
-            $projectEditable = $project->toArray();
-            $projectEditable["href"] = "/project-editor/".$project->item_id;
+            $project->href = "/project-editor/".$project->item_id
         ?>
-        @include("components.bannerbutton", $projectEditable)
+        <x-bannerbutton :project="$project" class="bannerbutton-50" />
     @endforeach
 </div>
 @endsection

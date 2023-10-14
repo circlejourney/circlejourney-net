@@ -508,11 +508,13 @@
  /* Blog */
 
  .editor-text, .editor-body, .editor-button {
+   box-sizing: border-box;
    background-color: var(--black);
    color: var(--white);
    border: 1px solid grey;
    width: 100%;
    padding: 0.4rem;
+   margin: 0.2rem;
    border-radius: 10px;
  }
 
