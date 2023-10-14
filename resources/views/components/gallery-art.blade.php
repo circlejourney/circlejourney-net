@@ -1,6 +1,6 @@
-<div class="gallery-image">
-    <a href="{{ $href }}" {{ $attributes }}>
-        <img class="thumbnail" src="{{ $src }}">
+<div class="gallery-art">
+    <a class="gallery-thumb-link" href="{{ $href }}" {{ $attributes }}>
+        <img class="gallery-thumbnail" src="{{ $src }}">
     </a>
     <div class="caption">
         @isset($title)    

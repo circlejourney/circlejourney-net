@@ -3,9 +3,16 @@
     
     @foreach($artworks as $artwork)
     <div class="lightbox-display hidden">
-        <h2 class="lightbox-title">{{ $artwork->title }}</h2>
-        @isset($artwork->description)<p>{!! $artwork->description !!}</p>@endisset
-        <img class="lightbox-image" src="/{{$artwork->img_src}}" onclick="event.stopPropagation()">
+
+        <div class="lightbox-image-container">
+            <img class="lightbox-image" src="/{{$artwork->img_src}}" onclick="event.stopPropagation()">
+        </div>
+        
+        <div class="lightbox-info">
+            <h2 class="lightbox-title">{{ $artwork->title }}</h2>
+            @isset($artwork->description)<div class="lightbox-description">{!! $artwork->description !!}</div>@endisset
+        </div>
+        
     </div>
     @endforeach
 

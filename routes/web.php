@@ -128,6 +128,6 @@ Route::get("/doodlefisticuffs", function(){
     return view("doodlefisticuffs");
 });  
 
-/*Route::fallback(function ($e) {
+Route::fallback(function ($e) {
     return redirect( "https://circlejourney.net/".$e );
-});*/
+});

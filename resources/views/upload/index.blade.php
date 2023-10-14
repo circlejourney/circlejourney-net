@@ -11,9 +11,7 @@
     </script>
 @endpush
 
-@section('title')
-    {{ "Uploads" }}
-@endsection
+@section('title'){{ "Uploads" }}@endsection
 
 @section('content')
     
