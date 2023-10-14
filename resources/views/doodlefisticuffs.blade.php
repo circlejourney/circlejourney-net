@@ -247,7 +247,7 @@
 @endpush
 
 @section("body")
-    <div class="main display container p-lg-5">
+    <div class="main container p-lg-5">
 
         <div class="roster w-50 m-auto">
             <div class="roster-slot">
