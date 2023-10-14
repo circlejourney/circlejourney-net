@@ -16,12 +16,24 @@ class Lightbox {
         $(this.element).find(".lightbox-prev").on("click", (e)=>{
             e.stopPropagation();
             this.nav(-1);
-        })
+        });
 
         $(this.element).find(".lightbox-next").on("click", (e)=>{
             e.stopPropagation();
             this.nav(1);
-        })
+        });
+        
+        $(document).ready(function(){
+            // Turns all links with a data-sequence property into lightbox opening links.
+            $(".gallery a").each(function(i, elt){
+                if($(elt).data("sequence") !== undefined) {
+                    $(elt).on("click", (e)=>{
+                        e.preventDefault();
+                        lightbox.show(this.dataset.sequence);
+                    });
+                }
+            });
+        });
     }
 
     show(sequenceNo) { // Shows image in lightbox based on integer representing its ordinal position in the gallery.

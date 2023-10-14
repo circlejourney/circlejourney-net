@@ -454,9 +454,16 @@
 
  .alert {
    width: 100%;
-   background-color: rgb(121, 47, 50);
    padding: 0.4rem;
    margin-bottom: 1rem;
+ }
+
+ .alert.red {
+   background-color: rgb(121, 47, 50);
+ }
+
+ .alert.green {
+   background-color: rgb(47, 121, 77);
  }
  
  #content {
@@ -503,11 +510,6 @@
 
  /* Gallery */
  
- .gallery {
-    position: relative;
-    display: inline;
- }
- 
  .click-notice {
     display: inline-block;
     font-size: 80%;
@@ -515,7 +517,7 @@
     margin-left: 15px;
  }
  
- .subgallery {
+ .gallery {
     position: relative;
     width: 100%;
     text-align: center;

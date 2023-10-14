@@ -14,7 +14,7 @@
     <a href="/artwork-editor/create">Create a new artwork</a>
 </p>
 
-<div class="subgallery">
+<div class="gallery">
     @foreach($artworks as $artwork)
         <x-gallery-art
             id="image-{{ $artwork->id }}"
@@ -22,7 +22,7 @@
             src="{{$artwork->thumb_src}}"
             openlightbox=true
         >
-            <h2 class="caption-title">{{ $artwork->title }}</h2>
+            <x-slot name="title">{{ $artwork->title }}</x-slot>
             <p>{!! $artwork->description !!}</p>
         </x-gallery-art>
     @endforeach

@@ -1,19 +1,9 @@
 @extends("layouts.canonical", ["title"=>$title, "projects"=>$projects])
 
+@section("title"){{ "Art and comics" }}@endsection
+
 @section("head")
     @include("components.lightbox-scripts")
-    <script>
-        $(document).ready(function(){
-            $(".gallery-image > a").each(function(i, elt){
-                if($(elt).data("sequence") !== undefined) {
-                    $(elt).on("click", (e)=>{
-                        e.preventDefault();
-                        lightbox.show(this.dataset.sequence);
-                    });
-                }
-            });
-        })
-    </script>
 @endsection
 
 <?php
@@ -44,14 +34,16 @@
         <h2>Illustrations</h2>
     </div>
 
-    <div class="subgallery">
+    <div class="gallery">
         @foreach($illustrations as $illustration)
             <x-gallery-art
                 :data-sequence="$illustration->openlightbox ? $sequence++ : false"
                 src="{{$illustration->thumb_src}}"
                 href="{{$illustration->img_src}}"
                 :openlightbox="$illustration->openlightbox">
-                <h2 class="caption-title">{{ $illustration->title }}</h2>
+                <x-slot name="title">
+                    {{ $illustration->title }}
+                </x-slot>
                 <p>{!! $illustration->description !!}</p>
             </x-gallery-art>
         @endforeach
@@ -61,13 +53,15 @@
         <h2>Animations</h2>
     </div>
 
-    <div class="subgallery">
+    <div class="gallery">
         @foreach($animations as $animation)
             <x-gallery-art
                 :data-sequence="$animation->openlightbox ? $sequence++ : false"
                 src="{{$animation->thumb_src}}"
                 href="{{$animation->img_src}}" :openlightbox="$animation->openlightbox">
-                <h2 class="caption-title">{{ $animation->title }}</h2>
+                <x-slot name="title">
+                    {{ $animation->title }}
+                </x-slot>
                 <p>{!! $animation->description !!}</p>
             </x-gallery-art>
         @endforeach
