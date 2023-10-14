@@ -40,10 +40,6 @@ require __DIR__.'/auth.php';
 
 // Projects
 Route::middleware(['auth', 'auth.admin'])->group(function(){
-    Route::get("/upload", function(){
-        return view("upload");
-    });
-    Route::post("/upload", [UploadController::class, "upload"]);
 
     Route::get('/project-editor', [ProjectController::class, "index"]);
     Route::get('/project-editor/create', [ProjectController::class, "create"]);
@@ -65,6 +61,10 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::get("/artwork-editor/{artwork}", [ArtworkController::class, "edit"]);
     Route::delete("/artwork-editor/{artwork}", [ArtworkController::class, "destroy"]);
     Route::put("/artwork-editor/{artwork}", [ArtworkController::class, "update"]);
+
+    Route::get("/upload", [UploadController::class, "index"]);
+    Route::post("/upload", [UploadController::class, "store"]);
+    Route::delete("/upload/delete/{upload}", [UploadController::class, "destroy"]);
 });
 
 

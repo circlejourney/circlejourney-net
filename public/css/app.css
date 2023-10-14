@@ -34,6 +34,25 @@
    color: grey;
  }
 
+ .relative {
+   position: relative;
+ }
+
+ .pop {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   bottom: 105%;
+   z-index: 3;
+   margin-bottom: 0.5em;
+ }
+
+ .pop-text {
+   background: var(--black);
+   color: var(--white);
+ }
+
  .freeze {
    overflow: hidden;
  }
@@ -463,7 +482,7 @@
  }
 
  .alert.green {
-   background-color: rgb(47, 121, 77);
+   background-color: rgb(38, 97, 86);
  }
  
  #content {
@@ -483,10 +502,11 @@
 
  /* Blog */
 
- .editor-text, .editor-body {
+ .editor-text, .editor-body, .editor-button {
    background-color: var(--black);
    color: var(--white);
    width: 100%;
+   padding: 0.2rem;
  }
 
  .editor textarea {
@@ -594,6 +614,7 @@
    font-size: small;
  }
  
+ /* Badge links */
  .badge-grid { 
     display: flex;
     flex-wrap: wrap;
@@ -634,6 +655,7 @@
     background-color: rgba(0, 0, 0, 0.5);
  }
  
+ /* Bannerbuttons */
  .bannergrid {
     display: flex;
     flex-wrap: wrap;

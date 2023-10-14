@@ -16,8 +16,14 @@
         @endif
 
         @if($errors->any())
-            <div class="alert">
+            <div class="alert red">
                 {!! implode('', $errors->all('<div>:message</div>')) !!}
+            </div>
+        @endif
+
+        @if(session("status"))
+            <div class="alert green">
+                {!! session("status") !!}
             </div>
         @endif
 
