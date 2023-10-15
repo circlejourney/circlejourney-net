@@ -2,9 +2,9 @@
 
 @section("title")@isset($title){{ $title }}@endisset @endsection
 
-@section("head")
+@push("head")
     @yield("head")
-@endsection
+@endpush
 
 @section("breadcrumbs")
     @isset($title)
