@@ -77,12 +77,10 @@ class ProjectController extends Controller
     }
 
     public static function select(array $project_ids) {
-        $projects = array_map(
-            function($project_id){
-                return Project::where("item_id", $project_id)->firstOrFail();
-            },
-            $project_ids
-        );
+        $projects = array_filter(array_map(function($project_id){
+                return Project::where("item_id", $project_id)->first();
+            }, $project_ids));
+        
         return $projects;
     }
 

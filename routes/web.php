@@ -20,10 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function() {
-    /*return view("welcome", [
+    return view("welcome", [
         "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
-    ]);*/
-	return view("welcome", ["projects" => ProjectController::filter("category","%display%")]);
+    ]);
 })->name("welcome");
 
 Route::get('/dashboard', function () {
