@@ -3,9 +3,6 @@
 @section('title'){{ "Nocturna" }}@endsection
 
 @section('top')
-<div class="center">
-    <img style="max-height: 300px;" src="https://40.media.tumblr.com/d92017a36f3ec5d2febf0f488acfab27/tumblr_ntp60pngyS1uxrozmo1_r1_1280.png">
-</div>
 
 <p>A magician who has averted death one too many times. A luck black hole who's swindled casinoes to bankruptcy. Nocturna is a story of necromancy, curses and everything spooky, in a world where death in every country is a bureaucracy run by the worst beings for the job.</p>
 @endsection
