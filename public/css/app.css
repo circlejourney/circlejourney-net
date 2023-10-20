@@ -583,7 +583,7 @@
     bottom: 0;
  }
  
- .gallery-art:hover .thumbnail {
+ .gallery-art:hover .gallery-thumbnail {
     border-color: rgba(255, 255, 255, 0.5);
  }
 

@@ -73,6 +73,11 @@ Route::get('/interactive', function(){
     $listprojects = ProjectController::filter("category", "%interactive%");
     return view("interactive", ["projects"=>$listprojects]);
 });
+Route::get("/nocturna", function() {
+    $listprojects = ProjectController::filter("category", "%nocturna%");
+    $artworks = ArtworkController::filter("category", "%nocturna%");
+    return view("canonical.nocturna", ["projects"=>$listprojects, "artworks"=>$artworks]);
+});
 
 
 // Art and comics
