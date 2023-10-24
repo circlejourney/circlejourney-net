@@ -38,6 +38,10 @@ class UploadController extends Controller
     }
 
     public function destroy(Upload $upload) {
+        unlink( realpath($upload->file_path) );
+        if($upload->thumb_path) {
+            unlink( realpath($upload->thumb_path) );
+        }
         $upload->delete();
         return Redirect::to("/upload")->with("status", "File $upload->file_path successfully deleted.");
     }

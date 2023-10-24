@@ -2,7 +2,7 @@
 
 @section("html_title"){{ "Links" }}@endsection
 
-@section("head")
+@push("head")
     <style>
         @font-face {
             src: url(/resources/fonts/Arvo-Regular.ttf);
@@ -97,7 +97,7 @@
         }
         
     </style>
-@endsection
+@endpush
 
 
 @section("body")
