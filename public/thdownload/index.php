@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Toyhouse profile HTML mass downloader</title>
+        <meta name="description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
+        <meta name="og:description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
+
+        <link id="theme-css" href="https://th.circlejourney.net/src/site_black-forest.css?2" rel="stylesheet">
+        <style>
+            iframe {
+                width: 100vw; height: 100vh;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .profile-row {
+                margin-bottom: 0.5em;
+            }
+
+            .profile-button, .profile-label {
+                margin-right: 0.6em;
+            }
+
+        </style>
+
+        <script src="https://circlejourney.net/resources/jquery-3.3.1.min.js"></script>
+        <script src="/thdownload/script.js"></script>
+        <script>
+            let data;
+
+            function get(user) {
+                $(".list-container").text("Profile list is being fetched...");
+
+                $.get("/thdownload/get.php", { "user": user }, function(d){
+                    data = d;
+                    if(data.error) {
+                        $(".list-container").html(data.error);
+                        return false;
+                    }
+                    $(".list-container").empty();
+                    $(".queue-interface").removeClass("hidden");
+                    data.forEach(function(item){
+                        const link = $("<a></a>")
+                            .attr("href", "https://toyhou.se/"+item.url)
+                            .attr("target", "_blank")
+                            .text("/"+item.url)
+                            .addClass("profile-link");
+                        const label = $("<span></span>").text(item.name).addClass("profile-label");
+                        const button = $("<button>Download</button>")
+                            .addClass("profile-button btn btn-secondary")
+                            .click(function(e){
+                                e.preventDefault();
+                                startDownload(item.url, item.name, $("#only-custom").prop("checked"));
+                            });
+                        $(".list-container").append($("<div class='profile-row'></div>").append(button, label, link));
+                    });
+                });
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container p-4">
+            <h2>Toyhouse profile HTML downloader</h2>
+            <p style="font-size: 10pt">For now, this does not work with privated characters. (If you want to download your private profiles, you can use the manual version of this code! Simply <a href="/thdownload/manual.html">go to this page and follow the instructions</a>.)</p>
+            <p class="form-inline">
+                <input class="form-control" id="username" type="text" placeholder="Username"></input>
+                <button class="btn btn-primary" onclick="get($('#username').val())">Fetch character profiles</button>
+            </p>
+            <p class="queue-interface hidden">
+                Click on the links to download individually.
+            </p>
+            
+            <p class="queue-interface hidden">
+                <button class="btn btn-primary" id='cjstop' href='#' onclick="toggleQueue()">
+                    Queue all for download
+                </button>
+                
+                <input type="radio" id="only-custom" value="0" name="onlyCustom"> <label for="only-custom">Download raw custom HTML</label>
+                <input type="radio" id="download-all" value="1" name="onlyCustom"> <label for="download-all">Download whole webpage</label>
+            </p>
+
+            <div class="list-container">
+            </div>
+        </div>
+    </body>
+</html>
