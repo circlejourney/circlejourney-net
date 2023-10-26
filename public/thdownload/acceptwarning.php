@@ -84,6 +84,5 @@
         die();
     } else {
         error_log("$profilePath: This profile has been set to allow import. Importing...");
-        echo $userresponse;
     }
     
