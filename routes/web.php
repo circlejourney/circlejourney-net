@@ -149,14 +149,6 @@ Route::get("/doodlefisticuffs", function(){
     return view("doodlefisticuffs");
 });
 
-Route::get("/thdownload", function(){
-    return view("thdownload");
-});
-
-Route::get("/thdownload/get.php", function(){
-    return view("thdownload.get");
-});
-
 Route::fallback(function ($e) {
     return redirect( "https://circlejourney.net/".$e );
 });

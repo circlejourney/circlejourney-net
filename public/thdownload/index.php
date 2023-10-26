@@ -1,10 +1,9 @@
-@extends("layouts.app")
-
-@section("title"){{ "Toyhouse profile HTML mass downloader" }}@endsection
-
-@push("head")
-<meta name="description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
-<meta name="og:description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
+<!doctype html>
+<html>
+    <head>
+        <title>Toyhouse profile HTML mass downloader</title>
+        <meta name="description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
+        <meta name="og:description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
 
         <link id="theme-css" href="https://th.circlejourney.net/src/site_black-forest.css?2" rel="stylesheet">
         <style>
@@ -25,7 +24,10 @@
             }
 
         </style>
-        <script src="/thdownload_src/thdownload.js?v={{ filemtime("thdownload_src/thdownload.js") }}"></script>
+
+        <script src="https://circlejourney.net/resources/jquery-3.3.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/77ce6977ef.js" crossorigin="anonymous"></script>
+        <script src="/thdownload/script.js?v=<?php echo filemtime("script.js"); ?>"></script>
         <script>
             let data;
 
@@ -47,7 +49,7 @@
                             .attr("target", "_blank")
                             .text("/"+item.url)
                             .addClass("profile-link");
-                        const label = $("<span></span>").html(item.name).addClass("profile-label");
+                        const label = $("<span></span>").text(item.name).addClass("profile-label");
                         const button = $("<button>Download</button>")
                             .addClass("profile-button btn btn-secondary")
                             .click(function(e){
@@ -60,12 +62,11 @@
             }
 
         </script>
-@endpush
-
-@section("body")
+    </head>
+    <body>
         <div class="container p-4">
             <h2>Toyhouse profile HTML mass-downloader</h2>
-            <p style="font-size: 10pt"><b>Download all your OC profile HTML with just a few clicks!</b> To enable download for your characters, add <code>&lt;u id="allow-thcj-import">&lt;/u></code> to your user profile. By default, this app can only see public characters, but you can let it "see" your private characters by authorising my bot account, <a href="https://toyhou.se/fuchsiamoonrise">fuchsiamoonrise</a> (100% optional). Inspired by <a href="https://erayalkis.github.io/toyhouse_downloader/">Erayalkis' TH gallery downloader</a>.</p>
+            <p style="font-size: 10pt"><b>Download all your OC profile HTML with just a few clicks!</b> To enable download for your characters, add <code>&lt;u id="allow-thcj-import">&lt;/u></code> to your user profile. By default, this app can only see public characters, <a href="manual.html">here is my bandaid solution</a> in the meantime! Inspired by <a href="https://erayalkis.github.io/toyhouse_downloader/">Erayalkis' TH gallery downloader</a>.</p>
             <p class="form-inline">
                 <input class="form-control" id="username" type="text" placeholder="Username"></input>
                 <button class="btn btn-primary" onclick="get($('#username').val())">Fetch character profiles</button>
@@ -83,4 +84,5 @@
             <div class="list-container">
             </div>
         </div>
-@endsection
+    </body>
+</html>

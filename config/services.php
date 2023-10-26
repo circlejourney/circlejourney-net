@@ -38,7 +38,6 @@ return [
     'thdownload' => [
         'username' => env("TOYHOUSE_USERNAME"),
         'password' => env("TOYHOUSE_PASSWORD"),
-        'text' => "TEST",
     ]
 
 ];
