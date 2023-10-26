@@ -6,40 +6,22 @@
         echo json_encode($response, JSON_PRETTY_PRINT);
         die();
     }
+
     $profilePath = $_GET["user"];
     $userprofile = "https://toyhou.se/$profilePath";
     $allfolder = "https://toyhou.se/$profilePath/characters/folder:all";
 
-    $username="orchestrator"; 
-    $password="G&(87g0g";
-    $cookie="cookie.txt"; 
+    $cookie="cookie.txt";
 
-    $curlrequest = curl_init();
-    curl_setopt($curlrequest, CURLOPT_CUSTOMREQUEST, "GET");
-    curl_setopt($curlrequest, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curlrequest, CURLOPT_URL, $userprofile);
-    $userHTML = curl_exec($curlrequest);
-    
-    if(strpos($userHTML, "We can't find that page") !== false || strpos($userHTML, "Invalid user selected") !== false) {
-        $response = array(
-            "error" => 'Private or invalid profile.'
-        );
-        echo json_encode($response, JSON_PRETTY_PRINT);
-        die();
-
-    } else if(strpos($userHTML, "allow-thcj-import") === false) {
-        $response = array(
-            "error" => 'You are attempting to import a profile that has not been set to allow code import. To allow code import, paste the line <code>&lt;u id="allow-thcj-import">&lt;/u></code> at the start of your user profile.'
-        );
-        echo json_encode($response, JSON_PRETTY_PRINT);
-        die();
-    }
+    require("acceptwarning.php");
 
     // Fetch pagination list from "all" folder
-    curl_setopt($curlrequest, CURLOPT_URL, $allfolder);
-    $scraped = curl_exec($curlrequest);
-    $status = curl_getinfo($curlrequest, CURLINFO_HTTP_CODE);
-    $body = $scraped . PHP_EOL;
+    $paginationrequest = curl_init();
+    curl_setopt($paginationrequest, CURLOPT_URL, $allfolder);
+    curl_setopt($paginationrequest, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt ($paginationrequest, CURLOPT_COOKIEFILE, $cookie);
+    $body = curl_exec($paginationrequest);
+    $status = curl_getinfo($paginationrequest, CURLINFO_HTTP_CODE);
 
     $tidyconfig = array(
         'indent' => true,
@@ -65,18 +47,32 @@
 
     foreach($pages as $page) {
         curl_setopt($curlrequest, CURLOPT_URL, $page);
-        $scraped = curl_exec($curlrequest);
+        $characterbody = curl_exec($curlrequest);
 
-        $characterbody = $scraped . PHP_EOL;
+        // Get thumbnails
         preg_match_all("/href=\"(.*?)\"\sclass=\"img-thumbnail\">[\S]*(.*?)/", $characterbody, $matches);
-        preg_match_all("/character-name-badge\">(.*?)</", $characterbody, $names);
-        $matchreturn = array();
+        preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(.*?)</", $characterbody, $names);
+        preg_match_all("/thumb-character-stats text-center\">([\S\s]*?)<\/div>/", $characterbody, $stats);
 
-        foreach($matches[1] as $i => $value) {
-            $matchreturn[$i] = array(
-                "name" => $names[1][$i],
+        $matchreturn = array();
+        foreach($names[1] as $i => $value) {
+            $matchreturn[] = array(
+                "name" => $names[2][$i],
                 "url" => substr($value, 1)
             );
+
+            $statblock = $stats[1][$i];
+            if(preg_match("/title=\"Tabs\"/", $statblock)) {
+                curl_setopt($curlrequest, CURLOPT_URL, "https://toyhou.se" . $value);
+                $characterprofile = curl_exec($curlrequest);
+                $tabsfound = preg_match("/sidebar-tab\ssidebar-tab-[0-9]+\">[\S\s]*?<a\shref=\"(.*?)\">[\S\s]*?<\/i>(.*)/", $characterprofile, $tabs);
+                if($tabsfound) {
+                    $matchreturn[] = array(
+                        "name" => $names[2][$i] . " (" . $tabs[2] . ")",
+                        "url" => substr($tabs[1], 1)
+                    );
+                }
+            }
         }
 
         $charlist = array_merge($charlist, $matchreturn);

@@ -21,3 +21,4 @@ tailwind.config.js
 postcss.config.js
 phpunit.xml
 .editorconfig
+public/cookie.txt
