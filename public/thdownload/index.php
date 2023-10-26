@@ -33,6 +33,7 @@
 
             function get(user) {
                 $(".list-container").html("Profile list is being fetched... <i class='fa fa-hourglass fa-spin'><i>");
+                $(".queue-interface").addClass("hidden");
 
                 $.get("/thdownload/get.php", { "user": user }, function(d){
                     data = d;
@@ -70,17 +71,14 @@
                 <input class="form-control" id="username" type="text" placeholder="Username"></input>
                 <button class="btn btn-primary" onclick="get($('#username').val())">Fetch character profiles</button>
             </p>
-            <p class="queue-interface hidden">
-                Click on the links to download individually.
-            </p>
             
             <p class="queue-interface hidden">
+                <input type="radio" id="only-custom" value="0" name="onlyCustom"> <label for="only-custom">Download raw custom HTML</label>
+                <input type="radio" id="download-all" value="1" name="onlyCustom" checked="checked"> <label for="download-all">Download whole webpage</label>
+                <br>
                 <button class="btn btn-primary" id='cjstop' href='#' onclick="toggleQueue()">
                     Queue all for download
                 </button>
-                
-                <input type="radio" id="only-custom" value="0" name="onlyCustom"> <label for="only-custom">Download raw custom HTML</label>
-                <input type="radio" id="download-all" value="1" name="onlyCustom" checked="checked"> <label for="download-all">Download whole webpage</label>
             </p>
 
             <div class="list-container">
