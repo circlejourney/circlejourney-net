@@ -1,4 +1,4 @@
-<?php header("Content-type: application/json");
+<?php
     if(!isset($_GET["user"]) || !$_GET["user"]) {
         $response = array(
             "error" => 'Username not specified.'

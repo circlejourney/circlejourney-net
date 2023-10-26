@@ -7,6 +7,7 @@ use App\Http\Controllers\MetalinkController;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,11 +151,13 @@ Route::get("/doodlefisticuffs", function(){
 });
 
 Route::get("/thdownload", function(){
-    return view("thdownload");
+    return view("thdownload.index");
 });
 
 Route::get("/thdownload/get.php", function(){
-    return view("thdownload.get");
+    //return view("thdownload.get");
+    $thdownloadget = View::make('thdownload.get');
+    return response($thdownloadget)->header('Content-type', 'application/json');
 });
 
 Route::fallback(function ($e) {
