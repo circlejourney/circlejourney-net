@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("title"){{ "Toyhouse profile HTML mass downloader" }}@endsection
+@section("html_title"){{ "Toyhouse HTML Mass-Downloader" }}@endsection
 
 @push("head")
 <meta name="description" content="Circlejourney's Toyhouse profile HTML mass downloader. Download all your profiles in a few clicks.">
@@ -30,7 +30,7 @@
             let data;
 
             function get(user) {
-                $(".list-container").html("Profile list is being fetched... <i class='fa fa-hourglass fa-spin'><i>");
+                $(".list-container").html("Profile list is being fetched (it can take a while if you have a lot of characters)... <i class='fa fa-hourglass fa-spin'><i>");
                 $(".queue-interface").addClass("hidden");
 
                 $.get("/thdownload/get.php", { "user": user }, function(d){
