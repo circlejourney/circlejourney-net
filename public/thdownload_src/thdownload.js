@@ -25,11 +25,10 @@ function step() {
 }
 
 function startDownload(url, name, onlyCustom=false) {
-    return $.get("/thdownload/fetchprofile.php", {"url": url}, function(response) {
+    return $.get("/thdownload_src/fetchprofile.php", {"url": url}, function(response) {
         if(onlyCustom) {
             const custom = parser.parseFromString(response, "text/html").body.getElementsByClassName("profile-content-content");
             response = custom[0].innerHTML;
-
         }
         let filename;
         if(id = url.match(/([0-9]+)\./)) filename = name + " - " + id[1] + ".html";
