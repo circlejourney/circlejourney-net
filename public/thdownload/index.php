@@ -80,7 +80,7 @@
                 </button>
                 
                 <input type="radio" id="only-custom" value="0" name="onlyCustom"> <label for="only-custom">Download raw custom HTML</label>
-                <input type="radio" id="download-all" value="1" name="onlyCustom"> <label for="download-all">Download whole webpage</label>
+                <input type="radio" id="download-all" value="1" name="onlyCustom" checked="checked"> <label for="download-all">Download whole webpage</label>
             </p>
 
             <div class="list-container">
