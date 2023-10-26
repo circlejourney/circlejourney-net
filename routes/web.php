@@ -155,7 +155,6 @@ Route::get("/thdownload", function(){
 });
 
 Route::get("/thdownload/get.php", function(){
-    //return view("thdownload.get");
     $thdownloadget = View::make('thdownload.get');
     return response($thdownloadget)->header('Content-type', 'application/json');
 });

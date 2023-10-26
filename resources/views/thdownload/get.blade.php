@@ -77,88 +77,84 @@
     curl_setopt($postlogin, CURLOPT_POST, 0);
     $userresponse = curl_exec($postlogin);
     
-    if(strpos($userresponse, "user-content") === false) {
+    if(strpos($userresponse, 'id="sidebar"') === false) {
         $response = array(
-            "error" => 'Private or invalid profile.'
+            "error" => 'User not found. They may be private or nonexistent.'
         );
         echo json_encode($response, JSON_PRETTY_PRINT);
-        die();
 
     } else if(strpos($userresponse, "allow-thcj-import") === false) {
         $response = array(
-            "error" => 'You are attempting to import a profile that has not been set to allow code import. To allow code import, paste the line <code>&lt;u id="allow-thcj-import">&lt;/u></code> at the start of your user profile.'
+            "error" => 'You are attempting to import from a user that has not allowed code import. To allow code import, paste the line <code>&lt;u id="allow-thcj-import">&lt;/u></code> at the start of your user profile.'
         );
         echo json_encode($response, JSON_PRETTY_PRINT);
-        die();
+        
     } else {
-        error_log("$profilePath: This profile has been set to allow import. Importing...");
-    }
 
+        // Fetch pagination list from "all" folder
+        $paginationrequest = curl_init();
+        curl_setopt($paginationrequest, CURLOPT_URL, $allfolder);
+        curl_setopt($paginationrequest, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($paginationrequest, CURLOPT_COOKIEFILE, $cookie);
+        $body = curl_exec($paginationrequest);
+        $status = curl_getinfo($paginationrequest, CURLINFO_HTTP_CODE);
 
+        $tidyconfig = array(
+            'indent' => true,
+            'output-xhtml' => true,
+            'drop-empty-elements' => false,
+            'wrap' => 0
+        );
+        
+        preg_match_all('/<(?:a|span)\sclass\="page-link".*?>[0-9]+<\/(?:a|span)>/', $body, $matches);
+        preg_match("/>([0-9]+)</", end($matches[0]), $lastpage);
 
-    // Fetch pagination list from "all" folder
-    $paginationrequest = curl_init();
-    curl_setopt($paginationrequest, CURLOPT_URL, $allfolder);
-    curl_setopt($paginationrequest, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt ($paginationrequest, CURLOPT_COOKIEFILE, $cookie);
-    $body = curl_exec($paginationrequest);
-    $status = curl_getinfo($paginationrequest, CURLINFO_HTTP_CODE);
+        $pages = array_map(
+            function($i)use($allfolder){
+                return $allfolder."?page=".$i;
+            },
+            range(1, intval($lastpage[1]))
+        );
 
-    $tidyconfig = array(
-        'indent' => true,
-        'output-xhtml' => true,
-        'drop-empty-elements' => false,
-        'wrap' => 0
-    );
-    
-    preg_match_all('/<(?:a|span)\sclass\="page-link".*?>[0-9]+<\/(?:a|span)>/', $body, $matches);
-    preg_match("/>([0-9]+)</", end($matches[0]), $lastpage);
+        
+        $tidy = new tidy;
 
-    $pages = array_map(
-        function($i)use($allfolder){
-            return $allfolder."?page=".$i;
-        },
-        range(1, intval($lastpage[1]))
-    );
+        $charlist = array(
+            array("name" => "[User] $profilePath", "url" => $profilePath)
+        );
 
-    
-    $tidy = new tidy;
+        foreach($pages as $page) {
+            curl_setopt($postlogin, CURLOPT_URL, $page);
+            $characterbody = curl_exec($postlogin);
 
-    $charlist = array(
-        array("name" => "[User] $profilePath", "url" => $profilePath)
-    );
+            // Get thumbnails
+            preg_match_all("/href=\"(.*?)\"\sclass=\"img-thumbnail\">[\S]*(.*?)/", $characterbody, $matches);
+            preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(.*?)</", $characterbody, $names);
+            preg_match_all("/thumb-character-stats text-center\">([\S\s]*?)<\/div>/", $characterbody, $stats);
 
-    foreach($pages as $page) {
-        curl_setopt($postlogin, CURLOPT_URL, $page);
-        $characterbody = curl_exec($postlogin);
+            $matchreturn = array();
+            foreach($names[1] as $i => $value) {
+                $matchreturn[] = array(
+                    "name" => $names[2][$i],
+                    "url" => substr($value, 1)
+                );
 
-        // Get thumbnails
-        preg_match_all("/href=\"(.*?)\"\sclass=\"img-thumbnail\">[\S]*(.*?)/", $characterbody, $matches);
-        preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(.*?)</", $characterbody, $names);
-        preg_match_all("/thumb-character-stats text-center\">([\S\s]*?)<\/div>/", $characterbody, $stats);
-
-        $matchreturn = array();
-        foreach($names[1] as $i => $value) {
-            $matchreturn[] = array(
-                "name" => $names[2][$i],
-                "url" => substr($value, 1)
-            );
-
-            $statblock = $stats[1][$i];
-            if(preg_match("/title=\"Tabs\"/", $statblock)) {
-                curl_setopt($postlogin, CURLOPT_URL, "https://toyhou.se" . $value);
-                $characterprofile = curl_exec($postlogin);
-                $tabsfound = preg_match("/sidebar-tab\ssidebar-tab-[0-9]+\">[\S\s]*?<a\shref=\"(.*?)\">[\S\s]*?<\/i>(.*)/", $characterprofile, $tabs);
-                if($tabsfound) {
-                    $matchreturn[] = array(
-                        "name" => $names[2][$i] . " (" . $tabs[2] . ")",
-                        "url" => substr($tabs[1], 1)
-                    );
+                $statblock = $stats[1][$i];
+                if(preg_match("/title=\"Tabs\"/", $statblock)) {
+                    curl_setopt($postlogin, CURLOPT_URL, "https://toyhou.se" . $value);
+                    $characterprofile = curl_exec($postlogin);
+                    $tabsfound = preg_match("/sidebar-tab\ssidebar-tab-[0-9]+\">[\S\s]*?<a\shref=\"(.*?)\">[\S\s]*?<\/i>(.*)/", $characterprofile, $tabs);
+                    if($tabsfound) {
+                        $matchreturn[] = array(
+                            "name" => $names[2][$i] . " (" . $tabs[2] . ")",
+                            "url" => substr($tabs[1], 1)
+                        );
+                    }
                 }
             }
+
+            $charlist = array_merge($charlist, $matchreturn);
         }
 
-        $charlist = array_merge($charlist, $matchreturn);
+        echo json_encode($charlist, JSON_PRETTY_PRINT);
     }
-
-    echo json_encode($charlist, JSON_PRETTY_PRINT);
