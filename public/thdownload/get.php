@@ -43,7 +43,9 @@
     
     $tidy = new tidy;
 
-    $charlist = array();
+    $charlist = array(
+        array("name" => "[User] $profilePath", "url" => $profilePath)
+    );
 
     foreach($pages as $page) {
         curl_setopt($curlrequest, CURLOPT_URL, $page);
@@ -79,10 +81,3 @@
     }
 
     echo json_encode($charlist, JSON_PRETTY_PRINT);
-    
-    
-    /*$dom->loadHTML($body);
-    $uls = $dom->getElementsByTagName('ul');
-    foreach($uls as $ul) {
-        echo $ul;
-    }*/

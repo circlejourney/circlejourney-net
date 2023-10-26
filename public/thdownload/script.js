@@ -31,8 +31,10 @@ function startDownload(url, name, onlyCustom=false) {
             response = custom[0].innerHTML;
 
         }
-        const id = url.match(/([0-9]+)\./)[1];
-        downloadAsFile(response, name + " - " + id + ".html");
+        let filename;
+        if(id = url.match(/([0-9]+)\./)) filename = name + " - " + id[1] + ".html";
+        else filename = name + ".html";
+        downloadAsFile(response, filename);
     })
 }
 
