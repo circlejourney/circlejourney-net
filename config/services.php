@@ -35,4 +35,9 @@ return [
         'thumbnail_max_size' => (int)env("THUMBNAIL_MAX_SIZE"),
     ],
 
+    'thdownload' => [
+        'username' => env("TOYHOUSE_USERNAME"),
+        'password' => env("TOYHOUSE_PASSWORD"),
+    ]
+
 ];

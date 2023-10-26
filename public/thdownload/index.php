@@ -27,7 +27,7 @@
 
         <script src="https://circlejourney.net/resources/jquery-3.3.1.min.js"></script>
         <script src="https://kit.fontawesome.com/77ce6977ef.js" crossorigin="anonymous"></script>
-        <script src="/thdownload/script.js"></script>
+        <script src="/thdownload/script.js?v=<?php echo filemtime("script.js"); ?>"></script>
         <script>
             let data;
 
