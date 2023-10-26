@@ -1,11 +1,44 @@
 <?php
-
     $profilePath = $_GET["user"];
     $userprofile = "https://toyhou.se/$profilePath";
     $allfolder = "https://toyhou.se/$profilePath/characters/folder:all";
     $cookie="cookie.txt";
-    $curlrequest = curl_init();
 
+    $loginendpoint = "https://toyhou.se/~account/login";
+    $username = getenv("TOYHOUSE_USERNAME");
+    $password = getenv("TOYHOUSE_PASSWORD");
+
+
+    // Initial CSRF handshake
+    $postlogin = curl_init();
+    curl_setopt($postlogin, CURLOPT_URL, $loginendpoint);
+    curl_setopt($postlogin, CURLOPT_COOKIEJAR, $cookie);
+    curl_setopt($postlogin, CURLOPT_COOKIEFILE, $cookie);
+    curl_setopt($postlogin, CURLOPT_RETURNTRANSFER, 1);
+    $csrfresponse = curl_exec($postlogin);
+    $notauthed = preg_match("/<meta\sname=\"csrf-token\"\scontent=\"(.*?)\">/", $csrfresponse, $tokenmatches);
+    if($notauthed) {
+        error_log("Application currently not logged in. Logging in...");
+        $token = $tokenmatches[1];
+
+        // Login post request
+        $loginheaders = array(
+            "username" => $username,
+            "password" => $password,
+            "_token" => $token
+        );
+        curl_setopt($postlogin, CURLOPT_URL, $loginendpoint);
+        curl_setopt($postlogin, CURLOPT_COOKIEFILE, $cookie);
+        curl_setopt($postlogin, CURLOPT_COOKIEJAR, $cookie);
+        curl_setopt($postlogin, CURLOPT_POST, 1);
+        curl_setopt($postlogin, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($postlogin, CURLOPT_FOLLOWLOCATION, 0);
+        curl_setopt($postlogin, CURLOPT_POSTFIELDS, http_build_query($loginheaders));
+        $loginresponse = curl_exec($postlogin);
+    }
+
+
+    $curlrequest = curl_init();
     curl_setopt($curlrequest, CURLOPT_URL, $userprofile);
     curl_setopt ($curlrequest, CURLOPT_COOKIEJAR, $cookie);
     curl_setopt ($curlrequest, CURLOPT_COOKIEFILE, $cookie);
@@ -16,7 +49,7 @@
     preg_match("/<meta\sname=\"csrf-token\"\scontent=\"(.*?)\">/", $csrfresponse, $tokenmatches);
     $haswarning = preg_match("/name=\"user\"\stype=\"hidden\"\svalue=\"([0-9]+)\"/", $csrfresponse, $usermatches);
     if($haswarning) {
-        $token = $tokenmatches[1];
+        $token = $token ?? $tokenmatches[1];
         $user = $usermatches[1];
 
         $postinfo = array(

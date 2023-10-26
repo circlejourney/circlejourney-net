@@ -65,8 +65,8 @@
     </head>
     <body>
         <div class="container p-4">
-            <h2>Toyhouse profile HTML downloader</h2>
-            <p style="font-size: 10pt">This tool lets you download all your OC profile HTML with just a few clicks! To enable download for your characters, add <code>&lt;u id="allow-thcj-import">&lt;/u></code> to the end of your user profile. For now, this does not work with privated characters. (If you want to download your private profiles, you can use the (slightly less updated) manual version of this code. Simply <a href="/thdownload/manual.html">go to this page and follow the instructions</a>.)</p>
+            <h2>Toyhouse profile HTML mass-downloader</h2>
+            <p style="font-size: 10pt"><b>Download all your OC profile HTML with just a few clicks!</b> To enable download for your characters, add <code>&lt;u id="allow-thcj-import">&lt;/u></code> to your user profile. By default, this app can only see public characters, but you can let it "see" your private characters by authorising my bot account, <a href="https://toyhou.se/fuchsiamoonrise">fuchsiamoonrise</a> (100% optional)! Inspired by <a href="https://erayalkis.github.io/toyhouse_downloader/">Erayalkis' TH gallery downloader</a>.</p>
             <p class="form-inline">
                 <input class="form-control" id="username" type="text" placeholder="Username"></input>
                 <button class="btn btn-primary" onclick="get($('#username').val())">Fetch character profiles</button>
