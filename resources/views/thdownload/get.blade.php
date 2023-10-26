@@ -129,7 +129,7 @@
 
             // Get thumbnailsu
             preg_match_all("/href=\"(.*?)\"\sclass=\"img-thumbnail\">[\S]*(.*?)/", $characterbody, $matches);
-            preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(?:<i.*>)?(?:&nbsp;)?(.+)</", $characterbody, $names);
+            preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(?:<i.*>)?(?:&nbsp;)?(.+)<\/a>/", $characterbody, $names);
             preg_match_all("/thumb-character-stats text-center\">([\S\s]*?)<\/div>/", $characterbody, $stats);
 
             $matchreturn = array();
@@ -143,12 +143,14 @@
                 if(preg_match("/title=\"Tabs\"/", $statblock)) {
                     curl_setopt($postlogin, CURLOPT_URL, "https://toyhou.se" . $value);
                     $characterprofile = curl_exec($postlogin);
-                    $tabsfound = preg_match("/sidebar-tab\ssidebar-tab-[0-9]+\">[\S\s]*?<a\shref=\"(.*?)\">[\S\s]*?<\/i>(.*)/", $characterprofile, $tabs);
+                    $tabsfound = preg_match_all("/sidebar-tab\ssidebar-tab-[0-9]+\">[\S\s]*?<a\shref=\"(.*?)\">[\S\s]*?<\/i>(.*)/", $characterprofile, $tabs);
                     if($tabsfound) {
-                        $matchreturn[] = array(
-                            "name" => $names[2][$i] . " (" . $tabs[2] . ")",
-                            "url" => substr($tabs[1], 1)
-                        );
+                        foreach($tabs[0] as $j => $tab) {
+                            $matchreturn[] = array(
+                                "name" => $names[2][$i] . " (" . $tabs[2][$j] . ")",
+                                "url" => substr($tabs[1][$j], 1)
+                            );
+                        }
                     }
                 }
             }
