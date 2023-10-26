@@ -127,9 +127,9 @@
             curl_setopt($postlogin, CURLOPT_URL, $page);
             $characterbody = curl_exec($postlogin);
 
-            // Get thumbnails
+            // Get thumbnailsu
             preg_match_all("/href=\"(.*?)\"\sclass=\"img-thumbnail\">[\S]*(.*?)/", $characterbody, $matches);
-            preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(.*?)</", $characterbody, $names);
+            preg_match_all("/href=\"(.*?)\" .*character-name-badge\">(?:<i.*>)?(?:&nbsp;)?(.+)</", $characterbody, $names);
             preg_match_all("/thumb-character-stats text-center\">([\S\s]*?)<\/div>/", $characterbody, $stats);
 
             $matchreturn = array();
