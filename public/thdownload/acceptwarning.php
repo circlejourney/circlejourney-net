@@ -2,8 +2,7 @@
     $profilePath = $_GET["user"];
     $userprofile = "https://toyhou.se/$profilePath";
     $allfolder = "https://toyhou.se/$profilePath/characters/folder:all";
-    $cookie= getcwd() . DIRECTORY_SEPARATOR . "cookie.txt";
-    echo $cookie;
+    $cookie= $_SERVER["REQUEST_URI"] . DIRECTORY_SEPARATOR . "cookie.txt";
 
     $loginendpoint = "https://toyhou.se/~account/login";
     $username = getenv("TOYHOUSE_USERNAME");
