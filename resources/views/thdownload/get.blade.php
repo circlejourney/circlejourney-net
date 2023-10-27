@@ -1,4 +1,9 @@
 <?php
+
+    function sanitise($path) {
+        preg_replace("/[\~\/\.\?\=]/", "", $path);
+    }
+
     if(!isset($_GET["user"]) || !$_GET["user"]) {
         $response = array(
             "error" => 'Username not specified.'
@@ -7,7 +12,7 @@
         die();
     }
 
-    $profilePath = $_GET["user"];
+    $profilePath = sanitise($_GET["user"]);
     $userprofile = "https://toyhou.se/$profilePath";
     $allfolder = "https://toyhou.se/$profilePath/characters/folder:all";
 
@@ -26,6 +31,7 @@
     curl_setopt($postlogin, CURLOPT_RETURNTRANSFER, 1);
     $csrfresponse = curl_exec($postlogin);
     $notauthed = preg_match("/<meta\sname=\"csrf-token\"\scontent=\"(.*?)\">/", $csrfresponse, $tokenmatches);
+    
     if($notauthed) {
         error_log("Application currently not logged in. Logging in...");
         $token = $tokenmatches[1];

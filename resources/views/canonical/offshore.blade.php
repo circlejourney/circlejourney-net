@@ -9,10 +9,13 @@
     </p>
     <blockquote>
         <p>
-            “It's all about the recovery! Remember, no race goes flawlessly. If we wanted flawless we’d be running tour boats. Champs take the trophy after huge mistakes all the time." She slapped them both on the backs. “It’s what you do in the moments after you realise things are going to shit that define you as a sailor.”
+        Things had gone south two hours into today’s run of the bay. When a rogue gust had yanked the boom and mainsheet from Anqien’s control, it had only taken seconds for their yacht to swerve wildly off course and fling them into the blustery waves below.
         </p>
         <p>
-            “Yeah, and we’re not even <i>qualifying</i> if that happens tomorrow,” muttered Jinai.
+            Rookie mistake. And they should be embarrassed.
+        </p>
+        <p>
+        But feeling their water shoes skid on plastic and their shoulders smash against the waves, a strange, breathless thought had pierced through their shame like the glare of the sun. In that split second of zero-gravity, terminal velocity before they collided with reality and the sea, Anqien’s heart had raced at the thought that they were doing this with <i>her</i>. Dazzling, impossible, shooting star Jinai—
         </p>
     </blockquote>
     <p>
