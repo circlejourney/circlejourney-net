@@ -1,7 +1,7 @@
 <?php
 
     function sanitise($path) {
-        preg_replace("/[\~\/\.\?\=]/", "", $path);
+        return preg_replace("/[\~\/\.\?\=]/", "", $path);
     }
 
     if(!isset($_GET["user"]) || !$_GET["user"]) {
