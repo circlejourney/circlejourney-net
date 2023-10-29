@@ -1,3 +1,11 @@
+<?php
+    $hitsfile = getcwd() . DIRECTORY_SEPARATOR . "hits.txt";
+    if(!file_exists($hitsfile)) $hits = 0;
+    else $hits = file_get_contents($hitsfile);
+    $hits = intval($hits)+1;
+    file_put_contents($hitsfile, $hits);
+?>
+
 @extends("layouts.app")
 
 @section("html_title"){{ "Toyhouse HTML Mass-Downloader" }}@endsection

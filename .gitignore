@@ -22,3 +22,4 @@ postcss.config.js
 phpunit.xml
 .editorconfig
 public/cookie.txt
+public/hits.txt
