@@ -151,7 +151,7 @@ Route::get("/doodlefisticuffs", function(){
 });
 
 Route::get("/thdownload", function(){
-    return view("thdownload.index");
+    return redirect("https://circlejourney.net/thdownload"); // interim solution before I switch back or something
 });
 
 Route::get("/thdownload/get.php", function(){
