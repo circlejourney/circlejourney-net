@@ -150,10 +150,6 @@ Route::get("/doodlefisticuffs", function(){
     return view("doodlefisticuffs");
 });
 
-Route::get("/thdownload", function(){
-    return redirect("https://circlejourney.net/thdownload"); // interim solution before I switch back or something
-});
-
 Route::get("/thdownload/get.php", function(){
     $thdownloadget = View::make('thdownload.get');
     return response($thdownloadget)->header('Content-type', 'application/json');
