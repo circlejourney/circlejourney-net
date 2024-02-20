@@ -9,7 +9,7 @@
     </p>
     <blockquote>
         <p>
-        Things had gone south two hours into today’s run of the bay. When a rogue gust had yanked the boom and mainsheet from Anqien’s control, it had only taken seconds for their yacht to swerve wildly off course and fling them into the blustery waves below.
+        Things had gone south two hours into today’s run of the bay. When a rogue gust had led into a poorly timed jibe, it had only taken seconds for the Cloudlander to swerve wildly and fling them into the blustery waves below. 
         </p>
         <p>
             Rookie mistake. And they should be embarrassed.
