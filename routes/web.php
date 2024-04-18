@@ -156,5 +156,5 @@ Route::get("/thdownload/get.php", function(){
 });
 
 Route::fallback(function ($e) {
-    return redirect( "https://circlejourney.net/".$e );
+    return redirect( "https://og.circlejourney.net/".$e );
 });
