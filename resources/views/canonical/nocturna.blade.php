@@ -3,6 +3,12 @@
 @section('title'){{ "Nocturna" }}@endsection
 
 @section('top')
+    @section("breadcrumbs")
+        @include("components.breadcrumbs", ["crumbs" => [
+            ["href" => route("interactive"), "title" => "Interactive projects and games"],
+            ["href" => Route::current()->getName(), "title" => "Nocturna" ]
+        ] ])
+    @endsection
 
 <p>A magician who has averted death one too many times. A luck black hole who's swindled casinoes to bankruptcy. Nocturna is a story of necromancy, curses and everything spooky, in a world where death in every country is a bureaucracy run by the worst beings for the job.</p>
 @endsection

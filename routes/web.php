@@ -73,7 +73,8 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
 Route::get('/interactive', function(){
     $listprojects = ProjectController::filter("category", "%interactive%");
     return view("interactive", ["projects"=>$listprojects]);
-});
+})->name("interactive");
+
 Route::get("/nocturna", function() {
     $listprojects = ProjectController::filter("category", "%nocturna%");
     $artworks = ArtworkController::filter("category", "%nocturna%");
@@ -95,12 +96,12 @@ Route::get('/art', function(){
 // Writing
 Route::get("/writing", function(){
     $projects = ProjectController::filter("category", "writing");
-    return view("layouts.projects", ["title"=>"Writing", "projects"=>$projects]);
-});
+    return view("writing", ["title"=>"Writing", "projects"=>$projects]);
+})->name("writing");
 
 Route::get("/writing/portfolio", function(){
     return view("condensed.writing-portfolio");
-});
+})->name("writing.portfolio");
 
 Route::get("/offshore", function(){
     $artworks = ArtworkController::filter("category", "%offshore%");

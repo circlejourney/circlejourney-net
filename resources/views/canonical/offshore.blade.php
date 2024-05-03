@@ -3,6 +3,12 @@
 @section('title'){{ "Offshore" }}@endsection
 
 @section('content')
+    @section("breadcrumbs")
+        @include("components.breadcrumbs", ["crumbs" => [
+            ["href" => route("writing"), "title" => "Writing"],
+            ["href" => Route::current()->getName(), "title" => "Offshore" ]
+        ] ])
+    @endsection
 
     <p class="center">
         <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/58358955_wT4g18nwzsQ34T7.jpg?1670860926" style="max-height: 500px; display: inline;" alt="A cover image for Offshore, featuring two characters floating in the air towards the top left of the image, over ocean waves and seafoam. A race yacht's sail rises in the background.">
