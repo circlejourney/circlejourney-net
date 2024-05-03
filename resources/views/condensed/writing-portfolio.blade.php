@@ -54,6 +54,14 @@
     </script>
 @endpush
 
+
+@section("breadcrumbs")
+@include("components.breadcrumbs", ["crumbs" => [
+    ["href" => route("writing"), "title" => "Writing"],
+    ["href" => Route::current()->getName(), "title" => "Writing portfolio" ]
+] ])
+@endsection
+
 @section("content")
 <div class="writing-collapse">
     <h2>
