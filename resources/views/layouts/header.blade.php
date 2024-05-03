@@ -11,18 +11,17 @@
     @include("layouts.navigation")
 </div>
 
-<a id="blog-title" href="/">
-    <div id="blog-title-image-holder" class="blur">
-    </div>
-    <div id="blog-title-inside">
-        <div class="blog-title-headline">
-            <img id="blog-title-logo" class="transparent"> <span>Circlejourney</span>
+@isset($condensed)
+    <a id="blog-title" class="condensed" href="/">
+        <div id="blog-title-inside">
+            <div class="blog-title-headline">
+                <img id="blog-title-logo" class="transparent"> <span>Circlejourney</span>
+            </div>
         </div>
-        
-        <div class="center" style="font-family: Arvo; font-size: 10pt; text-shadow: 0 0 10px #eee;">⚠️&#xfe0e; This site is still being ported! Some links will take you back to my original domain, <code>circlejourney.net</code>.</div>
-    
-    </div>
-</a>
+    </a>
+@else
+    @include("layouts.banner")
+@endisset
 
 <div class="menu" id="menu">
     <div id="menu-button" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>

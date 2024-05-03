@@ -48,6 +48,19 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public static function boot() {
+        parent::boot();
+        Static::created(function($model) {
+            if(User::count() === 1) {
+                $model->rank = "admin";
+                $model->save();
+            } else {
+                $model->rank = "user";
+                $model->save();
+            }
+        });
+    }
+
     public function rank(string $rank): bool {
         return $this->getAttribute("rank");
     }

@@ -1,22 +1,4 @@
-$.getJSON("/js/bg.json", function(bglist) {
-    var bg = bglist[Math.floor(Math.random()*bglist.length)];
-    $("#blog-title-image-holder").css("background-image", `url(${bg.small})`);
-    $("<img>").attr("src", bg.big)
-        .on("load", function() {
-            $("#blog-title-image-holder")
-                .css("background-image", "url("+bg.big+")")
-                .removeClass("blur"); 
-        });
-});
-
 $(window).on("load", function(){
-    
-    $("<img>")
-        .attr("src", "/images/logosmall.png")
-        .on("load", function() {
-            $("#blog-title-logo").attr("src", "/images/logosmall.png").removeClass("transparent");
-        });
-    
     if("ontouchstart" in window) {
         $("#menu-button").after($(".breeze-submenu").attr("class", "submenu"));
         $(".submenu").each((i, val)=> {
@@ -27,9 +9,7 @@ $(window).on("load", function(){
             }
         );
     }
-    
     // loadBannersPretty();
-
 });
 
 

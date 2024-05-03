@@ -90,9 +90,16 @@ Route::get('/art', function(){
     return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "illustrations"=>$illustrations, "animations"=>$animations]);
 });
 
+
+
+// Writing
 Route::get("/writing", function(){
-    $projects = ProjectController::filter("category", "%writing%");
+    $projects = ProjectController::filter("category", "writing");
     return view("layouts.projects", ["title"=>"Writing", "projects"=>$projects]);
+});
+
+Route::get("/writing/portfolio", function(){
+    return view("condensed.writing-portfolio");
 });
 
 Route::get("/offshore", function(){

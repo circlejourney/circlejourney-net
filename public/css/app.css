@@ -274,6 +274,13 @@
     overflow: hidden;
     z-index: 1;
  }
+
+ #blog-title.condensed {
+   height: auto;
+ }
+ #blog-title.condensed #blog-title-inside {
+   background-color: #ceb192;
+ }
  
  #blog-title-image-holder {
     background-color: rgba(210, 200, 180, 0.3);
