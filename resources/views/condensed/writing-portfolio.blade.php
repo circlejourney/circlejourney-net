@@ -76,7 +76,7 @@
     </h2>
     <p>It was the dawn of discovery, the sunset of silence. It was the gilded decade, the godless decade, the decade when the world began to feel small. It was the Year 1892, and that was the year I fell in love.</p>
 
-    <p>Across the sea, cities were swept by revolution while in London, streets brightened and steam cars plummeted from favour. For a century we had sung the praises of coal and boiler, watching as it eagerly reshaped the world&mdash;but today, something new had risen to overshadow it: the sun.</p>
+    <p>Across the sea, cities were swept by revolution while in London, streets brightened and steam cars plummeted from favour. For a century we had sung the praises of coal and boiler, watching as it had eagerly reshaped the world&mdash;but today, something new had risen to overshadow it: the sun.</p>
 
     <details>
         <summary>...</summary>
@@ -162,7 +162,7 @@
             </a>
         </span>
     </h2>
-    <p>When it rains in Wulien, fountains overflow onto pavements. Every tourist&rsquo;s guide mentions the summer seastorms, but only in the way one glosses over secrets before a stranger. They say nothing of the way the rain beats, turning roads to rivers, or how the squall winds sing on storefront strings, the shutter-snaps of lightning before the thunder drops. When it rains in Wulien, it pours.</p>
+    <p>When it rains in Wulien, fountains overflow onto pavements. Tourist&rsquo;s guides mention the summer storms, but only in the way one glosses over secrets before a stranger. They say nothing of the way the rain beats, turning roads to rivers, or how the squall winds sing on storefront strings, the shutter-snaps of lightning before the thunder drops. When it rains in Wulien, it pours.</p>
     
     <p>From the day they first met on the bay, Jinai and Anqien could never forget that fact.</p>
     <details>
