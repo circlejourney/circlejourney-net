@@ -9,8 +9,8 @@
         <x-gallery-art
             :data-sequence="$artwork->openlightbox ? $lightboxable->search($artwork->id) : false"
             :openlightbox="$artwork->openlightbox"
-            :href="$artwork->img_src"
-            :src="$artwork->thumb_src"
+            :href="$artwork->img_src.'?'.$artwork->updated_at->timestamp"
+            :src="$artwork->thumb_src.'?'.$artwork->updated_at->timestamp"
             target="_blank">
             <x-slot name="title">
                 {{ $artwork->title }}
