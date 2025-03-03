@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\MetalinkController;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -56,7 +57,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
     Route::delete("/metalink-editor/{metalink}", [MetalinkController::class, "destroy"]);
     Route::put('/metalink-editor/{metalink}', [MetalinkController::class, "update"]);
 
-    Route::get("/artwork-editor", [ArtworkController::class, "index"]);
+    Route::get("/artwork-editor", [ArtworkController::class, "index"])->name("artwork.edit");
     Route::get("/artwork-editor/create", [ArtworkController::class, "create"]);
     Route::post("/artwork-editor/create", [ArtworkController::class, "store"]);
     Route::get("/artwork-editor/{artwork}", [ArtworkController::class, "edit"]);
@@ -161,6 +162,10 @@ Route::get("/doodlefisticuffs", function(){
 Route::get("/thdownload/get.php", function(){
     $thdownloadget = View::make('thdownload.get');
     return response($thdownloadget)->header('Content-type', 'application/json');
+});
+
+Route::controller(ResumeController::class)->group(function(){
+    Route::get("resume", "show");
 });
 
 Route::fallback(function ($e) {

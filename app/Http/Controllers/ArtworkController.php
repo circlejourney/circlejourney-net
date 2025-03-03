@@ -53,17 +53,18 @@ class ArtworkController extends Controller
             $thumb_src=$request->thumb_src;
         }
 
-        $create = Artwork::create([
+        $artwork = Artwork::create([
             "title" => $request->title,
             "description" => $request->description,
             "thumb_src" => $thumb_src,
             "img_src" => $img_src,
-            "category" => $request->category,
             "order" => $request->order,
             "openlightbox" => isset($request->openlightbox) ? "1" : "0"
         ]);
+        
+        $artwork->updateCategories(preg_split("/,\s*/", $request->category));
 
-        return redirect("/artwork-editor/");
+        return redirect(route("artwork.edit"));
     }
 
     /**
@@ -107,15 +108,17 @@ class ArtworkController extends Controller
             $thumb_src=$request->thumb_src;
         }
 
-        $artwork -> update([
+        $artwork->update([
             "title" => $request->title,
             "description" => $request->description,
             "thumb_src" => $thumb_src,
             "img_src" => $img_src,
-            "category" => $request->category,
             "order" => $request->order,
-            "openlightbox" => isset($request->openlightbox) ? "1" : "0"
+            "openlightbox" => isset($request->openlightbox)
         ]);
+        
+        $artwork->updateCategories(preg_split("/,\s*/", $request->category));
+
         return redirect("/artwork-editor/" . $artwork->id);
     }
 

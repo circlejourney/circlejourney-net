@@ -32,7 +32,7 @@ return [
     ],
 
     'fileupload' => [
-        'thumbnail_max_size' => (int)env("THUMBNAIL_MAX_SIZE"),
+        'thumbnail_max_size' => env("THUMBNAIL_MAX_SIZE", 350),
     ],
 
     'thdownload' => [

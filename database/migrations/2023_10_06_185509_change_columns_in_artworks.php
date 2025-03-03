@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('artworks', function (Blueprint $table) {
             $table->text("title")->nullable()->change();
             $table->text("description")->nullable()->change();
-            $table->text("order")->default(0)->change();
+            $table->unsignedInteger("order")->default(0)->change();
         });
     }
 
