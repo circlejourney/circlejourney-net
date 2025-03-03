@@ -23,7 +23,7 @@
 
         h1 {
             font-size: 600%;
-            line-height: 1em;
+            line-height: 0.9;
             font-weight: normal;
             font-family: "Bebas Neue", Arvo, sans-serif;
             word-break: break-word;
@@ -235,12 +235,38 @@
         }
 
         @media print {
-            body {
-                font-size: 9pt;
-                line-height: 1.2em;
+
+            @page {
+                margin-top: 1in;
             }
+
+            body {
+                font-size: 8pt;
+                line-height: 1.2em;
+                padding: 1rem;
+            }
+
+            h2 {
+                break-after: avoid;
+                padding-top: 1rem;
+                margin-bottom: none;
+            }
+
+            p {    
+                margin-block-start: 0.4em;
+                margin-block-end: 0.4em;
+            }
+
             .print-d-block {
                 display: block;
+            }
+
+            .gallery-thumbnail {
+                max-height: 150px;
+            }
+
+            .gallery-thumb-link {
+                border: none;
             }
         }
 
@@ -288,9 +314,9 @@
                             <div class="subtitle">July 2024 &ndash; Present</div>
                         </div>
                     </div>
-                    <p>I created, develop and administrate <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken petsite (in the style of Flight Rising) with breeding and trading mechanics, a user marketplace, forums, and minigames. Responsibilities include UI/UX design, programming game features, graphic design, addressing site suggestions and bug reports, and other general site administration. The game currently has about 500 players.</p>
+                    <p>I developed <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a game site about breeding chickens. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
                     <p class="skills">
-                        Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootsrap), CSS (SASS), JavaScript (jQuery)
+                        Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
                     </p>
 
                     <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
@@ -304,9 +330,7 @@
                             <div class="subtitle">2018 &ndash; Present</div>
                         </div>
                     </div>
-                    <p>I started my art commission business under the pseudonym Circlejourney in 2018, and officially registered it as a sole trader business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few!</p>
-
-                    <div>Here are some selected works for clients:</div>
+                    <p>I started my art commission business under the name Circlejourney in 2018. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
 
                     <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
                 </div>
@@ -319,7 +343,7 @@
                             <div class="subtitle">2024 &ndash; Present</div>
                         </div>
                     </div>
-                    <p>OzCHI is the Australian Conference for Human-Computer Interaction. Since 2024, I have designed and maintained the <a target="_blank" href="https://ozchi.org/2024">OzCHI website</a>, which functions as the conference's main hub for information about submission, registration, and attendance. I liaise with other chairs to ensure that all information is accurate and that important changes are communicated in a timely manner.</p>
+                    <p>Since 2024, I have designed and maintained the <a target="_blank" href="https://ozchi.org/2024">official website for OzCHI</a> (the Australian Conference for Human-Computer Interaction), which is the conference's main hub for information about submission, registration, and attendance. I liaise with other chairs to ensure all information is accurate and up-to-date.</p>
                     <p class="skills">
                         Skills: HTML (Bootstrap), CSS, JavaScript, and PHP
                     </p>
@@ -349,10 +373,10 @@
         </div>
 
         <div class="row-block">
+            <div class="section">
             <h2>
                 Education
             </h2>
-            <div class="section">
                 <div class="section-header">
                     <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
                     <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
@@ -362,7 +386,6 @@
                 <ul>
                 <li><strong>Sessional tutor:</strong> DXB205 (Interactive Narrative Design)</li>
                 <li><strong>Research assistant and web developer:</strong> <em>Kinning with the Unseen</em>, August &ndash; November 2022 (Project Lead: Dr Jane Turner)</li>
-                <li><strong>Session chair:</strong> Faculty of Education Research and Publication Week 2022</li>
                 </ul>
             </div>
 
