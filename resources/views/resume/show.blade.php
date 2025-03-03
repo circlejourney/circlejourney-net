@@ -1,3 +1,4 @@
+
 @extends("layouts.app")
 
 @section("html_title"){{ "Amari Low - Resume" }}@endsection
@@ -32,6 +33,7 @@
         h2 {
             font-size: 300%;
             line-height: 1em;
+            font-weight: normal;
             font-family: "Bebas Neue", Arvo, sans-serif;
         }
 
@@ -251,6 +253,10 @@
                 padding-top: 0.5rem;
             }
 
+            h3 {
+                font-weight: bold;
+            }
+
             p {    
                 margin-block-start: 0.4em;
                 margin-block-end: 0.4em;
@@ -270,6 +276,11 @@
 
             .section-icon {
                 width: 30px;
+            }
+
+            .section-title {
+                border-bottom: 1px solid;
+                margin-bottom: 0.1rem;
             }
 
             .gallery {
@@ -327,11 +338,11 @@
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="/images/tinychick.png">
                         <div class="row-block">
-                            <h3 class="section-title"><b>ChickenPet:</b> Full Stack Developer &amp; Site Administrator</h3>
+                            <h3 class="section-title">ChickenPet: Full Stack Developer &amp; Site Administrator</h3>
                             <div class="subtitle">July 2024 &ndash; Present</div>
                         </div>
                     </div>
-                    <p>I developed <a target="_blank" href="https://chicken.pet/intro">chicken.pet</a>, a game site about breeding chickens. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
+                    <p>I created <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
                     <p class="skills">
                         Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
                     </p>
@@ -345,7 +356,7 @@
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/cjsq.png">
                         <div class="row-block">
-                            <h3 class="section-title"><b>Circlejourney:</b> Founder</h3>
+                            <h3 class="section-title">Circlejourney: Founder</h3>
                             <div class="subtitle">2018 &ndash; Present</div>
                         </div>
                     </div>
@@ -358,7 +369,7 @@
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/ozchi2025.svg">
                         <div class="row-block">
-                            <h3 class="section-title"><b>OzCHI:</b> Web & Social Media Chair</h3>
+                            <h3 class="section-title">OzCHI: Web & Social Media Chair</h3>
                             <div class="subtitle">2024 &ndash; Present</div>
                         </div>
                     </div>
@@ -456,7 +467,7 @@
             <div class="section-header row gap-p5">
                 <img class="section-icon" src="/images/seaunseentitle.png">
                 <div class="row-block">
-                    <h3 class="section-title"><b>The Sea Unseen:</b> Organiser, layout artist, print distributor</h3>
+                    <h3 class="section-title">The Sea Unseen: <b>Organiser, layout artist, print distributor</h3>
                     <div class="subtitle">2021 &ndash; Present</div>
                 </div>
             </div>
@@ -467,7 +478,7 @@
             <div class="section-header row gap-p5">
                 <img class="section-icon" src="/images/wtwlogo.png">
                 <div class="row-block">
-                    <h3 class="section-title"><b>Window to Worlds:</b> Organiser, layout artist, print distributor</h3>
+                    <h3 class="section-title">Window to Worlds: Organiser, layout artist, print distributor</h3>
                     <div class="subtitle">2020 &ndash; Present</div>
                 </div>
             </div>
@@ -479,7 +490,7 @@
             <div class="section-header row gap-p5">
                 <img class="section-icon" src="/images/theditor.png">
                 <div class="row-block">
-                    <h3 class="section-title"><b>Toyhouse live code editor</b></h3>
+                    <h3 class="section-title">Toyhouse live code editor</h3>
                     <div class="subtitle">2020 &ndash; Present</div>
                 </div>
             </div>
