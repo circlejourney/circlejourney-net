@@ -403,7 +403,7 @@
                             <div class="subtitle">February &ndash; December 2022</div>
                         </div>
                     </div>
-                    <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees. I also assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
+                    <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees and assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
                 </div>
         </div>
 
