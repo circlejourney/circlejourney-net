@@ -1,4 +1,5 @@
 <div id="lightbox" class="hidden">
+    <div class="lightbox-nav lightbox-close"><i class="fa fa-times"></i></div>
     <div class="lightbox-nav lightbox-prev"><i class="fa fa-chevron-left"></i></div>
     
     @foreach($artworks as $artwork)

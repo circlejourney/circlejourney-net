@@ -203,6 +203,13 @@
    opacity: 0.5;
    cursor: default;
  }
+
+ .lightbox-close {
+   position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 2;
+ }
  
  sup {
     font-size: 80%;
