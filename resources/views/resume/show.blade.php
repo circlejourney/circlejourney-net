@@ -264,8 +264,12 @@
                 display: block;
             }
 
+            .gallery-art {
+                margin: 3px;
+            }
+
             .gallery-thumbnail {
-                max-height: 150px;
+                max-height: 140px;
             }
 
             .gallery-thumb-link {
