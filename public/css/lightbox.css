@@ -54,6 +54,7 @@
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    color: white;
   }
  
   .lightbox-nav.faded {
