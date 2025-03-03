@@ -1,8 +1,8 @@
-@if($title)
+@if ($title)
 <div class="gallery-title">
     <h2>{{ $title }}</h2>
 </div>
-@endifP
+@endif
 
 <div class="gallery">
     @forelse($artworks as $artwork)
