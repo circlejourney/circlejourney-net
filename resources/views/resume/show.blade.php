@@ -183,6 +183,7 @@
         }
 
         .caption {
+            display: none;
             position: absolute;
             opacity: 0;
             background: rgba(255, 255, 255, 0.7);
