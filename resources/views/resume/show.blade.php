@@ -174,7 +174,7 @@
         box-sizing: border-box;
         border: 5px solid rgba(255, 255, 255, 0.3);
         max-height: 180px;
-        max-width: 180px;
+        max-width: 200px;
         }
 
         .caption {
@@ -384,7 +384,7 @@
                     <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017 &bull; First Class Honours</div>
                 </div>
                 <p>
-                    My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a 550-page interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
+                    My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a ~110-panel interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
                 </p>
             
                 <x-gallery :artworks="$bfa" :lightboxable="$lightboxable->pluck('id')"/>
