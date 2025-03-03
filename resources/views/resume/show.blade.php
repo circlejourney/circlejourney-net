@@ -170,7 +170,6 @@
         object-fit: cover;
         object-position: top;
         box-sizing: border-box;
-        padding: 5px;
         border: 5px solid rgba(255, 255, 255, 0.3);
         max-height: 180px;
         max-width: 180px;
