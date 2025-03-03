@@ -27,20 +27,20 @@
 
     <h2 id="homestuck">Homestuck</h2>
     
-    @include("components.thumblist-2columns", $metalinks = $homestucklinks)
+    @include("components.thumblist-2columns", ["metalinks" => $homestucklinks])
 
 
     <h2 id="vasterror">Vast Error</h2>
 
-    @include("components.thumblist-2columns", $metalinks = $vasterrorlinks)
+    @include("components.thumblist-2columns", ["metalinks" => $vasterrorlinks])
     
 
     <h2 id="su">Steven Universe</h2>
 
-    @include("components.thumblist-2columns", $metalinks = $sulinks)
+    @include("components.thumblist-2columns", ["metalinks" => $sulinks])
 
     <h2 id="others">Other fanmusic</h2>
 
-    @include("components.thumblist-2columns", $metalinks = $otherlinks)
+    @include("components.thumblist-2columns", ["metalinks" => $otherlinks])
 
 @endsection

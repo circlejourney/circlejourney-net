@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Artwork;
 use App\Models\Category;
+use App\Models\Metalink;
 use App\Models\Project;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,35 +20,24 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::beginTransaction();
-        foreach(Project::all() as $project) {
-            $categories = preg_split("/,\s?/", $project->category);
-            foreach($categories as $category_name) {
-                if(!$category = Category::where("name", $category_name)->first()) {
-                    $category = Category::create([
-                        "name" => $category_name
-                    ]);
-                }
-                $project->categories()->syncWithoutDetaching($category->id);
+        if(Schema::hasColumn('projects', 'category')) {
+            foreach(Project::all() as $project) {
+                $categories = preg_split("/,\s?/", $project->category);
+                $project->updateCategories($categories);
             }
-        }
-        foreach(Artwork::all() as $artwork) {
-            $categories = preg_split("/,\s*/", $artwork->category);
-            foreach($categories as $category_name) {
-                if(!$category = Category::where("name", $category_name)->first()) {
-                    $category = Category::create([
-                        "name" => $category_name
-                    ]);
-                }
-                $artwork->categories()->syncWithoutDetaching($category->id);
+        };
+        
+        if(Schema::hasColumn('projects', 'category')) {
+            foreach(Artwork::all() as $artwork) {
+                $categories = preg_split("/,\s*/", $artwork->category);
+                $artwork->updateCategories($categories);
             }
         }
 
-        Schema::table('artworks', function (Blueprint $table) {
-            $table->dropColumn("category");
-        });
-        Schema::table('projects', function (Blueprint $table) {
-            $table->dropColumn("category");
-        });
+        foreach(Metalink::all() as $metalink) {
+            $categories = preg_split("/,\s*/", $artwork->category);
+            $metalink->updateCategories($categories);
+        }
 
         DB::commit();
     }

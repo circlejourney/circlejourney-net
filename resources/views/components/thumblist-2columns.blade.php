@@ -1,5 +1,5 @@
 <div class="bannergrid">
-    @foreach($metalinks as $link)
+    @forelse($metalinks as $link)
     <x-thumb-banner class="bannerbutton-50" imgSrc="{{ $link->img_src }}" :href="$link->href">
         
         <span class="aside">
@@ -11,5 +11,9 @@
         </div>
         
     </x-thumb-banner>
-    @endforeach
+    @empty
+    <p class="center">
+        None found.
+    </p>
+    @endforelse
 </div>

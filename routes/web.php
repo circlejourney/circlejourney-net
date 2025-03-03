@@ -7,6 +7,9 @@ use App\Http\Controllers\MetalinkController;
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\UploadController;
+use App\Models\Artwork;
+use App\Models\Metalink;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
@@ -72,31 +75,24 @@ Route::middleware(['auth', 'auth.admin'])->group(function(){
 
 // Interactive
 Route::get('/interactive', function(){
-    $listprojects = ProjectController::filter("category", "%interactive%");
+    $listprojects =  Project::whereHas("categories", function($q) { $q->where("name", "interactive"); })->get();
     return view("interactive", ["projects"=>$listprojects]);
 })->name("interactive");
 
 Route::get("/nocturna", function() {
-    $listprojects = ProjectController::filter("category", "%nocturna%");
-    $artworks = ArtworkController::filter("category", "%nocturna%");
+    $listprojects =  Project::whereHas("categories", function($q) { $q->where("name", "nocturna"); })->get();
+    $artworks =  Artwork::whereHas("categories", function($q) { $q->where("name", "nocturna"); })->get();
     return view("canonical.nocturna", ["projects"=>$listprojects, "artworks"=>$artworks]);
 });
 
 
 // Art and comics
-Route::get('/art', function(){
-    $listprojects = ProjectController::filter("category", "%art%");
-    $illustrations = ArtworkController::filter("category", "%illustration%");
-    $animations = ArtworkController::filter("category", "%animation%");
-
-    return view("art", ["title"=>"Art and comics", "projects"=>$listprojects, "illustrations"=>$illustrations, "animations"=>$animations]);
-});
-
+Route::get('art', [ProjectController::class, "index_art"]);
 
 
 // Writing
 Route::get("/writing", function(){
-    $projects = ProjectController::filter("category", "writing");
+    $projects = Project::whereHas("categories", function($q) { $q->where("name", "writing"); })->get();
     return view("writing", ["title"=>"Writing", "projects"=>$projects]);
 })->name("writing");
 
@@ -105,7 +101,7 @@ Route::get("/writing/portfolio", function(){
 })->name("writing.portfolio");
 
 Route::get("/offshore", function(){
-    $artworks = ArtworkController::filter("category", "%offshore%");
+    $artworks = Artwork::whereHas("categories", function($q) { $q->where("name", "offshore"); })->get();;
     return view("canonical.offshore", ["artworks"=>$artworks]);
 });
 
@@ -119,7 +115,7 @@ Route::get('/art/{column},{value}', [ArtworkController::class, "filter"]);
 
 // Collabs
 Route::get('/collabs', function(){
-    $listprojects = ProjectController::filter("category", "%collabs%");
+    $listprojects =  Project::whereHas("categories", function($q) { $q->where("name", "collabs"); })->get();
     return view("layouts.projects", ["title"=>"Collaborations and community projects", "projects"=>$listprojects ]);
 });
 
@@ -143,10 +139,10 @@ Route::get("/music", function(){
 Route::get('/music/{column},{value}', [\App\Http\Controllers\MetalinkController::class, "filterview"]);
 
 Route::get("/music/fanmusic", function(){
-    $homestucklinks = MetalinkController::filter("category", "homestuck");
-    $vasterrorlinks = MetalinkController::filter("category", "vasterror");
-    $sulinks = MetalinkController::filter("category", "stevenuniverse");
-    $otherlinks = MetalinkController::filter("category", "others");
+    $homestucklinks = Metalink::where("category", "homestuck")->get();
+    $sulinks = Metalink::where("category", "stevenuniverse")->get();
+    $otherlinks = Metalink::where("category", "others")->get();
+    $vasterrorlinks = Metalink::where("category", "vasterror")->get();
     return view("music.fanmusic", [
         "homestucklinks" => $homestucklinks,
         "vasterrorlinks" => $vasterrorlinks,

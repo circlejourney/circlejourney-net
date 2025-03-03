@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
-class Metalink extends Model
+class Metalink extends Categorisable
 {
     use HasFactory;
     protected $primaryKey = "item_id";

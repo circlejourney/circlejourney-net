@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artwork;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,14 +78,26 @@ class ProjectController extends Controller
     }
 
     public static function select(array $project_ids) {
-        $projects = array_filter(array_map(function($project_id){
-                return Project::where("item_id", $project_id)->first();
-            }, $project_ids));
+        $projects = Project::whereIn("id", $project_ids)->get();
         
         return $projects;
     }
 
     public static function filter(string $column, string $value) {
         return Project::where($column, "like", $value)->orderBy('order', 'desc')->orderBy('created_at', 'asc')->get();
+    }
+
+    public function index_art() {
+        $artprojects = Project::whereHas("categories", function($q) {
+            $q->where("name", "art");
+        })->get();
+        $illustrations = Artwork::whereHas("categories", function($q) {
+            $q->where("name", "illustration");
+        })->get();
+        $animations = Artwork::whereHas("categories", function($q) {
+            $q->where("name", "animation");
+        })->get();
+        $lightboxable = $illustrations->concat($animations)->where("openlightbox", 1);
+        return view("art", ["title"=>"Art and comics", "projects"=>$artprojects, "illustrations"=>$illustrations, "animations"=>$animations, "lightboxable" => $lightboxable]);
     }
 }
