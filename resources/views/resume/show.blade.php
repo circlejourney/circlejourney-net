@@ -180,7 +180,7 @@
         box-sizing: border-box;
         border: 5px solid rgba(255, 255, 255, 0.3);
         max-height: 180px;
-        max-width: 200px;
+        max-width: 220px;
         }
 
         .caption {
