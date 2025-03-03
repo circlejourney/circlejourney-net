@@ -1,3 +1,7 @@
+<div class="gallery-title">
+    <h2>{{ $title }}</h2>
+</div>
+
 <div class="gallery">
     @forelse($artworks as $artwork)
         <x-gallery-art

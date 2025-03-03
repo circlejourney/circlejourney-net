@@ -20,16 +20,8 @@
     @endforeach
     </div>
 
-    <div class="gallery-title">
-        <h2>Illustrations</h2>
-    </div>
+    <x-gallery title="Illustrations" :artworks="$illustrations" :lightboxable="$lightboxable->pluck('id')" />
 
-    @include("components.gallery", ["artworks" => $illustrations, "lightboxable" => $lightboxable->pluck("id")])
-
-    <div class="gallery-title">
-        <h2>Animations</h2>
-    </div>
-
-    @include("components.gallery", ["artworks" => $animations, "lightboxable" => $lightboxable->pluck("id")])
+    <x-gallery title="Animations" :artworks="$animations" :lightboxable="$lightboxable->pluck('id')" />
 
 @endsection
