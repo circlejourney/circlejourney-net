@@ -147,6 +147,10 @@
             line-height: 0;
         }
 
+        .gallery-art:hover .gallery-thumbnail {
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
         .gallery-thumb-link {
             display: block;
             height: 100%;
