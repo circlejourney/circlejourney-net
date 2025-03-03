@@ -118,7 +118,7 @@
         }
 
         .section-header {
-            margin-top: 1rem;
+            margin-top: 1.25rem;
         }
 
         .section-title {
@@ -265,6 +265,10 @@
 
             .section {
                 margin-bottom: 0.5rem;
+            }
+
+            .section-header {
+                margin-top: 1rem;
             }
 
             .print-d-block {
