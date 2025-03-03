@@ -223,6 +223,11 @@
             font-size: 180%;
         }
 
+        .lightbox-description a {
+            background-color: var(--muted);
+            color: var(--bg-link);
+        }
+
         @media only screen and (max-width: 768px) {    
             .row,.col {
                 display: block;
