@@ -13,7 +13,7 @@ class Gallery extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $artworks, public $lightboxable, public $title) {}
+    public function __construct(public $artworks, public $lightboxable, public $title=null) {}
 
     /**
      * Get the view / contents that represent the component.

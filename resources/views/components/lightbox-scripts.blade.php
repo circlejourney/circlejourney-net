@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/lightbox.css">
 <script src="/js/lightbox.js" type="text/javascript"></script>
 <script>
     let lightbox;
