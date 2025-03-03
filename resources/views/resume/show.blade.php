@@ -24,6 +24,7 @@
         h1 {
             font-size: 600%;
             line-height: 1em;
+            font-weight: normal;
             font-family: "Bebas Neue", Arvo, sans-serif;
             word-break: break-word;
         }
@@ -107,7 +108,7 @@
         }
 
         .section-header {
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
         }
 
         .section-title {
@@ -138,12 +139,12 @@
         }
 
         .gallery-art {
-        margin: 10px;
-        box-sizing: border-box;
-        position: relative;
-        text-align: center;
-        overflow-y: hidden;
-        line-height: 0;
+            margin: 10px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            overflow-y: hidden;
+            line-height: 0;
         }
 
         .gallery-art:hover .caption {
@@ -153,13 +154,14 @@
         }
 
         .gallery-art:hover .gallery-thumbnail {
-        border-color: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .gallery-thumb-link {
-        display: block;
-        height: 100%;
-        width: 100%;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: none;
         }
 
         .gallery-thumbnail {
@@ -169,16 +171,15 @@
         object-position: top;
         box-sizing: border-box;
         padding: 5px;
-        border: 5px solid rgba(255, 255, 255, 0.2);
+        border: 5px solid rgba(255, 255, 255, 0.3);
         max-height: 180px;
         max-width: 180px;
-        background-color: rgb(158, 155, 148);
         }
 
         .caption {
             position: absolute;
             opacity: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.7);
             padding: 10px;
             left: 0;
             bottom: -30px;
@@ -188,13 +189,11 @@
             text-align: left;
             transition: 0.2s all linear;
             font-family: Rubik;
-            color: white;
         }
 
         .caption a, .caption a:visited {
             font-weight: normal;
             text-decoration: none;
-            color: #d8874a;
             background: none;
         }
 
@@ -204,7 +203,6 @@
         }
 
         .caption p {
-            color: #ccc;
             display: block;
             width: 100%;
             padding: 0;
@@ -293,7 +291,7 @@
                         <div class="subtitle">2018 &ndash; Present</div>
                     </div>
                 </div>
-                <p>I started my art commission business under the pseudonym Circlejourney in 2018, and officiated it as a sole trader business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, film background painting, front-end web development, and graphic design&hellip;just to name a few!</p>
+                <p>I started my art commission business under the pseudonym Circlejourney in 2018, and officially registered it as a sole trader business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few!</p>
 
                 <div>Here are some selected works for clients:</div>
 
@@ -339,7 +337,7 @@
                 <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
                 <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
             </div>
-            <p>My research project, <em>ReLocative Media,&nbsp;</em>looks at how how to design and develop better internet technologies for people who connect with family and intimate partners over the internet.</p>
+            <p>My research project, <em>ReLocative Media,&nbsp;</em>looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
             <p>Related work:</p>
             <ul>
             <li><strong>Sessional tutor:</strong> DXB205 (Interactive Narrative Design)</li>
@@ -352,7 +350,7 @@
                 <div class="subtitle">Griffith University &bull; July 2018 &ndash; June 2020 &bull; Graduated with Distinction</div>
             </div>
             <p>
-                For my research project, I developed a location-based hypertext engine in HTML/JavaScript/CSS, and then produced <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, a collection of locative ghost stories about the buried histories of Brisbane.
+                For my research project, I developed a location-based (GPS-driven) hypertext engine with HTML, jQuery and Leaflet.js, and used it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
             </p>
             <x-gallery :artworks="$mfa" :lightboxable="$lightboxable->pluck('id')"/>
 
@@ -387,6 +385,17 @@
 
     <div class="section">
         <h2>Other projects</h2>
+        
+        <div class="section-header row gap-p5">
+            <img class="section-icon" src="/images/seaunseentitle.png">
+            <div class="row-block">
+                <h3 class="section-title"><b>The Sea Unseen:</b> Organiser, layout artist, print distributor</h3>
+                <div class="subtitle">2021 &ndash; Present</div>
+            </div>
+        </div>
+        <p><a target="_blank" href="https://seaunseenzine.carrd.co">The Sea Unseen</a> is a marine-themed charity art zine I initated in 2021. It has since had 3 editions and raised over AUD 1,000 for the Australian Marine Conservation Society. Every edition brings together scores of artists from all over the world, creating marine artwork together for love of our oceans. As the main organiser and graphic designer, I oversee communications, artwork production, zine formatting, release, and distribution of print editions.</p>
+
+        
         <div class="section-header row gap-p5">
             <img class="section-icon" src="/images/wtwlogo.png">
             <div class="row-block">
@@ -396,14 +405,15 @@
         </div>
         <p>I started the original character art zine <a target="_blank" href="https://windowtoworlds.carrd.co">Window to Worlds</a> in 2020, and since then, we have featured hundreds of artists and creative works in our four editions to date. As a project moderator, I co-manage communications, artist selections, artwork production, zine formatting, release, and distribution of the print edition.</p>
         
+        
         <div class="section-header row gap-p5">
-            <img class="section-icon" src="/images/seaunseentitle.png">
+            <img class="section-icon" src="/images/theditor.png">
             <div class="row-block">
-                <h3 class="section-title"><b>The Sea Unseen:</b> Organiser, layout artist, print distributor</h3>
-                <div class="subtitle">2021 &ndash; Present</div>
+                <h3 class="section-title"><b>Toyhouse live code editor</b></h3>
+                <div class="subtitle">2020 &ndash; Present</div>
             </div>
         </div>
-        <p><a target="_blank" href="https://seaunseenzine.carrd.co">The Sea Unseen</a> is a marine-themed charity art zine I initated in 2021. It has since had 3 editions and raised over AUD 1,000 for the Australian Marine Conservation Society. Every edition brings together artists from all over the world and features a diversity of marine artwork. As the main organiser and graphic designer, I oversee communications, artwork production, zine formatting, release, and distribution of print editions.</p>
+        <p><a target="_blank" href="https://th.circlejourney.net">The Toyhouse live code editor</a> is a utility I created to make Toyhouse profile coding easier for users who are less familiar with HTML, by letting them preview their code as they type. It has since become well loved by the community, and sees an average of 1,400 unique users per day.</p>
         
     </div>
 @endsection
