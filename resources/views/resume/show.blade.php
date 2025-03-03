@@ -264,6 +264,10 @@
                 display: block;
             }
 
+            .section-icon {
+                width: 30px;
+            }
+
             .gallery {
                 background-color: white;
             }
