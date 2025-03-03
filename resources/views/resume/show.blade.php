@@ -248,8 +248,11 @@
 
             h2 {
                 break-after: avoid;
-                padding-top: 1rem;
                 margin-bottom: none;
+            }
+
+            h2:not(:nth-child(1)) {
+                padding-top: 1rem;
             }
 
             p {    
