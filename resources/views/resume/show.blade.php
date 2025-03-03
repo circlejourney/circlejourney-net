@@ -258,7 +258,7 @@
             }
 
             .section {
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
             }
 
             .print-d-block {
