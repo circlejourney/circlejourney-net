@@ -367,7 +367,6 @@
                 <p>
                     For my research project, I developed a location-based (GPS-driven) hypertext engine with HTML, jQuery and Leaflet.js, and used it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
                 </p>
-                <x-gallery :artworks="$mfa" :lightboxable="$lightboxable->pluck('id')"/>
 
                 <p>Related work: </p>
                 <ul>
@@ -376,6 +375,7 @@
                     <b>Awards:</b> Griffith Award for Academic Excellence 2019
                 </li>
                 </ul>
+                <x-gallery :artworks="$mfa" :lightboxable="$lightboxable->pluck('id')"/>
             </div>
 
             <div class="section">
@@ -386,14 +386,14 @@
                 <p>
                     My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a ~110-panel interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
                 </p>
-            
-                <x-gallery :artworks="$bfa" :lightboxable="$lightboxable->pluck('id')"/>
 
                 <ul>
                 <li>
                     <b>Awards:</b> Dean's List 2015 (during study abroad at Northeastern University), Dean's List for academic year of 2016
                 </li>
                 </ul>
+            
+                <x-gallery :artworks="$bfa" :lightboxable="$lightboxable->pluck('id')"/>
             </div>
         </div>
     </div>
