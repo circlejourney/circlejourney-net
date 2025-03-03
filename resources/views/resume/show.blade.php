@@ -9,8 +9,8 @@
         :root {
             --accent: #24506B;
             --muted: #355f79;
-            --bg: #f6efe9;
-            --faded: rgb(237, 214, 196);
+            --bg: #eae4df;
+            --faded: rgb(231, 205, 185);
             --bg-link: #ffd1ac;
         }
 
