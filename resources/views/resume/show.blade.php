@@ -431,9 +431,9 @@
     <div class="spacer"></div>
 
     <div>
+        <div class="section">
         <h2>Other projects</h2>
         
-        <div class="section">
             <div class="section-header row gap-p5">
                 <img class="section-icon" src="/images/seaunseentitle.png">
                 <div class="row-block">
