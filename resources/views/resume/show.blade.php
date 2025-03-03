@@ -270,10 +270,7 @@
             }
 
             .gallery-thumbnail {
-                max-height: 140px;
-            }
-
-            .gallery-thumb-link {
+                max-height: 130px;
                 border: none;
             }
         }
