@@ -196,6 +196,12 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
+   cursor: pointer;
+ }
+
+ .lightbox-nav.faded {
+   opacity: 0.5;
+   cursor: default;
  }
  
  sup {

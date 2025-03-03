@@ -49,6 +49,8 @@ class Lightbox {
             .data("active", sequenceNo)
             .find(".lightbox-display:not(.hidden)").addClass("hidden");
         $(this.element).find(".lightbox-display").eq(sequenceNo).removeClass("hidden");
+        $(".lightbox-prev").toggleClass("faded", sequenceNo == 0);
+        $(".lightbox-next").toggleClass("faded", sequenceNo == $(this.element).find(".lightbox-display").length-1);
     }
 
     hide() {
