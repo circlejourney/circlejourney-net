@@ -442,17 +442,6 @@
             </div>
             <p><a target="_blank" href="https://th.circlejourney.net">The Toyhouse live code editor</a> is a utility I created to make Toyhouse profile coding easier for users who are less familiar with HTML, by letting them preview their code as they type. It has since become well loved by the community, and sees an average of 1,400 unique users per day.</p>
         </div>
-        
-        
-        <div class="section">
-            <div class="section-header row gap-p5">
-                <div class="row-block">
-                    <h3 class="section-title"><b>Signs of Crux interactive tarot deck</b></h3>
-                    <div class="subtitle">2024</div>
-                </div>
-            </div>
-            <p><a target="_blank" href="https://circlejourney.net/signsofcrux/draw">An interactive deck</a> for the Signs of Crux original character tarot project.</p>
-        </div>
 
     </div>
 @endsection
