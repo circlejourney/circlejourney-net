@@ -248,7 +248,8 @@
 
             h2 {
                 break-after: avoid;
-                margin-bottom: none;
+                margin: none;
+                padding-top: 0.5rem;
             }
 
             p {    
