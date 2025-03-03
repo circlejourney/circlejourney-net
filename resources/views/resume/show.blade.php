@@ -56,6 +56,10 @@
             margin-block-end: 0.6em;
         }
 
+        .spacer {
+            height: 1.25rem;
+        }
+
         .header {            
             margin-bottom: 2rem;
             background-color: var(--accent);
@@ -105,6 +109,10 @@
         .skills {
             font-size: 90%;
             color: var(--muted);
+        }
+
+        .section {
+            break-inside: avoid;
         }
 
         .section-header {
@@ -263,33 +271,39 @@
     <div class="row print-d-block">
         <div class="row-block">
                 <h2>Work history</h2>
-                <div class="section-header row gap-p5">
-                    <img class="section-icon" src="/images/tinychick.png">
-                    <div class="row-block">
-                        <h3 class="section-title"><b>ChickenPet:</b> Full Stack Developer &amp; Site Administrator</h3>
-                        <div class="subtitle">July 2024 &ndash; Present</div>
+                
+                <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="/images/tinychick.png">
+                        <div class="row-block">
+                            <h3 class="section-title"><b>ChickenPet:</b> Full Stack Developer &amp; Site Administrator</h3>
+                            <div class="subtitle">July 2024 &ndash; Present</div>
+                        </div>
                     </div>
+                    <p>I created, develop and administrate <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken petsite (in the style of Flight Rising) with breeding and trading mechanics, a user marketplace, forums, and minigames. Responsibilities include UI/UX design, programming game features, graphic design, addressing site suggestions and bug reports, and other general site administration. The game currently has about 500 players.</p>
+                    <p class="skills">
+                        Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootsrap), CSS (SASS), JavaScript (jQuery)
+                    </p>
+
+                    <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
                 </div>
-                <p>I created, develop and administrate <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken petsite (in the style of Flight Rising) with breeding and trading mechanics, a user marketplace, forums, and minigames. Responsibilities include UI/UX design, programming game features, graphic design, addressing site suggestions and bug reports, and other general site administration. The game currently has about 500 players.</p>
-                <p class="skills">
-                    Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootsrap), CSS (SASS), JavaScript (jQuery)
-                </p>
 
-                <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
-
-                <div class="section-header row gap-p5">
-                    <img class="section-icon" src="images/cjsq.png">
-                    <div class="row-block">
-                        <h3 class="section-title"><b>Circlejourney:</b> Founder</h3>
-                        <div class="subtitle">2018 &ndash; Present</div>
+                <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="images/cjsq.png">
+                        <div class="row-block">
+                            <h3 class="section-title"><b>Circlejourney:</b> Founder</h3>
+                            <div class="subtitle">2018 &ndash; Present</div>
+                        </div>
                     </div>
+                    <p>I started my art commission business under the pseudonym Circlejourney in 2018, and officially registered it as a sole trader business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few!</p>
+
+                    <div>Here are some selected works for clients:</div>
+
+                    <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
                 </div>
-                <p>I started my art commission business under the pseudonym Circlejourney in 2018, and officially registered it as a sole trader business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few!</p>
 
-                <div>Here are some selected works for clients:</div>
-
-                <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
-
+                <div class="section">
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/ozchi2025.svg">
                         <div class="row-block">
@@ -301,80 +315,89 @@
                     <p class="skills">
                         Skills: HTML (Bootstrap), CSS, JavaScript, and PHP
                     </p>
+                </div>
 
-                <div class="section-header row gap-p5">
-                    <img class="section-icon" src="/images/qut.jpg">
-                    <div class="row-block jc-center">
-                        <h3 class="section-title">Queensland University of Technology: Sessional Academic</h3>
-                        <div class="subtitle">July 2022 &ndash; November 2024</div>
+                <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="/images/qut.jpg">
+                        <div class="row-block jc-center">
+                            <h3 class="section-title">Queensland University of Technology: Sessional Academic</h3>
+                            <div class="subtitle">July 2022 &ndash; November 2024</div>
+                        </div>
                     </div>
+                    <p>I tutored the Interactive Narrative Design unit for undergraduates, which imparts skills in designing narratives for dynamic and open-ended play in video games and tabletop roleplaying games. My duties included remote teaching and classroom management, producing video learning content, and liaising with other tutors and UC during marking moderation.</p>
                 </div>
-                <p>I tutored the Interactive Narrative Design unit for undergraduates, which imparts skills in designing narratives for dynamic and open-ended play in video games and tabletop roleplaying games. My duties included remote teaching and classroom management, producing video learning content, and liaising with other tutors and UC during marking moderation.</p>
                 
-                <div class="section-header row gap-p5">
-                    <img class="section-icon" src="/images/je.svg">
-                    <div class="row-block jc-center">
-                        <h3 class="section-title">Junior Engineers: Coding and Robotics Tutor</h3>
-                        <div class="subtitle">February &ndash; December 2022</div>
+                <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="/images/je.svg">
+                        <div class="row-block jc-center">
+                            <h3 class="section-title">Junior Engineers: Coding and Robotics Tutor</h3>
+                            <div class="subtitle">February &ndash; December 2022</div>
+                        </div>
                     </div>
+                    <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees. I also assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
                 </div>
-                <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees. I also assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
-                <p>&nbsp;</p>
         </div>
 
         <div class="row-block">
             <h2>
                 Education
             </h2>
-            <div class="section-header">
-                <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
-                <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
+            <div class="section">
+                <div class="section-header">
+                    <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
+                    <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
+                </div>
+                <p>My research project, <em>ReLocative Media,&nbsp;</em>looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
+                <p>Related work:</p>
+                <ul>
+                <li><strong>Sessional tutor:</strong> DXB205 (Interactive Narrative Design)</li>
+                <li><strong>Research assistant and web developer:</strong> <em>Kinning with the Unseen</em>, August &ndash; November 2022 (Project Lead: Dr Jane Turner)</li>
+                <li><strong>Session chair:</strong> Faculty of Education Research and Publication Week 2022</li>
+                </ul>
             </div>
-            <p>My research project, <em>ReLocative Media,&nbsp;</em>looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
-            <p>Related work:</p>
-            <ul>
-            <li><strong>Sessional tutor:</strong> DXB205 (Interactive Narrative Design)</li>
-            <li><strong>Research assistant and web developer:</strong> <em>Kinning with the Unseen</em>, August &ndash; November 2022 (Project Lead: Dr Jane Turner)</li>
-            <li><strong>Session chair:</strong> Faculty of Education Research and Publication Week 2022</li>
-            </ul>
 
-            <div class="section-header">
-                <h3 class="section-title">Master of Interactive Media (Research)</h3>
-                <div class="subtitle">Griffith University &bull; July 2018 &ndash; June 2020 &bull; Graduated with Distinction</div>
+            <div class="section">
+                <div class="section-header">
+                    <h3 class="section-title">Master of Interactive Media (Research)</h3>
+                    <div class="subtitle">Griffith University &bull; July 2018 &ndash; June 2020 &bull; Graduated with Distinction</div>
+                </div>
+                <p>
+                    For my research project, I developed a location-based (GPS-driven) hypertext engine with HTML, jQuery and Leaflet.js, and used it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
+                </p>
+                <x-gallery :artworks="$mfa" :lightboxable="$lightboxable->pluck('id')"/>
+
+                <p>Related work: </p>
+                <ul>
+                <li><strong>Assistant programmer:</strong> Flying Fruit, Griffith University exhibit at Beijing Design Week 2018 (Coordinator: Prof. Andrew Brown)</li>
+                <li>
+                    <b>Awards:</b> Griffith Award for Academic Excellence 2019
+                </li>
+                </ul>
             </div>
-            <p>
-                For my research project, I developed a location-based (GPS-driven) hypertext engine with HTML, jQuery and Leaflet.js, and used it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
-            </p>
-            <x-gallery :artworks="$mfa" :lightboxable="$lightboxable->pluck('id')"/>
 
-            <p>Related work: </p>
-            <ul>
-            <li><strong>Assistant programmer:</strong> Flying Fruit, Griffith University exhibit at Beijing Design Week 2018 (Coordinator: Prof. Andrew Brown)</li>
-            <li>
-                <b>Awards:</b> Griffith Award for Academic Excellence 2019
-            </li>
-            </ul>
-            <div>
-
-
-            <div class="section-header">
-                <h3 class="section-title">Bachelor of Fine Arts, Digital Animation</h3>
-                <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017 &bull; First Class Honours</div>
-            </div>
-            <p>
-                My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a 550-page interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
-            </p>
+            <div class="section">
+                <div class="section-header">
+                    <h3 class="section-title">Bachelor of Fine Arts, Digital Animation</h3>
+                    <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017 &bull; First Class Honours</div>
+                </div>
+                <p>
+                    My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a 550-page interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
+                </p>
             
-            <x-gallery :artworks="$bfa" :lightboxable="$lightboxable->pluck('id')"/>
+                <x-gallery :artworks="$bfa" :lightboxable="$lightboxable->pluck('id')"/>
 
-            <ul>
-            <li>
-                <b>Awards:</b> Dean's List 2015 (during study abroad at Northeastern University), Dean's List for academic year of 2016
-            </li>
-            </ul>
+                <ul>
+                <li>
+                    <b>Awards:</b> Dean's List 2015 (during study abroad at Northeastern University), Dean's List for academic year of 2016
+                </li>
+                </ul>
             </div>
         </div>
     </div>
+    
+    <div class="spacer"></div>
 
     <div class="section">
         <h2>Other projects</h2>
