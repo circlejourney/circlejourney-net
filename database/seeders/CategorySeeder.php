@@ -34,11 +34,6 @@ class CategorySeeder extends Seeder
             }
         }
 
-        foreach(Metalink::all() as $metalink) {
-            $categories = preg_split("/,\s*/", $artwork->category);
-            $metalink->updateCategories($categories);
-        }
-
         DB::commit();
     }
 }
