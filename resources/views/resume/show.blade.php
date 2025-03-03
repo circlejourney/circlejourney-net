@@ -135,6 +135,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         }
 
         .gallery-title {
@@ -167,14 +168,10 @@
 
         .gallery-thumb-link {
             display: block;
-            height: 100%;
-            width: 100%;
             background: none;
         }
 
         .gallery-thumbnail {
-        height: 100%;
-        width: 100%;
         object-fit: cover;
         object-position: top;
         box-sizing: border-box;
