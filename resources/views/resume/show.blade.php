@@ -178,6 +178,7 @@
         }
 
         .caption {
+            display: none;
             position: absolute;
             opacity: 0;
             background: rgba(255, 255, 255, 0.7);
@@ -240,7 +241,7 @@
 @endpush
 
 @section("body")
-    @include("components.lightbox")
+    @include("components.lightbox", ["artworks" => $lightboxable])
     <div class="header row">
         <div class="col jc-center">
             <h1>Amari Low aka<br>Circlejourney</h1>
@@ -399,38 +400,53 @@
     
     <div class="spacer"></div>
 
-    <div class="section">
+    <div>
         <h2>Other projects</h2>
         
-        <div class="section-header row gap-p5">
-            <img class="section-icon" src="/images/seaunseentitle.png">
-            <div class="row-block">
-                <h3 class="section-title"><b>The Sea Unseen:</b> Organiser, layout artist, print distributor</h3>
-                <div class="subtitle">2021 &ndash; Present</div>
+        <div class="section">
+            <div class="section-header row gap-p5">
+                <img class="section-icon" src="/images/seaunseentitle.png">
+                <div class="row-block">
+                    <h3 class="section-title"><b>The Sea Unseen:</b> Organiser, layout artist, print distributor</h3>
+                    <div class="subtitle">2021 &ndash; Present</div>
+                </div>
             </div>
+            <p><a target="_blank" href="https://seaunseenzine.carrd.co">The Sea Unseen</a> is a marine-themed charity art zine I initated in 2021. It has since had 3 editions and raised over AUD 1,000 for the Australian Marine Conservation Society. Every edition brings together scores of artists from all over the world, creating marine artwork together for love of our oceans. As the main organiser and graphic designer, I oversee communications, artwork production, zine formatting, release, and distribution of print editions.</p>
         </div>
-        <p><a target="_blank" href="https://seaunseenzine.carrd.co">The Sea Unseen</a> is a marine-themed charity art zine I initated in 2021. It has since had 3 editions and raised over AUD 1,000 for the Australian Marine Conservation Society. Every edition brings together scores of artists from all over the world, creating marine artwork together for love of our oceans. As the main organiser and graphic designer, I oversee communications, artwork production, zine formatting, release, and distribution of print editions.</p>
 
-        
-        <div class="section-header row gap-p5">
-            <img class="section-icon" src="/images/wtwlogo.png">
-            <div class="row-block">
-                <h3 class="section-title"><b>Window to Worlds:</b> Organiser, layout artist, print distributor</h3>
-                <div class="subtitle">2020 &ndash; Present</div>
+        <div class="section">
+            <div class="section-header row gap-p5">
+                <img class="section-icon" src="/images/wtwlogo.png">
+                <div class="row-block">
+                    <h3 class="section-title"><b>Window to Worlds:</b> Organiser, layout artist, print distributor</h3>
+                    <div class="subtitle">2020 &ndash; Present</div>
+                </div>
             </div>
+            <p>I started the original character art zine <a target="_blank" href="https://windowtoworlds.carrd.co">Window to Worlds</a> in 2020, and since then, we have featured hundreds of artists and creative works in our four editions to date. As a project moderator, I co-manage communications, artist selections, artwork production, zine formatting, release, and distribution of the print edition.</p>
         </div>
-        <p>I started the original character art zine <a target="_blank" href="https://windowtoworlds.carrd.co">Window to Worlds</a> in 2020, and since then, we have featured hundreds of artists and creative works in our four editions to date. As a project moderator, I co-manage communications, artist selections, artwork production, zine formatting, release, and distribution of the print edition.</p>
         
         
-        <div class="section-header row gap-p5">
-            <img class="section-icon" src="/images/theditor.png">
-            <div class="row-block">
-                <h3 class="section-title"><b>Toyhouse live code editor</b></h3>
-                <div class="subtitle">2020 &ndash; Present</div>
+        <div class="section">
+            <div class="section-header row gap-p5">
+                <img class="section-icon" src="/images/theditor.png">
+                <div class="row-block">
+                    <h3 class="section-title"><b>Toyhouse live code editor</b></h3>
+                    <div class="subtitle">2020 &ndash; Present</div>
+                </div>
             </div>
+            <p><a target="_blank" href="https://th.circlejourney.net">The Toyhouse live code editor</a> is a utility I created to make Toyhouse profile coding easier for users who are less familiar with HTML, by letting them preview their code as they type. It has since become well loved by the community, and sees an average of 1,400 unique users per day.</p>
         </div>
-        <p><a target="_blank" href="https://th.circlejourney.net">The Toyhouse live code editor</a> is a utility I created to make Toyhouse profile coding easier for users who are less familiar with HTML, by letting them preview their code as they type. It has since become well loved by the community, and sees an average of 1,400 unique users per day.</p>
         
+        
+        <div class="section">
+            <div class="section-header row gap-p5">
+                <div class="row-block">
+                    <h3 class="section-title"><b>Signs of Crux interactive tarot deck</b></h3>
+                    <div class="subtitle">2024</div>
+                </div>
+            </div>
+            <p><a target="_blank" href="https://circlejourney.net/signsofcrux/draw">An interactive deck</a> for the Signs of Crux original character tarot project.</p>
+        </div>
+
     </div>
 @endsection
-

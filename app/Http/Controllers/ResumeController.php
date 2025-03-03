@@ -20,7 +20,8 @@ class ResumeController extends Controller
         $chickenpet = Artwork::whereHas("categories", function($q){
             $q->where("name", "resume_chp");
         })->get();
-        $lightboxable = $artworks->concat($bfa)->concat($mfa)->where("openlightbox", 1);
+        $lightboxable = $artworks->concat($bfa)->concat($mfa)->concat($chickenpet)->where("openlightbox", 1);
+        error_log($lightboxable->count());
         return view("resume.show", ["artworks" => $artworks, "chickenpet" => $chickenpet, "bfa" => $bfa, "mfa" => $mfa, "lightboxable" => $lightboxable]);
     }
 }
