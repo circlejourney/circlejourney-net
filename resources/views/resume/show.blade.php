@@ -263,6 +263,10 @@
             .print-d-block {
                 display: block;
             }
+            
+            .print-d-none {
+                display: none;
+            }
 
             .section-icon {
                 width: 30px;
@@ -331,8 +335,10 @@
                     <p class="skills">
                         Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
                     </p>
-
-                    <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
+                    
+                    <div class="print-d-none">
+                        <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
+                    </div>
                 </div>
 
                 <div class="section">
