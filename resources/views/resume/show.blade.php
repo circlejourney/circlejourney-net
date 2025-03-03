@@ -243,7 +243,6 @@
             body {
                 font-size: 8pt;
                 line-height: 1.2em;
-                padding: 1rem;
             }
 
             h2 {
@@ -265,12 +264,17 @@
                 display: block;
             }
 
+            .gallery {
+                background-color: white;
+            }
+
             .gallery-art {
                 margin: 3px;
             }
 
             .gallery-thumbnail {
                 max-height: 130px;
+                max-width: 160px;
                 border: none;
             }
         }
