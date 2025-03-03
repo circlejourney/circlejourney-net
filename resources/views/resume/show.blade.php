@@ -118,7 +118,7 @@
         }
 
         .section-header {
-            margin-top: 1.25rem;
+            margin-top: 1rem;
         }
 
         .section-title {
@@ -373,7 +373,7 @@
                             <div class="subtitle">2024 &ndash; Present</div>
                         </div>
                     </div>
-                    <p>Since 2024, I have designed and maintained the <a target="_blank" href="https://ozchi.org/2024">official website for OzCHI</a> (the Australian Conference for Human-Computer Interaction), which is the conference's main hub for information about submission, registration, and attendance. I liaise with other chairs to ensure all information is accurate and up-to-date.</p>
+                    <p>As a Web and Social Media chair for OzCHI (the Australian Conference for Human-Computer Interaction), I am the main web developer for the conference's <a target="_blank" href="https://ozchi.org/2024">official website</a>. The site is the conference's main hub for information about submission, registration, and attendance. I am responsible for liaising with other chairs to ensure all information is accurate and up-to-date.</p>
                     <p class="skills">
                         Skills: HTML (Bootstrap), CSS, JavaScript, and PHP
                     </p>
@@ -411,7 +411,7 @@
                     <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
                     <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
                 </div>
-                <p>My research project, <em>ReLocative Media,&nbsp;</em>looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
+                <p>My research project, <a href="https://place.circlejourney.net"><em>ReLocative Media</em></a>, looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
                 <p>Related work:</p>
                 <ul>
                 <li><strong>Sessional tutor:</strong> DXB205 (Interactive Narrative Design)</li>
@@ -467,7 +467,7 @@
             <div class="section-header row gap-p5">
                 <img class="section-icon" src="/images/seaunseentitle.png">
                 <div class="row-block">
-                    <h3 class="section-title">The Sea Unseen: <b>Organiser, layout artist, print distributor</h3>
+                    <h3 class="section-title">The Sea Unseen: Organiser, layout artist, print distributor</h3>
                     <div class="subtitle">2021 &ndash; Present</div>
                 </div>
             </div>
