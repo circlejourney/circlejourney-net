@@ -158,6 +158,12 @@
         .gallery-art:hover .gallery-thumbnail {
             border-color: rgba(255, 255, 255, 0.6);
         }
+        
+        .gallery-art:hover .caption {
+            opacity: 1;
+            left: 0;
+            bottom: 0;
+        }
 
         .gallery-thumb-link {
             display: block;
@@ -205,7 +211,7 @@
         }
 
         .caption p {
-            display: block;
+            display: none;
             width: 100%;
             padding: 0;
             font-size: small;
