@@ -251,7 +251,7 @@
                 margin-bottom: none;
             }
 
-            h2:not(:nth-child(1)) {
+            h2:not(:first-child) {
                 padding-top: 1rem;
             }
 
