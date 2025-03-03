@@ -251,13 +251,13 @@
                 margin-bottom: none;
             }
 
-            h2:not(:first-child) {
-                padding-top: 1rem;
-            }
-
             p {    
                 margin-block-start: 0.4em;
                 margin-block-end: 0.4em;
+            }
+
+            .section {
+                margin-bottom: 1rem;
             }
 
             .print-d-block {
