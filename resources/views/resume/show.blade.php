@@ -449,7 +449,7 @@
                     <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017 &bull; First Class Honours</div>
                 </div>
                 <p>
-                    My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a ~110-panel interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
+                    My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a ~110-page interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
                 </p>
 
                 <ul>
