@@ -15,7 +15,7 @@ class ProjectController extends Controller
         ["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"];
         $projects = Project::whereHas("categories", function($q){
             return $q->where("name", "highlight");
-        });
+        })->get();
         return view("welcome", ["projects" => $projects]);
     }
 
@@ -43,7 +43,6 @@ class ProjectController extends Controller
                 "background_position" => $request->background_position,
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
-                "category" => $request->category,
                 "order" => $request->order,
                 "dark" => $dark
             ]
@@ -78,7 +77,6 @@ class ProjectController extends Controller
                 "background_position" => $request->background_position,
                 "label_title" => $request->label_title,
                 "label_text" => $request->label_text,
-                "category" => $request->category,
                 "order" => $request->order,
                 "dark" => $dark
             ]
