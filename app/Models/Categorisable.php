@@ -32,7 +32,6 @@ class Categorisable extends Model
         $detachable = Category::whereIn("name", $remove);
         $this->categories()->detach($detachable->pluck("id"));
         foreach($detachable->get() as $category) {
-            error_log($category);
             if(!$category->artworks()->count() && !$category->projects()->count()) $category->delete();
         }
     }

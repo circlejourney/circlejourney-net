@@ -6,11 +6,13 @@ use App\Models\Artwork;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
 {
     public function welcome() {
+        ["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"];
         $projects = Project::whereHas("categories", function($q){
             return $q->where("name", "highlight");
         });
@@ -32,7 +34,8 @@ class ProjectController extends Controller
 
     public function store(Request $request) {
         $dark = isset($request->dark) ? "1" : "0";
-        Project::create(
+        DB::beginTransaction();
+        $project = Project::create(
             [
                 "item_id" => $request->item_id,
                 "href" => $request->href,
@@ -45,6 +48,10 @@ class ProjectController extends Controller
                 "dark" => $dark
             ]
         );
+        
+        $project->updateCategories(preg_split("/,\s*/", $request->category));
+        DB::commit();
+
         return redirect("/project-editor/");
     }
 
@@ -63,6 +70,7 @@ class ProjectController extends Controller
     {
         $project = Project::where("item_id", $item_id)->firstOrFail();
         $dark = isset($project->dark) ? "1" : "0";
+        DB::beginTransaction();
         $project->update(
             [
                 "href" => $request->href,
@@ -75,6 +83,8 @@ class ProjectController extends Controller
                 "dark" => $dark
             ]
         );
+        $project->updateCategories(preg_split("/,\s*/", $request->category));
+        DB::commit();
         return redirect("/project-editor/".$item_id);
     }
 
