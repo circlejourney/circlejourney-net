@@ -135,10 +135,10 @@ Route::get("/music", function(){
 Route::get('/music/{column},{value}', [\App\Http\Controllers\MetalinkController::class, "filterview"]);
 
 Route::get("/music/fanmusic", function(){
-    $homestucklinks = Metalink::where("category", "homestuck")->get();
-    $sulinks = Metalink::where("category", "stevenuniverse")->get();
-    $otherlinks = Metalink::where("category", "others")->get();
-    $vasterrorlinks = Metalink::where("category", "vasterror")->get();
+    $homestucklinks = Metalink::where("category", "homestuck")->orderBy("publish_date", "desc")->get();
+    $sulinks = Metalink::where("category", "stevenuniverse")->orderBy("publish_date", "desc")->get();
+    $otherlinks = Metalink::where("category", "others")->orderBy("publish_date", "desc")->get();
+    $vasterrorlinks = Metalink::where("category", "vasterror")->orderBy("publish_date", "desc")->get();
     return view("music.fanmusic", [
         "homestucklinks" => $homestucklinks,
         "vasterrorlinks" => $vasterrorlinks,
