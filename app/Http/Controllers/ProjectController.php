@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
 {
+    public function welcome() {
+        $projects = Project::whereHas("categories", function($q){
+            return $q->where("name", "highlight");
+        });
+        return view("welcome", ["projects" => $projects]);
+    }
+
     public function index()
     {
         $projects = Project::all()->sortDesc();

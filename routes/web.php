@@ -24,11 +24,7 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::get('/', function() {
-    return view("welcome", [
-        "projects" => ProjectController::select(["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"], ["alternate"=> true ])
-    ]);
-})->name("welcome");
+Route::get('/', [ProjectController::class, "welcome"])->name("welcome");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
