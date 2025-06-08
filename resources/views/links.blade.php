@@ -109,7 +109,7 @@
             <span class="link-header">
                 Circlejourney
                 &bull;
-                circlejourney#3354
+                circlejourney @ Discord
             </span>
         </div>
     </div>
