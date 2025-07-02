@@ -2,9 +2,8 @@
 
 @section("top")
     <p class="center" style="color: #eee;">
-        <b>Amari Low • they/them • Artist, writer, web developer, music producer... [<a href="/resume">view CV</a>]</b>
+        <b>they/them • Artist, writer, web developer, music producer</b>
     </p>
-    <div class="center">BFA Digital Animation • MFA Interactive Media • PhD candidate at QUT</div>
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="center announcements">

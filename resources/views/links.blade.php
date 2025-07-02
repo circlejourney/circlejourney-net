@@ -108,8 +108,6 @@
         <div class="link-inside">
             <span class="link-header">
                 Circlejourney
-                &bull;
-                circlejourney @ Discord
             </span>
         </div>
     </div>
