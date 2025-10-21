@@ -430,7 +430,7 @@
                     <div class="subtitle">Griffith University &bull; July 2018 &ndash; June 2020 &bull; Graduated with Distinction</div>
                 </div>
                 <p>
-                    For my research project, I developed a location-based (GPS-driven) hypertext engine with HTML, jQuery and Leaflet.js, and used it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
+                    For my research project, I developed a GPS-driven story engine with HTML, jQuery and Leaflet.js, using it to produce <a target="_blank" href="https://circlejourney.net/spectralcarta?playtest"><i>The Spectral Carta</i></a>, an interwoven collection of locative ghost stories about the forgotten histories of Brisbane.
                 </p>
 
                 <p>Related work: </p>
