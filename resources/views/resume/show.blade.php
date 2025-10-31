@@ -315,7 +315,7 @@
         <div class="row-block col jc-center gap-p5">
             <div class="subtitle">
                 <b>
-                    Digital artist/animator &bull; web developer &bull; interaction design researcher
+                    full-stack web developer &bull; digital artist/animator &bull; interaction design researcher
                 </b>
             </div>
 
@@ -351,7 +351,7 @@
                         Skills: WordPress, PHP, HTML, CSS, JavaScript
                     </p>
                     <p>
-                        I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, an informational website for people living with brain tumours. I designed WordPress layouts using the Astra block editor and back-end templating, implementing user tester feedback and consulting with researchers to present medical information in a clear, concise way.
+                        I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, an informational website for people living with brain tumours. I designed responsive WordPress layouts using the Astra block editor and PHP templating, implemented user tester feedback, and consulted with researchers to present medical information in a clear, concise way.
                     </p>
                 </div>
                 
@@ -432,7 +432,7 @@
             </h2>
                 <div class="section-header">
                     <h3 class="section-title">Doctor of Philosophy (Ongoing)</h3>
-                    <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; present</div>
+                    <div class="subtitle">Queensland University of Technology &bull; February 2022 &ndash; 2026 (expected completion)</div>
                 </div>
                 <p>My research project, <a href="https://place.circlejourney.net"><em>ReLocative Media</em></a>, looks at how how to design better technologies for people who sustain close relationships over the internet. It brings together sociological, geographical, and design research methods under a participatory framework, empowering members of these communities to shape design practices moving into the future.</p>
                 <p>Related work:</p>
@@ -463,8 +463,8 @@
 
             <div class="section">
                 <div class="section-header">
-                    <h3 class="section-title">Bachelor of Fine Arts, Digital Animation</h3>
-                    <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017 &bull; First Class Honours</div>
+                    <h3 class="section-title">Bachelor of Fine Arts, Digital Animation (1st Class Honours)</h3>
+                    <div class="subtitle">Nanyang Technological University &bull;&nbsp;July 2013 &ndash; May 2017</div>
                 </div>
                 <p>
                     My thesis project, </strong> <a target="_blank" href="https://compass.circlejourney.net"><em>Compass</em></a> is a ~110-page interactive graphic novel with two endings. I produced the comic script, artwork, and programming with consultation with Prof. Hans-Martin Rall and Ben Slater.
