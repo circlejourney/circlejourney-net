@@ -341,16 +341,34 @@
                 
                 <div class="section">
                     <div class="section-header row gap-p5">
+                        <img class="section-icon" src="images/caringforthecarer.png">
+                        <div class="row-block">
+                            <h3 class="section-title">Caring for the Carer: Web Developer</h3>
+                            <div class="subtitle">2025 (Contract)</div>
+                        </div>
+                    </div>
+                    <p class="skills">
+                        Skills: WordPress, PHP, HTML, CSS, JavaScript
+                    </p>
+                    <p>
+                        I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, an informational website for people living with brain tumours. I designed WordPress layouts using the Astra block editor and back-end templating, implementing user tester feedback and consulting with researchers to present medical information in a clear, concise way.
+                    </p>
+                </div>
+                
+                <div class="section">
+                    <div class="section-header row gap-p5">
                         <img class="section-icon" src="/images/tinychick.png">
                         <div class="row-block">
                             <h3 class="section-title">ChickenPet: Full Stack Developer &amp; Site Administrator</h3>
-                            <div class="subtitle">July 2024 &ndash; Present</div>
+                            <div class="subtitle">July 2024 &ndash; Present (Self-Employed)</div>
                         </div>
                     </div>
-                    <p>I created <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
+
                     <p class="skills">
-                        Skills: Linux, MySQL, PHP (Laravel 11), HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
+                        Skills: PHP (Laravel 11), MySQL, HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
                     </p>
+
+                    <p>I created <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
                     
                     <div class="print-d-none">
                         <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
@@ -359,37 +377,24 @@
 
                 <div class="section">
                     <div class="section-header row gap-p5">
-                        <img class="section-icon" src="images/cjsq.png">
-                        <div class="row-block">
-                            <h3 class="section-title">Circlejourney: Founder</h3>
-                            <div class="subtitle">2018 &ndash; Present</div>
-                        </div>
-                    </div>
-                    <p>I started my art commission business under the name Circlejourney in 2018. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
-
-                    <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
-                </div>
-
-                <div class="section">
-                    <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/ozchi2025.svg">
                         <div class="row-block">
                             <h3 class="section-title">OzCHI: Web & Social Media Chair</h3>
-                            <div class="subtitle">2024 &ndash; Present</div>
+                            <div class="subtitle">2024 &ndash; Present (Volunteer)</div>
                         </div>
                     </div>
-                    <p>As a Web and Social Media chair for OzCHI (the Australian Conference for Human-Computer Interaction), I am the main web developer for the conference's <a target="_blank" href="https://ozchi.org/2024">official website</a>. The site is the conference's main hub for information about submission, registration, and attendance. I am responsible for liaising with other chairs to ensure all information is accurate and up-to-date.</p>
                     <p class="skills">
                         Skills: HTML (Bootstrap), CSS, JavaScript, and PHP
                     </p>
+                    <p>As a Web and Social Media chair for OzCHI (the Australian Conference for Human-Computer Interaction), I am the main web developer for the conference's <a target="_blank" href="https://ozchi.org/2024">official website</a>. The site is the conference's main hub for information about submission, registration, and attendance. I am responsible for liaising with other chairs to ensure all information is accurate and up-to-date.</p>
                 </div>
-
+                
                 <div class="section">
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="/images/qut.jpg">
                         <div class="row-block jc-center">
                             <h3 class="section-title">Queensland University of Technology: Sessional Academic</h3>
-                            <div class="subtitle">July 2022 &ndash; November 2024</div>
+                            <div class="subtitle">July 2022 &ndash; November 2024 (Contract)</div>
                         </div>
                     </div>
                     <p>I tutored the Interactive Narrative Design unit for undergraduates, which imparts skills in designing narratives for dynamic and open-ended play in video games and tabletop roleplaying games. My duties included remote teaching and classroom management, producing video learning content, and liaising with other tutors and UC during marking moderation.</p>
@@ -400,12 +405,25 @@
                         <img class="section-icon" src="/images/je.svg">
                         <div class="row-block jc-center">
                             <h3 class="section-title">Junior Engineers: Coding and Robotics Tutor</h3>
-                            <div class="subtitle">February &ndash; December 2022</div>
+                            <div class="subtitle">February &ndash; December 2022 (Part-Time)</div>
                         </div>
                     </div>
                     <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees and assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
                 </div>
-        </div>
+
+                {{-- <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="images/cjsq.png">
+                        <div class="row-block">
+                            <h3 class="section-title">Circlejourney: Founder</h3>
+                            <div class="subtitle">2018 &ndash; Present ()</div>
+                        </div>
+                    </div>
+                    <p>I started my art commission business under the name Circlejourney in 2018. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
+
+                    <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
+                </div> --}}
+            </div>
 
         <div class="row-block">
             <div class="section">
