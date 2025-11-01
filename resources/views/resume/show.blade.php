@@ -338,13 +338,29 @@
     <div class="row print-d-block">
         <div class="row-block">
                 <h2>Work history</h2>
-                
+
+                <div class="section">
+                    <div class="section-header row gap-p5">
+                        <img class="section-icon" src="images/artfight.svg">
+                        <div class="row-block">
+                            <h3 class="section-title">Art Fight: Web Developer</h3>
+                            <div class="subtitle">2025 &ndash; present (Contract)</div>
+                        </div>
+                    </div>
+                    <p class="skills">
+                        Skills: Laravel, PHP, MySQL, HTML, CSS, JavaScript (jQuery)
+                    </p>
+                    <p>
+                        I am seasonally contracted as a Laravel web developer for <a href="https://artfight.net/">Art Fight</a>, an annual art trading game with over 600,000 users. In my role, I develop new features based on detailed project briefs, organise internal user testing, and collaborate on staged deployment of new features.
+                    </p>
+                </div>
+
                 <div class="section">
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/caringforthecarer.png">
                         <div class="row-block">
                             <h3 class="section-title">Caring for the Carer: Web Developer</h3>
-                            <div class="subtitle">2025 (Contract)</div>
+                            <div class="subtitle">April &ndash; June 2025 (Contract)</div>
                         </div>
                     </div>
                     <p class="skills">
@@ -368,7 +384,7 @@
                     </div>
 
                     <p class="skills">
-                        Skills: PHP (Laravel 11), MySQL, HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
+                        Skills: Laravel, PHP, MySQL, HTML, CSS (SASS), JavaScript (jQuery), API integrations
                     </p>
 
                     <p>I developed <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site running on the Laravel 11 framework. ChickenPet has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 1,000 players and growing.</p>
