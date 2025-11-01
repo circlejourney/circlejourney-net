@@ -430,7 +430,7 @@
                     <p>I taught after-school programmes for Scratch and Python, and ran App Prototyping, Film Academy and Lego Mindstorms holiday camps for primary school students (7 to 13 years old). I also delivered professional development sessions for employees and assisted in developing JavaScript curriculum to be taught at the primary school level.</p>
                 </div>
 
-                {{-- <div class="section">
+                <div class="section">
                     <div class="section-header row gap-p5">
                         <img class="section-icon" src="images/cjsq.png">
                         <div class="row-block">
@@ -441,7 +441,7 @@
                     <p>I started my art commission business under the name Circlejourney in 2018. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
 
                     <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
-                </div> --}}
+                </div>
             </div>
 
         <div class="row-block">
