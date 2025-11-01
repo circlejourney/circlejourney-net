@@ -351,7 +351,10 @@
                         Skills: WordPress, PHP, HTML, CSS, JavaScript
                     </p>
                     <p>
-                        I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, an informational website for people living with brain tumours. I designed responsive WordPress layouts using the Astra block editor and PHP templating, implemented user tester feedback, and consulted with researchers to present medical information in a clear, concise way.
+                        Under a project led by researchers from UQ, QUT, Curtin University and UWA, I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, a medical knowledge base for people living with brain tumours.
+                    </p>
+                    <p>
+                        In this contract role, I designed responsive WordPress layouts using the Astra block editor and PHP templating, implemented user tester feedback, and consulted with researchers to present medical information in a clear, concise way.
                     </p>
                 </div>
                 
@@ -368,7 +371,7 @@
                         Skills: PHP (Laravel 11), MySQL, HTML (Bootstrap), CSS (SASS), JavaScript (jQuery), UI/UX design, PayPal API
                     </p>
 
-                    <p>I created <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site. It has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 500 players.</p>
+                    <p>I developed <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site running on the Laravel 11 framework. ChickenPet has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 1,000 players and growing.</p>
                     
                     <div class="print-d-none">
                         <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
