@@ -435,10 +435,10 @@
                         <img class="section-icon" src="images/cjsq.png">
                         <div class="row-block">
                             <h3 class="section-title">Circlejourney: Founder</h3>
-                            <div class="subtitle">2018 &ndash; Present ()</div>
+                            <div class="subtitle">2021 &ndash; Present (Self-Employed)</div>
                         </div>
                     </div>
-                    <p>I started my art commission business under the name Circlejourney in 2018. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
+                    <p>I established my design and web development business under the name Circlejourney in 2018 and registered it as a business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
 
                     <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
                 </div>
