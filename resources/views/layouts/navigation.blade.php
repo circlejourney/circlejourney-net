@@ -1,4 +1,4 @@
-@if(Auth::user())
+@auth
     <div class="breeze-submenu">
         <div class="menu-header">
             <a>{{ Auth::user()->name }}</a>
@@ -27,4 +27,4 @@
             </a>
         </div>
     </div>
-@endif
+@endauth
