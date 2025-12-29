@@ -4,7 +4,7 @@
 
 @section('content')
 <p class="center">
-    <x-badge-link href="/music-intro">
+    <x-badge-link href="/music/intro">
         My journey as a musician
     </x-badge-link>
     <x-badge-link href="/music/fanmusic">
