@@ -12,6 +12,7 @@
             <li><a href="/project-editor/">Edit projects</a></li>
             <li><a href="/artwork-editor/">Edit artwork</a></li>
             <li><a href="/metalink-editor/">Edit metalinks</a></li>
+            <li><a href="/album-editor/">Edit albums</a></li>
         @endif
     </ul>
 @endsection

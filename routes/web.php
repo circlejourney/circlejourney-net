@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\MetalinkController;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\UploadController;
 use App\Models\Artwork;
@@ -134,17 +135,16 @@ Route::get("/music", function(){
 });
 Route::get('/music/{column},{value}', [\App\Http\Controllers\MetalinkController::class, "filterview"]);
 
-Route::get("/music/fanmusic", function(){
-    $homestucklinks = Metalink::where("category", "homestuck")->orderBy("publish_date", "desc")->get();
-    $sulinks = Metalink::where("category", "stevenuniverse")->orderBy("publish_date", "desc")->get();
-    $otherlinks = Metalink::where("category", "others")->orderBy("publish_date", "desc")->get();
-    $vasterrorlinks = Metalink::where("category", "vasterror")->orderBy("publish_date", "desc")->get();
-    return view("music.fanmusic", [
-        "homestucklinks" => $homestucklinks,
-        "vasterrorlinks" => $vasterrorlinks,
-        "sulinks" => $sulinks,
-        "otherlinks" => $otherlinks
-    ]);
+Route::controller(MusicController::class)->group(function(){
+    Route::middleware(['auth', 'auth.admin'])->group(function(){
+        Route::get('album-editor', 'index_albums')->name('music.album.index');
+        Route::get('album-editor/{album}', 'edit')->name('music.album.edit');
+        Route::post('album-editor/{album}', 'update');
+        Route::get('album-editor/create', 'create')->name('music.album.create');
+        Route::post('album-editor/create', 'store');
+    });
+
+    Route::get('music/fanmusic', 'get_fanmusic')->name('music.fanmusic');
 });
 
 Route::get("/doodlefisticuffs", function(){
