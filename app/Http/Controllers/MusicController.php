@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class MusicController extends Controller
 {
+    public function index_new() {
+        return view('music.index-new', ['albums' => Album::orderBy('order', 'desc')->get()]);
+    }
     public function get_fanmusic() {    
         $homestucklinks = Metalink::where("category", "homestuck")->orderBy("publish_date", "desc")->get();
         $sulinks = Metalink::where("category", "stevenuniverse")->orderBy("publish_date", "desc")->get();

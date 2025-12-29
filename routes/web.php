@@ -143,7 +143,7 @@ Route::controller(MusicController::class)->group(function(){
         Route::get('album-editor/create', 'create')->name('music.album.create');
         Route::post('album-editor/create', 'store');
     });
-
+    Route::get("/music-new", "index_new");
     Route::get('music/fanmusic', 'get_fanmusic')->name('music.fanmusic');
 });
 
