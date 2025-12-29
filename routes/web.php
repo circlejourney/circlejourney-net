@@ -130,12 +130,10 @@ Route::middleware('auth', 'auth.bio')->group(function () {
 Route::get("/blog/{blogPost}", [BlogPostController::class, "show"]);
 
 // Music
-Route::get("/music", function(){
-    return view("music.index");
-});
 Route::get('/music/{column},{value}', [\App\Http\Controllers\MetalinkController::class, "filterview"]);
 
 Route::controller(MusicController::class)->group(function(){
+    Route::get("/music", "index_new");
     Route::middleware(['auth', 'auth.admin'])->group(function(){
         Route::get('album-editor', 'index_albums')->name('music.album.index');
         Route::get('album-editor/{album}', 'edit')->name('music.album.edit');
@@ -143,7 +141,6 @@ Route::controller(MusicController::class)->group(function(){
         Route::get('album-editor/create', 'create')->name('music.album.create');
         Route::post('album-editor/create', 'store');
     });
-    Route::get("/music-new", "index_new");
     Route::get('music/fanmusic', 'get_fanmusic')->name('music.fanmusic');
 });
 
