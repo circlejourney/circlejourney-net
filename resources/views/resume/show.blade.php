@@ -351,7 +351,7 @@
                         Skills: Laravel, PHP, MySQL, HTML, CSS, JavaScript (jQuery)
                     </p>
                     <p>
-                        I am seasonally contracted as a Laravel web developer for <a href="https://artfight.net/">Art Fight</a>, an annual art trading game with over 600,000 users. In my role, I develop new features based on detailed project briefs, organise internal user testing, and collaborate on staged deployment of new features.
+                        I am seasonally contracted as a Laravel web developer for <a href="https://artfight.net/">Art Fight</a>, an annual art trading game with over 600,000 users. In my role, I develop new game features, organise internal user testing, and collaborate on staged deployment of features.
                     </p>
                 </div>
 
@@ -367,10 +367,7 @@
                         Skills: WordPress, PHP, HTML, CSS, JavaScript
                     </p>
                     <p>
-                        Under a project led by researchers from UQ, QUT, Curtin University and UWA, I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, a medical knowledge base for people living with brain tumours.
-                    </p>
-                    <p>
-                        In this contract role, I designed responsive WordPress layouts using the Astra block editor and PHP templating, implemented user tester feedback, and consulted with researchers to present medical information in a clear, concise way.
+                        Under a project led by researchers from UQ, QUT, Curtin University and UWA, I designed, developed and maintained <a href="https://www.caringforthecarer.org.au/">Caring for the Carer</a>, a medical knowledgebase for people living with brain tumours. In this role, I designed responsive WordPress layouts using block editor and PHP templating, implemented user tester feedback, and consulted with researchers to present medical information clearly and concisely.
                     </p>
                 </div>
                 
@@ -387,7 +384,7 @@
                         Skills: Laravel, PHP, MySQL, HTML, CSS (SASS), JavaScript (jQuery), API integrations
                     </p>
 
-                    <p>I developed <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken breeding game site running on the Laravel 11 framework. ChickenPet has genetics, trade mechanics, a user marketplace, forums, and minigames. I design and programme all game features, address site suggestions and bug reports, and manage the site. The game currently has about 1,000 players and growing.</p>
+                    <p>I developed <a target="_blank" href="https://chicken.pet/intro">ChickenPet</a>, a chicken raising game with genetics, trade mechanics, a user marketplace, forums, and minigames. As the site adinistrator, I also address site suggestions, bug reports, and other management matters. The game currently has about 1,000 players and growing.</p>
                     
                     <div class="print-d-none">
                         <x-gallery :artworks="$chickenpet" :lightboxable="$lightboxable->pluck('id')"/>
@@ -405,7 +402,7 @@
                     <p class="skills">
                         Skills: HTML (Bootstrap), CSS, JavaScript, and PHP
                     </p>
-                    <p>As a Web and Social Media chair for OzCHI (the Australian Conference for Human-Computer Interaction), I am the main web developer for the conference's <a target="_blank" href="https://ozchi.org/2024">official website</a>. The site is the conference's main hub for information about submission, registration, and attendance. I am responsible for liaising with other chairs to ensure all information is accurate and up-to-date.</p>
+                    <p>As a Web and Social Media chair for OzCHI (the Australian Conference for Human-Computer Interaction), I am the main web developer for the conference's <a target="_blank" href="https://ozchi.org/2024">official website</a>: the conference's main hub for information about submission, registration, and attendance. I liaise with other chairs to ensure all information is accurate and up-to-date.</p>
                 </div>
                 
                 <div class="section">
@@ -416,7 +413,7 @@
                             <div class="subtitle">July 2022 &ndash; November 2024 (Contract)</div>
                         </div>
                     </div>
-                    <p>I tutored the Interactive Narrative Design unit for undergraduates, which imparts skills in designing narratives for dynamic and open-ended play in video games and tabletop roleplaying games. My duties included remote teaching and classroom management, producing video learning content, and liaising with other tutors and UC during marking moderation.</p>
+                    <p>I tutored the Interactive Narrative Design unit for undergraduates, which imparts skills in designing narratives for dynamic and open-ended play in interactive stories and games. My duties included remote teaching, classroom management, and producing video learning content.</p>
                 </div>
                 
                 <div class="section">
@@ -438,7 +435,7 @@
                             <div class="subtitle">2021 &ndash; Present (Self-Employed)</div>
                         </div>
                     </div>
-                    <p>I established my design and web development business under the name Circlejourney in 2018 and registered it as a business in 2021. I have fulfilled hundreds of project briefs of all kinds, including illustration, 2D animation, background music, front-end web development, and graphic design&hellip;just to name a few! Some work I've done for clients:</p>
+                    <p>I established my design and web development business under the name Circlejourney in 2018 and registered it as a business in 2021. I have fulfilled hundreds of project briefs for illustration, 2D animation, background music, front-end web development, and graphic design. Work I have done for clients:</p>
 
                     <x-gallery :artworks="$artworks" :lightboxable="$lightboxable->pluck('id')"/>
                 </div>
