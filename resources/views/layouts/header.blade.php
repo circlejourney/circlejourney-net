@@ -28,10 +28,6 @@
     </div>
     
     <div class="submenu">
-        <div class="menu-header-link"><a href="https://circlejourney.net/" class="menu-trigger">Original Site</a></div>
-    </div>
-    
-    <div class="submenu">
         <div class="menu-header menu-trigger">Art & comics</div>
         <ul class="dropdown">
         <x-menu-option href="/art/">Art and comics home</x-menu-option>
