@@ -2,8 +2,9 @@ class Lightbox {
 
     constructor(element) {
         this.element = element;
+        console.log(element);
         $(window).on("keydown", ((e)=>{
-            if($(this.element).hasClass("hidden")) return;
+            if($(this.element).hasClass("hide")) return;
             if(e.keyCode == 37) this.nav(-1);
             if(e.keyCode == 39) this.nav(1);
             if(e.keyCode == 27) this.hide();
@@ -45,16 +46,16 @@ class Lightbox {
        
         $(document.body).addClass("freeze");
          $(this.element)
-            .removeClass("hidden")
+            .removeClass("hide")
             .data("active", sequenceNo)
-            .find(".lightbox-display:not(.hidden)").addClass("hidden");
-        $(this.element).find(".lightbox-display").eq(sequenceNo).removeClass("hidden");
+            .find(".lightbox-display:not(.hide)").addClass("hide");
+        $(this.element).find(".lightbox-display").eq(sequenceNo).removeClass("hide");
         $(".lightbox-prev").toggleClass("faded", sequenceNo == 0);
         $(".lightbox-next").toggleClass("faded", sequenceNo == $(this.element).find(".lightbox-display").length-1);
     }
 
     hide() {
-        $(this.element).addClass("hidden");
+        $(this.element).addClass("hide");
         $(document.body).removeClass("freeze");
     }
 
