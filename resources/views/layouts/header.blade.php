@@ -31,74 +31,49 @@
     </div>
     
     <div class="submenu">
-        <div class="menu-header"><a>Art & comics</a></div>
+        <div class="menu-header">Art & comics</div>
         <ul class="dropdown">
         <x-menu-option href="/art/">Art and comics home</x-menu-option>
-        <x-menu-option href="https://circlejourney.carrd.co">Commission sheet</x-menu-option>
-        <x-menu-option href="http://circlejourney.weebly.com">Portfolio</x-menu-option>
-        <x-menu-option href="https://compass.circlejourney.net">Compass (2017-2020)</x-menu-option>
-        <x-menu-option href="https://light.circlejourney.net">The Light Left Under Trees (2019-)</x-menu-option>
-        <x-menu-option href="https://comics.circlejourney.net/dusk">Dusk: Unbirth (2016)</x-menu-option>
-        <x-menu-option href="https://comics.circlejourney.net/snow-white">A Retelling of Snow White (2016)</x-menu-option>
+        <x-menu-option href="https://circlejourney.net/commissions">Commissions</x-menu-option>
+        <x-menu-option href="http://circlejourney.weebly.com" target="_blank">Art and design portfolio</x-menu-option>
+        <x-menu-option href="https://comics.circlejourney.net">Comics home</x-menu-option>
         </ul>
     </div>
     
     <div class="submenu">
-        <div class="menu-header"><a>Writing</a></div>
+        <div class="menu-header" tabindex="0">Writing</div>
         <ul class="dropdown">
         <x-menu-option href="/writing/">Writing home</x-menu-option>
-        <x-menu-option href="https://rd.circlejourney.net">Revolving Door</x-menu-option>
-        <x-menu-option href="/offshore/">Offshore</x-menu-option>
-        <x-menu-option href="/writing/eaglesandswans/">Eagles and Swans</x-menu-option>
-        <x-menu-option href="/writing/otdots/">Of the Dragon, of the Stars</x-menu-option>
-        <x-menu-option href="/writing/compass/">Compass</x-menu-option>
-        <x-menu-option href="/writing/islandwars/">Island Wars</x-menu-option>
-        <x-menu-option href="/writing/voca/">Voca</x-menu-option>
-        <x-menu-option href="/writing/shortstories/">Short stories</x-menu-option>
+        <x-menu-option href="https://circlejourney.net/writing/blog">Writing blog</x-menu-option>
+        <x-menu-option href="/writing/portfolio">Writing portfolio</x-menu-option>
         </ul>
     </div>
     
     <div class="submenu">
-        <div class = "menu-header"><a>Interactive</a></div>
+        <div class = "menu-header menu-toplink" tabindex="0">Interactive</div>
         <ul class="dropdown">
-        <x-menu-option href="/interactive/">Interactive home</x-menu-option>
-        <x-menu-option href="https://compass.circlejourney.net">Compass</x-menu-option>
-        <x-menu-option href="https://th.circlejourney.net">Toyhouse editor</x-menu-option>
-        <li class= "menu-mini-header">GPS</li>
-        <x-menu-option href="/water/">Bubblers and Drinking Fountains Map</x-menu-option>
-        <x-menu-option href="/spectralcarta/">The Spectral Carta</x-menu-option>
-        <li class= "menu-mini-header">Games</li>
-        <x-menu-option href="/in-between/">In Between</x-menu-option>
-        <x-menu-option href="/angel/">Angel</x-menu-option>
-        <x-menu-option href="/swim/">Swim!</x-menu-option>
-        <li class= "menu-mini-header">Fun</li>
-        <x-menu-option href="/p5/islands/">Islands</x-menu-option>
-        <x-menu-option href="/petridish/">Petri Dish</x-menu-option>
+            <x-menu-option href="/interactive/">Interactive home</x-menu-option>
+            <x-menu-option href="https://portfolio.circlejourney.net">Web development portfolio</x-menu-option>
+            <x-menu-option href="https://compass.circlejourney.net">Compass</x-menu-option>
+            <x-menu-option href="https://th.circlejourney.net">Toyhouse editor</x-menu-option>
+            <x-menu-option href="/in-between/">In Between</x-menu-option>
+            <x-menu-option href="/spectralcarta/">The Spectral Carta</x-menu-option>
         </ul>
     </div>
     
     <div class="submenu">
-    <div class="menu-header"><a>Music</a></div>
+    <div class="menu-header menu-toplink" tabindex="0">Music</div>
     <ul class="dropdown">
-    <x-menu-option href="/music/">Music home</x-menu-option>
-    <x-menu-option href="/music/fanmusic/">Fanmusic and invited contributions</x-menu-option>
-    <x-menu-option href="/music/whereveryouwere/">Wherever You Were (2023)</x-menu-option>
-    <x-menu-option href="/music/theskybeyondourbay/">The Sky Beyond Our Bay (2023)</x-menu-option>
-    <x-menu-option href="/music/flyways/">Flyways (2021)</x-menu-option>
-    <x-menu-option href="/music/amemoryfindsitsname/">A Memory Finds Its Name (2021)</x-menu-option>
-    <x-menu-option href="/music/theskyisours/">The sky is ours (2020)</x-menu-option>
-    <x-menu-option href="/music/thechanginglight/">The Changing Light (2019)</x-menu-option>
-    <x-menu-option href="/music/timeandtide/">Time and Tide (2018)</x-menu-option>
-    <x-menu-option href="/music/someotherhorizon/">Some Other Horizon (2016)</x-menu-option>
-    <x-menu-option href="/music/betweenskyandsea/">Between Sky and Sea (2016)</x-menu-option>
-    <x-menu-option href="/music/coastaldreaming/">Coastal Dreaming (2015)</x-menu-option>
-    <x-menu-option href="/music/worldsawait/">Worlds Await (2013)</x-menu-option>
-    <x-menu-option href="/music/compass/">Compass (2013)</x-menu-option>
+        <x-menu-option href="/music/">Music home</x-menu-option>
+        <x-menu-option href="/music/fanmusic/">Fanmusic and invited contributions</x-menu-option>
+        <x-menu-option href="https://circlejourney.carrd.co#music">Music commissions</x-menu-option>
+        <x-menu-option href="https://circlejourney.net/music/intro">Introduction to my music</x-menu-option>
     </ul>
     </div>
     
-    <div class = "submenu">
-        <div class="menu-header-link"><a href="/collabs/">Community projects</a></div>
+    <div class="submenu">
+        <div class="menu-header-link"><a href="/collabs/" class="menu-toplink">Community projects</a></div>
     </div>
+    
 
 </div>

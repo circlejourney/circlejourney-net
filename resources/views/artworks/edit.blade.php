@@ -39,13 +39,13 @@
         @csrf
         @method("PUT")
 
-        <input id="file-select" type="radio" name="fileoption" value="upload" checked onchange="$('.formtoggle').toggleClass('hidden')"><label for="file-select">File upload</label>
-        <input id="url-select" type="radio" name="fileoption" value="url" onchange="$('.formtoggle').toggleClass('hidden')"><label for="url-select">Enter URL</label>
+        <input id="file-select" type="radio" name="fileoption" value="upload" checked onchange="$('.formtoggle').toggleClass('hide')"><label for="file-select">File upload</label>
+        <input id="url-select" type="radio" name="fileoption" value="url" onchange="$('.formtoggle').toggleClass('hide')"><label for="url-select">Enter URL</label>
         
         <div class="formtoggle">
             <input type="file" name="image" id="image" onchange="updatePreview()">
         </div>
-        <div class="formtoggle hidden">
+        <div class="formtoggle hide">
             <input class="editor-text" type="text" id="thumb_src" name="thumb_src" value="{{ $artwork->thumb_src }}" placeholder="Thumbnail source URL" onchange="$('#preview-image').attr('src', '/'+this.value);">
             <input class="editor-text" type="text" id="img_src" name="img_src" value="{{ $artwork->img_src }}" placeholder="Image source URL">
         </div>

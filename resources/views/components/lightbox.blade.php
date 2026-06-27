@@ -1,9 +1,9 @@
-<div id="lightbox" class="hidden">
+<div id="lightbox" class="hide">
     <div class="lightbox-nav lightbox-close"><i class="fa fa-times"></i></div>
     <div class="lightbox-nav lightbox-prev"><i class="fa fa-chevron-left"></i></div>
     
     @foreach($artworks as $artwork)
-    <div class="lightbox-display hidden">
+    <div class="lightbox-display hide">
 
         <div class="lightbox-image-container">
             <img class="lightbox-image" src="/{{$artwork->img_src}}" onclick="event.stopPropagation()">
