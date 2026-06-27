@@ -18,7 +18,6 @@ class ProjectSeeder extends Seeder
         $projects = json_decode( file_get_contents( resource_path('seeders/projects.json') ), true );
         DB::beginTransaction();
         foreach($projects as $projectData) {
-            $projectData["item_id"] = Str::of( $projectData["label_title"] )->lower()->kebab();
             if( Project::where('item_id', $projectData['item_id'])->exists() ) continue;
             $project = Project::create( Arr::only( $projectData, (new Project)->getFillable() ) );
             $project->updateCategories( $projectData['categories'] );
