@@ -773,8 +773,12 @@ div.menu-trigger::after {
    justify-content: center;
 }
 
-.thumb-bannerlabel h2 {
+.thumb-bannerlabel h2, .bannerlabel h3 {
    margin: 0;
+}
+
+.bannerlabel h3 {
+   font-size: 37px;
 }
 
 .thumb-bannerlabel p {
