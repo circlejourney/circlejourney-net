@@ -1,5 +1,5 @@
 <div class="topbar">
-    <a class="home-button" href="/"><i class="fa fa-home"></i></a>
+    <a class="home-button" href="https://circlejourney.net"><i class="fa fa-home"></i></a>
     <a target="_blank" href="https://bsky.app/profile/circlejourney.net" class="linklist-button" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
     <a target="_blank" href="http://github.com/circlejourney" class="linklist-button" aria-label="Github"><i class="fab fa-github"></i></a>
     <a href="https://new.circlejourney.net/links" class="linklist-button"><i class="fa fa-chain"></i> Link list</a> &bull; admin@circlejourney.net
@@ -7,7 +7,7 @@
 </div>
 
 @isset($condensed)
-    <a id="blog-title" class="condensed" href="/">
+    <a id="blog-title" class="condensed" href="https://circlejourney.net">
         <div id="blog-title-inside">
             <div class="blog-title-headline">
                 <img id="blog-title-logo" class="transparent"> <span>Circlejourney</span>
