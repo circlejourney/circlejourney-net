@@ -4,7 +4,7 @@
 
 @section('content')
 <p class="center">
-    <x-badge-link href="/music/intro">
+    <x-badge-link href="https://circlejourney.net/music/intro">
         My journey as a musician
     </x-badge-link>
     <x-badge-link href="/music/fanmusic">
@@ -16,7 +16,7 @@
 
 <div class="badge-grid">
     @foreach($albums as $album)
-    <x-badge-link :href="'/music/'.$album->slug" :background_image="$album->thumbnail_path" :alt="$album->title" />
+    <x-badge-link :href="'https://circlejourney.net/music/'.$album->slug" :background_image="$album->thumbnail_path" :alt="$album->title" />
     @endforeach
     
 </div>
