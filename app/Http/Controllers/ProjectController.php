@@ -48,7 +48,7 @@ class ProjectController extends Controller
             ]
         );
         
-        $project->updateCategories(preg_split("/,\s*/", $request->category));
+        $project->updateCategories($request->categories);
         DB::commit();
 
         return redirect("/project-editor/");
@@ -81,7 +81,7 @@ class ProjectController extends Controller
                 "dark" => $dark
             ]
         );
-        $project->updateCategories(preg_split("/,\s*/", $request->category));
+        $project->updateCategories($request->categories);
         DB::commit();
         return redirect("/project-editor/".$item_id);
     }

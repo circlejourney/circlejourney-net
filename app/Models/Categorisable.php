@@ -17,7 +17,8 @@ class Categorisable extends Model
         return $this->categories()->pluck("name")->join(",");
     }
 
-    public function updateCategories(array $categories) {
+    public function updateCategories(string|array $categories) {
+        if( gettype($categories) == "string" ) $categories = preg_split("/,\s*/", $categories);
         $remove = $this->categories()->pluck("name")->diff(collect($categories));
         $add = collect($categories)->diff($this->categories()->pluck("name"));
 
