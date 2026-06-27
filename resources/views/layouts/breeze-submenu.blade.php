@@ -20,11 +20,5 @@
         </ul>
     </div>   
 @else
-    <div class="breeze-submenu">
-        <div class="menu-header-link">
-            <a href="/login">
-                Login / Register
-            </a>
-        </div>
-    </div>
+    <div class="breeze-submenu"></div>
 @endauth
