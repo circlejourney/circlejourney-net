@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropColumn('projects');
+            $table->dropColumn('category');
         });
         Schema::table('artworks', function (Blueprint $table) {
-            $table->dropColumn('projects');
+            $table->dropColumn('category');
         });
     }
 
@@ -25,10 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('projects')->nullable();
+            $table->string('category')->nullable();
         });
         Schema::table('artworks', function (Blueprint $table) {
-            $table->string('projects')->nullable();
+            $table->string('category')->nullable();
         });
     }
 };
