@@ -7,8 +7,8 @@
 
         <!-- OpenGraph -->
         @hasSection("html_title")
-            <title>{{ config('app.name', 'Laravel') }} || @yield("html_title")</title>
-            <meta property="og:title" content="{{ config('app.name', 'Laravel') }} || @yield("html_title")" />
+            <title>@yield("html_title") - {{ config('app.name', 'Laravel') }}</title>
+            <meta property="og:title" content="@yield("html_title") - {{ config('app.name', 'Laravel') }}" />
             <meta property="og:description" content="@yield("html_title") on Circlejourney's homepage." />
         @else
             <title>{{ config('app.name', 'Laravel') }}</title>
