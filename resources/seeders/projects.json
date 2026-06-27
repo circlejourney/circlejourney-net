@@ -1,0 +1,177 @@
+[
+    {
+        "item_id": "compass",
+        "background_image": "https://circlejourney.net/resources/images/compassposter.webp",
+        "background_position": "center 40%",
+        "label_title": "Compass",
+        "href": "https://compass.circlejourney.net",
+        "order": 0,
+        "dark": false,
+        "categories": "home_interactive_narrative,art",
+        "label_text": "<p>Lured by the legends, two travellers sail towards the edge of the world. An interactive comic (Bachelor honours thesis project).</p>"
+    },
+    {
+        "item_id": "dusk-in-between",
+        "background_image": "https://circlejourney.net/resources/images/inbetween01.webp",
+        "background_position": "center 40%",
+        "label_title": "Dusk: In Between",
+        "href": "/in-between/",
+        "order": 1,
+        "dark": false,
+        "categories": "home_interactive_narrative,art",
+        "label_text": "<p>A young reaper hunts down a queen who has evaded her death for a thousand years. Exploration / bullet hell game, winner of PengJam 2021.</p>"
+    },
+    {
+        "item_id": "dusk-unbirth",
+        "background_image": "https://circlejourney.net/resources/images/duskunbirth.webp",
+        "background_position": "center 24%",
+        "label_title": "Dusk: Unbirth",
+        "href": "https://comics.circlejourney.net/dusk",
+        "order": 2,
+        "dark": false,
+        "categories": "home_interactive_narrative,art",
+        "label_text": "<p>In a city where 10,000 people die every year, an exorcist without a name meets the ghost of a bereaved mother. [CW: gore, body horror]</p>"
+    },
+    {
+        "item_id": "atlas-of-drifting",
+        "background_image": "https://img.itch.zone/aW1nLzYzNDIxNDQuanBn/original/EWjpLg.jpg",
+        "background_position": "center 5%",
+        "label_title": "Atlas of Drifting",
+        "href": "https://circlejourney.net/atlas",
+        "order": 3,
+        "dark": false,
+        "categories": "home_interactive_narrative,art,writing",
+        "label_text": "<p>\"So began the year I lost contact with the sea.\" The story of my 2020 trapped in Brisbane, told in maps and poetry.</p>"
+    },
+    {
+        "item_id": "the-spectral-carta",
+        "background_image": "https://circlejourney.net/resources/images/spectralcarta.webp",
+        "background_position": "center 15%",
+        "label_title": "The Spectral Carta",
+        "href": "/spectralcarta/?playtest",
+        "order": 4,
+        "dark": false,
+        "categories": "home_interactive_narrative,interactive",
+        "label_text": "<p>Help the ghosts of Brisbane find peace - a GPS-based ghost walk for Brisbane (Master's thesis project).</p>"
+    },
+    {
+        "item_id": "ghosts-under-bridges",
+        "background_image": "https://circlejourney.net/interactive/images/ghosts.jpg",
+        "background_position": "center 50%",
+        "label_title": "Ghosts Under Bridges",
+        "href": "https://circlejourney.net/ghosts",
+        "order": 5,
+        "dark": true,
+        "categories": "home_interactive_narrative,art,writing",
+        "label_text": "<p>Three locative (GPS) stories about wistful memories and alienation, inextricably tied to the nooks and crannies of Brisbane.</p>"
+    },
+    {
+        "item_id": "comics-home",
+        "background_image": "https://circlejourney.net/resources/images/snowwhite.webp",
+        "background_position": "center 70%",
+        "label_title": "Comics home",
+        "href": "https://comics.circlejourney.net",
+        "order": 6,
+        "dark": false,
+        "categories": "home_interactive_narrative,art",
+        "label_text": "<p>A collection of my webcomics and sequential art.</p>"
+    },
+    {
+        "item_id": "chickenpet",
+        "background_image": "https://chicken.pet/splash/banner1.png",
+        "background_position": "center 15%",
+        "label_title": "ChickenPet",
+        "href": "https://chicken.pet",
+        "order": 7,
+        "dark": false,
+        "categories": "home_interactive,interactive",
+        "label_text": "<p>A game where you breed and raise chickens, with social forums, trading, and minigames.</p>"
+    },
+    {
+        "item_id": "toyhouse-live-code-editor",
+        "background_image": "https://circlejourney.net/resources/images/THeditor.webp",
+        "background_position": "center 85%",
+        "label_title": "Toyhouse Live Code Editor",
+        "href": "https://th.circlejourney.net",
+        "order": 8,
+        "dark": false,
+        "categories": "home_interactive,interactive",
+        "label_text": "<p>An editor that shows a live preview of code, made for creating Toyhouse profiles and posts.</p>"
+    },
+    {
+        "item_id": "web-development-portfolio",
+        "background_image": "https://circlejourney.net/resources/images/portfolio.webp",
+        "background_position": "center 50%",
+        "label_title": "Web Development portfolio",
+        "href": "https://portfolio.circlejourney.net",
+        "order": 9,
+        "dark": true,
+        "categories": "home_interactive,interactive"
+    },
+    {
+        "item_id": "transplacial-playground",
+        "background_image": "https://circlejourney.net/resources/images/multiplayer-room-designer.webp",
+        "background_position": "center 15%",
+        "label_title": "Transplacial Playground",
+        "href": "https://place.circlejourney.net",
+        "order": 10,
+        "dark": false,
+        "categories": "home_interactive,interactive",
+        "label_text": "<p>\n                        Mapping the homes we make together across distances. A gallery of interactive works and publications emerging from my PhD thesis.\n                    </p>"
+    },
+    {
+        "item_id": "html-color-names",
+        "background_image": "https://htmlcolornames.org/wp-content/uploads/2026/05/hashbig.jpg",
+        "background_position": "center 50%",
+        "label_title": "HTML Color Names",
+        "href": "https://htmlcolornames.org",
+        "order": 11,
+        "dark": false,
+        "categories": "home_interactive,interactive",
+        "label_text": "<p>A resource and reference guide for named HTML colours.</p>"
+    },
+    {
+        "item_id": "the-spindles-of-spacetime-a-tale-of-twelve-worlds",
+        "background_image": "https://circlejourney.net/resources/images/triptych.webp",
+        "background_position": "center 20%",
+        "label_title": "The Spindles of Spacetime: A tale of twelve worlds",
+        "href": "https://rd.circlejourney.net",
+        "order": 12,
+        "dark": false,
+        "categories": "home_writing,writing",
+        "label_text": "<p>A band of heroes from different worlds races to save Duchess Orobelle (the child keeping the multiverse intact) from her self-proclaimed villain. An ongoing serial web novel.</p>"
+    },
+    {
+        "item_id": "offshore",
+        "background_image": "https://circlejourney.net/resources/images/curtaincall.webp",
+        "background_position": "center 34%",
+        "label_title": "Offshore",
+        "href": "https://circlejourney.net/offshore",
+        "order": 13,
+        "dark": false,
+        "categories": "home_writing,writing",
+        "label_text": "<p>It's all about the recovery! A sports/romance novel about a two-handed offshore sailing team preparing for their last race together, and the budding feelings between them.</p>"
+    },
+    {
+        "item_id": "eagles-and-swans",
+        "background_image": "https://circlejourney.net/resources/images/swanscross.webp",
+        "background_position": "center 46%",
+        "label_title": "Eagles and Swans",
+        "href": "https://circlejourney.net/writing/eaglesandswans",
+        "order": 14,
+        "dark": true,
+        "categories": "home_writing,writing",
+        "label_text": "<p>When Ruthenia was a child, her parents were executed for heresy. Now, the goddess Lilin is wreaking havoc on Astra, and the kings are readying to slay her. Ruth is the only one who hears her pleas…</p>"
+    },
+    {
+        "item_id": "writing-blog",
+        "background_image": "https://circlejourney.net/resources/images/dreamscape-scaled.webp",
+        "background_position": "center 75%",
+        "label_title": "Writing Blog",
+        "href": "https://circlejourney.net/writing/blog/",
+        "order": 15,
+        "dark": false,
+        "categories": "home_writing,writing",
+        "label_text": "<p>My short fiction, poetry, and non-fiction writing.</p>"
+    }
+]
