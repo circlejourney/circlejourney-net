@@ -4,7 +4,7 @@
 
 @section('content')
 <p class="center">
-    <x-badge-link href="/music/intro">
+    <x-badge-link href="https://circlejourney.net/music/intro">
         My journey as a musician
     </x-badge-link>
     <x-badge-link href="/music/fanmusic">
@@ -15,33 +15,33 @@
 <h2>Albums</h2>
 
 <div class="badge-grid">
-    <x-badge-link href="/music/solstices+equinoxes" background_image="https://f4.bcbits.com/img/a2412916867_16.jpg" alt="Solstices & Equinoxes" />
-    <x-badge-link href="/music/to-the-cities-ive-never-known" background_image="https://f4.bcbits.com/img/a0621545357_16.jpg" alt="To the Cities I've Never Known" />
-    <x-badge-link href="/music/love-letters" background_image="https://f4.bcbits.com/img/a0763486578_16.jpg"/>
-    <x-badge-link href="/music/dreamersdiarchy" background_image="https://f4.bcbits.com/img/a1758922190_16.jpg" alt="Dreamer's Diarchy" />
-    <x-badge-link href="/music/whereveryouwere" background_image="https://i.scdn.co/image/ab67616d00001e0270cefcb5dadf32ec1351f849">
+    <x-badge-link href="https://circlejourney.net/music/solstices+equinoxes" background_image="https://f4.bcbits.com/img/a2412916867_16.jpg" alt="Solstices & Equinoxes" />
+    <x-badge-link href="https://circlejourney.net/music/to-the-cities-ive-never-known" background_image="https://f4.bcbits.com/img/a0621545357_16.jpg" alt="To the Cities I've Never Known" />
+    <x-badge-link href="https://circlejourney.net/music/love-letters" background_image="https://f4.bcbits.com/img/a0763486578_16.jpg"/>
+    <x-badge-link href="https://circlejourney.net/music/dreamersdiarchy" background_image="https://f4.bcbits.com/img/a1758922190_16.jpg" alt="Dreamer's Diarchy" />
+    <x-badge-link href="https://circlejourney.net/music/whereveryouwere" background_image="https://i.scdn.co/image/ab67616d00001e0270cefcb5dadf32ec1351f849">
     </x-badge-link>
-    <x-badge-link href="/music/theskybeyondourbay" background_image="https://f4.bcbits.com/img/a3376744408_10.jpg">
+    <x-badge-link href="https://circlejourney.net/music/theskybeyondourbay" background_image="https://f4.bcbits.com/img/a3376744408_10.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/flyways" background_image="https://f4.bcbits.com/img/a3232585135_10.jpg">
+    <x-badge-link href="https://circlejourney.net/music/flyways" background_image="https://f4.bcbits.com/img/a3232585135_10.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/amemoryfindsitsname" background_image="https://f4.bcbits.com/img/a1668076941_10.jpg">
+    <x-badge-link href="https://circlejourney.net/music/amemoryfindsitsname" background_image="https://f4.bcbits.com/img/a1668076941_10.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/theskyisours" background_image="https://f4.bcbits.com/img/a1495289006_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/theskyisours" background_image="https://f4.bcbits.com/img/a1495289006_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/thechanginglight" background_image="https://f4.bcbits.com/img/a3279646927_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/thechanginglight" background_image="https://f4.bcbits.com/img/a3279646927_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/timeandtide" background_image="https://f4.bcbits.com/img/a3236619707_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/timeandtide" background_image="https://f4.bcbits.com/img/a3236619707_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/someotherhorizon" background_image="https://f4.bcbits.com/img/a1597463711_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/someotherhorizon" background_image="https://f4.bcbits.com/img/a1597463711_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/betweenskyandsea" background_image="https://f4.bcbits.com/img/a1237498215_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/betweenskyandsea" background_image="https://f4.bcbits.com/img/a1237498215_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/coastaldreaming" background_image="https://f4.bcbits.com/img/a0396190320_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/coastaldreaming" background_image="https://f4.bcbits.com/img/a0396190320_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/worldsawait" background_image="https://f4.bcbits.com/img/a3836868237_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/worldsawait" background_image="https://f4.bcbits.com/img/a3836868237_16.jpg">
     </x-badge-link>
-    <x-badge-link href="/music/compass" background_image="https://f4.bcbits.com/img/a2104335924_16.jpg">
+    <x-badge-link href="https://circlejourney.net/music/compass" background_image="https://f4.bcbits.com/img/a2104335924_16.jpg">
     </x-badge-link>
 </div>
 
