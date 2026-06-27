@@ -106,7 +106,8 @@
         "href": "https://portfolio.circlejourney.net",
         "order": 9,
         "dark": true,
-        "categories": "home_interactive,interactive"
+        "categories": "home_interactive,interactive",
+        "label_text": ""
     },
     {
         "item_id": "transplacial-playground",
