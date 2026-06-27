@@ -10,4 +10,9 @@ class Project extends Categorisable
 {
     use HasFactory;
     protected $fillable = ["item_id", "href", "background_image", "background_position", "label_title", "label_text", "dark", "category", "order"];
+
+    public static function inCategory( string $category ) {
+        $category = Category::where('name', $category)->first();
+        return $category? $category->projects()->orderBy("order") : self::where('id', false);
+    }
 }

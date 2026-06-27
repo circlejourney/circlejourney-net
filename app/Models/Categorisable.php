@@ -37,9 +37,4 @@ class Categorisable extends Model
             if(!$category->artworks()->count() && !$category->projects()->count()) $category->delete();
         }
     }
-
-    public static function inCategory( string $category ) {
-        $category = Category::where('name', $category)->first();
-        return $category? $category->projects() : self::where('id', false);
-    }
 }
