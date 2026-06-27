@@ -51,8 +51,8 @@
             <x-menu-option href="https://portfolio.circlejourney.net">Web development portfolio</x-menu-option>
             <x-menu-option href="https://compass.circlejourney.net">Compass</x-menu-option>
             <x-menu-option href="https://th.circlejourney.net">Toyhouse editor</x-menu-option>
-            <x-menu-option href="/in-between/">In Between</x-menu-option>
-            <x-menu-option href="/spectralcarta/">The Spectral Carta</x-menu-option>
+            <x-menu-option href="https://circlejourney.net/in-between/">In Between</x-menu-option>
+            <x-menu-option href="https://circlejourney.net/spectralcarta/">The Spectral Carta</x-menu-option>
         </ul>
     </div>
     
