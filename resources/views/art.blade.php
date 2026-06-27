@@ -10,7 +10,7 @@
     @include("components.lightbox", ["artworks" => $lightboxable])
     <div class="center">
         <x-badge-link href="https://circlejourney.weebly.com">Art and design portfolio</x-badge-link>
-        <x-badge-link href="https://circlejourney.carrd.co">Commission sheet</x-badge-link>
+        <x-badge-link href="https://circlejourney.net/commissions">Commission sheet</x-badge-link>
         <x-badge-link href="/commform">Commission slot claim form</x-badge-link>
     </div>
     
