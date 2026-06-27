@@ -1,11 +1,8 @@
 <div class="topbar">
     <a class="home-button" href="/"><i class="fa fa-home"></i></a>
-    <a class="linklist-button" target = "_blank" href = "mailto:circlejourneyart@gmail.com"><i class = "fas fa-envelope"></i></a>
-    <a class="linklist-button" target = "_blank" href = "http://instagram.com/circlejourneyart"><i class = "fab fa-instagram"></i></a>
-    <a class="linklist-button" target = "_blank" href = "http://circlejourneyart.tumblr.com"><i class = "fab fa-tumblr"></i></a>
-    <a class="linklist-button" target = "_blank" href = "http://facebook.com/circlejourneyart"><i class = "fab fa-facebook"></i></a>
-    <a class="linklist-button" target = "_blank" href = "http://circlejourney.bandcamp.com"><i class = "fa fa-music"></i></a>
-    <a class="linklist-button" href = "/links"><i class = "fa fa-chain"></i> Link list</a>
+    <a target="_blank" href="https://bsky.app/profile/circlejourney.net" class="linklist-button" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
+    <a target="_blank" href="http://github.com/circlejourney" class="linklist-button" aria-label="Github"><i class="fab fa-github"></i></a>
+    <a href="https://new.circlejourney.net/links" class="linklist-button"><i class="fa fa-chain"></i> Link list</a> &bull; admin@circlejourney.net
     @include("layouts.navigation")
 </div>
 
@@ -23,15 +20,9 @@
 
 <div class="menu" id="menu">
     <div id="menu-button" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
-
-    <div class="submenu">
-        <div class="menu-header-link">
-            <a href="/blog/">Blog</a>
-        </div>
-    </div>
     
     <div class="submenu">
-        <div class="menu-header">Art & comics</div>
+        <div class="menu-header menu-trigger">Art & comics</div>
         <ul class="dropdown">
         <x-menu-option href="/art/">Art and comics home</x-menu-option>
         <x-menu-option href="https://circlejourney.net/commissions">Commissions</x-menu-option>
@@ -41,7 +32,7 @@
     </div>
     
     <div class="submenu">
-        <div class="menu-header" tabindex="0">Writing</div>
+        <div class="menu-header menu-trigger" tabindex="0">Writing</div>
         <ul class="dropdown">
         <x-menu-option href="/writing/">Writing home</x-menu-option>
         <x-menu-option href="https://circlejourney.net/writing/blog">Writing blog</x-menu-option>
@@ -50,7 +41,7 @@
     </div>
     
     <div class="submenu">
-        <div class = "menu-header menu-toplink" tabindex="0">Interactive</div>
+        <div class = "menu-header menu-trigger" tabindex="0">Interactive</div>
         <ul class="dropdown">
             <x-menu-option href="/interactive/">Interactive home</x-menu-option>
             <x-menu-option href="https://portfolio.circlejourney.net">Web development portfolio</x-menu-option>
@@ -62,7 +53,7 @@
     </div>
     
     <div class="submenu">
-    <div class="menu-header menu-toplink" tabindex="0">Music</div>
+    <div class="menu-header menu-trigger" tabindex="0">Music</div>
     <ul class="dropdown">
         <x-menu-option href="/music/">Music home</x-menu-option>
         <x-menu-option href="/music/fanmusic/">Fanmusic and invited contributions</x-menu-option>
@@ -72,7 +63,7 @@
     </div>
     
     <div class="submenu">
-        <div class="menu-header-link"><a href="/collabs/" class="menu-toplink">Community projects</a></div>
+        <div class="menu-header-link"><a href="/collabs/" class="menu-trigger">Community projects</a></div>
     </div>
     
 

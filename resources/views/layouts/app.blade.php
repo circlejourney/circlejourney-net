@@ -35,5 +35,7 @@
     </head>
     <body>
         @yield("body")
+        
+        @stack("foot")
     </body>
 </html>
