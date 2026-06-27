@@ -68,7 +68,7 @@ body {
    margin: 0;
    font-family: Arvo, sans-serif;
    background-color: black;
-   background: url(https://circlejourney.net/resources/images/bg.jpg);
+   background: url(/resources/images/bg.jpg);
    color: var(--softwhite);
    width: 100vw;
    height: auto;
@@ -181,7 +181,7 @@ blockquote {
    line-height: 1.2em;
    box-sizing: border-box;
    width: 100%;
-   padding: 0.2em;
+   padding: 0.4em;
    font-size: 10pt;
    font-family: Rubik, sans-serif;
    vertical-align: middle;
@@ -401,7 +401,7 @@ blockquote {
    justify-content: center;
 }
 
-.menu-header a::after {
+div.menu-trigger::after {
    content: " ▾";
 }
 
