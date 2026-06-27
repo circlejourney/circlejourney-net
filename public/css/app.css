@@ -145,6 +145,10 @@ figcaption {
    color: #aaa;
 }
 
+#tagline {
+    line-height: 2em;
+}
+
 /* MISC */
 
 
