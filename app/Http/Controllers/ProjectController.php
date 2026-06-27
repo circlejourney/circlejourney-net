@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artwork;
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,10 +14,12 @@ class ProjectController extends Controller
 {
     public function welcome() {
         ["compass-2020", "spectralcarta", "atlasofdrifting", "offshore", "theditor", "flyways", "revolvingdoor", "in-between"];
-        $projects = Project::whereHas("categories", function($q){
-            return $q->where("name", "highlight");
-        })->get();
-        return view("welcome", ["projects" => $projects]);
+        
+        return view("welcome", [
+            "interactive_narrative" => Project::inCategory("home_interactive_narrative")->get(),
+            "interactive" => Project::inCategory("home_interactive")->get(),
+            "writing" => Project::inCategory("writing")->get(),
+        ]);
     }
 
     public function index()

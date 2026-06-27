@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -35,5 +36,10 @@ class Categorisable extends Model
         foreach($detachable->get() as $category) {
             if(!$category->artworks()->count() && !$category->projects()->count()) $category->delete();
         }
+    }
+
+    public static function inCategory( string $category ) {
+        $category = Category::where('name', $category)->first();
+        return $category? $category->projects() : self::where('id', false);
     }
 }

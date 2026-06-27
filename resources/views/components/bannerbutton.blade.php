@@ -5,8 +5,7 @@
     {{ $attributes }}>
 
     <div class="bannerlabel @if($dark) darker @endif">
-        <h2>{{$label_title}}</h2>
+        <h3>{{$label_title}}</h3>
         {!! $label_text !!}
     </div>
-
 </a>
