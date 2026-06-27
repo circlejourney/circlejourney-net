@@ -696,7 +696,7 @@ div.menu-trigger::after {
 }
 
 /* Bannerbuttons */
-.bannergrid {
+.bannergrid, .banner-grid {
    display: flex;
    flex-wrap: wrap;
 }
