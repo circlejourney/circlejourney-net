@@ -49,7 +49,7 @@
     <div class="submenu">
         <div class = "menu-header menu-trigger" tabindex="0">Interactive</div>
         <ul class="dropdown">
-            <x-menu-option href="/interactive/">Interactive home</x-menu-option>
+            <x-menu-option href="https://circlejourney.net/interactive/">Interactive home</x-menu-option>
             <x-menu-option href="https://portfolio.circlejourney.net">Web development portfolio</x-menu-option>
             <x-menu-option href="https://compass.circlejourney.net">Compass</x-menu-option>
             <x-menu-option href="https://th.circlejourney.net">Toyhouse editor</x-menu-option>
