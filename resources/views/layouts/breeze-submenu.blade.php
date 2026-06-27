@@ -18,7 +18,6 @@
                 <a href="/logout" onclick="event.preventDefault();this.closest('form').submit();">Log out</a>
             </form>
         </ul>
-        <span></span>
     </div>   
 @else
     <div class="breeze-submenu">
