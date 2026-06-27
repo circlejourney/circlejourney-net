@@ -18,7 +18,7 @@ class ProjectController extends Controller
         return view("welcome", [
             "interactive_narrative" => Project::inCategory("home_interactive_narrative")->get(),
             "interactive" => Project::inCategory("home_interactive")->get(),
-            "writing" => Project::inCategory("writing")->get(),
+            "writing" => Project::inCategory("home_writing")->get(),
         ]);
     }
 
