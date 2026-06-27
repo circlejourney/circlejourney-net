@@ -22,6 +22,12 @@
     <div id="menu-button" onclick = '$("#menu").toggleClass("visible");'><i class = "fa fa-bars"></i></div>
     
     <div class="submenu">
+        <div class="menu-header">
+            <a class="menu-trigger" href="https://circlejourney.net">Home</a>
+        </div>
+    </div>
+    
+    <div class="submenu">
         <div class="menu-header-link"><a href="https://circlejourney.net/" class="menu-trigger">Original Site</a></div>
     </div>
     
