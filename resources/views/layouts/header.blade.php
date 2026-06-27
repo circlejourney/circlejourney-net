@@ -3,7 +3,6 @@
     <a target="_blank" href="https://bsky.app/profile/circlejourney.net" class="linklist-button" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
     <a target="_blank" href="http://github.com/circlejourney" class="linklist-button" aria-label="Github"><i class="fab fa-github"></i></a>
     <a href="https://new.circlejourney.net/links" class="linklist-button"><i class="fa fa-chain"></i> Link list</a> &bull; admin@circlejourney.net
-    @include("layouts.navigation")
 </div>
 
 @isset($condensed)
